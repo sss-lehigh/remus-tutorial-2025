@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['seg_5f_0',['seg_',['../structremus_1_1MemoryNode_1_1SegInfo.html#a0e657826218c213e1f84c8f48de672e8',1,'remus::MemoryNode::SegInfo']]],
+  ['seg_5fsize_1',['SEG_SIZE',['../namespaceremus.html#a48807228cb6b8763101be0f13505d5cb',1,'remus']]],
+  ['segs_5f_2',['segs_',['../classremus_1_1MemoryNode.html#a2dfa9a041602a192628cabd0aa023469',1,'remus::MemoryNode']]],
+  ['segs_5fper_5fmn_3',['SEGS_PER_MN',['../namespaceremus.html#a5305d5f39f5169851628ea477f16de59',1,'remus']]],
+  ['self_5f_4',['self_',['../classremus_1_1MemoryNode.html#a3eb46341d958400600fa89364b056a8b',1,'remus::MemoryNode']]],
+  ['send_5fseg_5f_5',['send_seg_',['../classremus_1_1MemoryNode.html#ad3ee26e30d727d8072172fc4628e6e51',1,'remus::MemoryNode']]],
+  ['send_5fwrs_6',['send_wrs',['../structremus_1_1ComputeThread_1_1seq__send__wrs__t.html#a827ccab58938b32970ab10ffcf7acbe6',1,'remus::ComputeThread::seq_send_wrs_t']]],
+  ['seq_5fidx_7',['seq_idx',['../structremus_1_1ComputeThread_1_1seq__send__wrs__t.html#ad3b3eb75cedac1e753692533ac8179a3',1,'remus::ComputeThread::seq_send_wrs_t']]],
+  ['seq_5fop_5fcounter_5fassignments_8',['seq_op_counter_assignments',['../classremus_1_1ComputeThread.html#a1d5b2078b153f4c9451425edbb3003d3',1,'remus::ComputeThread']]],
+  ['seq_5fop_5fcounter_5fend_9',['seq_op_counter_end',['../classremus_1_1ComputeThread.html#a73f34eded79568dc62141ea96cb1f57f',1,'remus::ComputeThread']]],
+  ['seq_5fop_5fcounter_5fnum_5f_10',['seq_op_counter_num_',['../structremus_1_1ComputeThread_1_1seq__idx__t.html#a1e70189302cab4b2b5abb2a85555d109',1,'remus::ComputeThread::seq_idx_t']]],
+  ['seq_5fop_5fcounter_5fstart_11',['seq_op_counter_start',['../classremus_1_1ComputeThread.html#aef1a978550097a0499e5c0b5c85e7161',1,'remus::ComputeThread']]],
+  ['seq_5fsend_5fwrs_12',['seq_send_wrs',['../classremus_1_1ComputeThread.html#a0680c8c5c05d295e89458f99796b92e3',1,'remus::ComputeThread']]],
+  ['sge_13',['sge',['../structremus_1_1ComputeThread_1_1seq__send__wrs__t_1_1send__wr__t.html#ab90d73bb0e099fa44c6d4d66c9ecd4d9',1,'remus::ComputeThread::seq_send_wrs_t::send_wr_t']]],
+  ['size_5f_14',['size_',['../structremus_1_1ComputeThread_1_1staging__buf__t.html#a46b2a56fa64bc080c5ef9c45f77dbc6b',1,'remus::ComputeThread::staging_buf_t::size_'],['../structremus_1_1ComputeThread_1_1seq__staging__buf__t.html#a5faa1c158d5f046b5023b594a34c7c30',1,'remus::ComputeThread::seq_staging_buf_t::size_'],['../structremus_1_1ComputeThread_1_1cached__buf__t.html#a3f168df56e11ecb3f0431d316a0e501c',1,'remus::ComputeThread::cached_buf_t::size_'],['../structremus_1_1internal_1_1ControlBlock.html#a55c39acf1a76174a79c2b4b4dbad25e2',1,'remus::internal::ControlBlock::size_']]],
+  ['staging_5fbuf_5f_15',['staging_buf_',['../classremus_1_1ComputeThread.html#a10e6bc894d5f2525956bf7e1318b4c12',1,'remus::ComputeThread']]],
+  ['staging_5fbuf_5fallocations_5f_16',['staging_buf_allocations_',['../classremus_1_1ComputeThread.html#acac0c07460f6e5bdd628dcc9bef19d37',1,'remus::ComputeThread']]],
+  ['staging_5fbuf_5fend_17',['staging_buf_end',['../classremus_1_1ComputeThread.html#a5d13850eb3533bc5a959bfa5c7844058',1,'remus::ComputeThread']]],
+  ['staging_5fbuf_5fsize_5f_18',['staging_buf_size_',['../classremus_1_1ComputeThread.html#a942f28439af4ffdf5fc37a90ae9c7ff3',1,'remus::ComputeThread']]],
+  ['staging_5fbuf_5fstart_19',['staging_buf_start',['../classremus_1_1ComputeThread.html#a8d627aea599abf38a3018ed10da5d0d1',1,'remus::ComputeThread']]],
+  ['staging_5fbufs_20',['staging_bufs',['../structremus_1_1ComputeThread_1_1seq__send__wrs__t.html#a7164100c27b226cbe20829f69962b97c',1,'remus::ComputeThread::seq_send_wrs_t']]],
+  ['state_21',['state',['../structremus_1_1AsyncResult_1_1promise__type.html#ae2e382963f4d12520a7eeaa2685a03c9',1,'remus::AsyncResult::promise_type::state'],['../structremus_1_1AsyncResultVoid_1_1promise__type.html#a7cad88133a5d58c9ab80a64b4764e3ed',1,'remus::AsyncResultVoid::promise_type::state']]],
+  ['status_22',['status',['../structremus_1_1StatusVal.html#a7f33042470ad80bec63ee8b6565298bc',1,'remus::StatusVal']]]
+];
