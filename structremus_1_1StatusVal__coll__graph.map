@@ -1,0 +1,5 @@
+<map id="remus::StatusVal&lt; T &gt;" name="remus::StatusVal&lt; T &gt;">
+<area shape="rect" id="Node000001" title="A simple struct that contains the status with its value." alt="" coords="5,93,176,119"/>
+<area shape="rect" id="Node000002" href="$structremus_1_1Status.html" title="A status object that can be used to track the status of an operation." alt="" coords="35,5,147,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,45,93,93,88,93,88,45"/>
+</map>
