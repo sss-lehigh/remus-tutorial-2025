@@ -1,0 +1,13 @@
+.vscode/
+build/
+build_debug/
+dev.screenrc
+run.screenrc
+local/
+.cache/
+cloudlab_common.sh
+build.sh
+.clang-format
+*.csv
+*.log
+.venv
