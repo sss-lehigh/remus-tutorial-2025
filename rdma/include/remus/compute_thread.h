@@ -30,7 +30,7 @@ namespace remus::internal {
 /// some room in object headers that a synchronization mechanism can use for
 /// metadata.
 class BumpAllocator {
-  const uint64_t seg_size_;  // Size of Segments at each MemoryNode
+  const uint64_t seg_size_; // Size of Segments at each MemoryNode
 
   /// Size-segregated collections of free memory blocks
   std::unordered_map<uint64_t, std::vector<uint64_t>> freelists_;
@@ -46,8 +46,8 @@ class BumpAllocator {
 
   /// The header for allocated blocks of memory
   struct header_t {
-    std::atomic<uint64_t> size_;     // The size of the block: write-once
-    std::atomic<uint64_t> padding_;  // Padding to 16B; can be used as a lock
+    std::atomic<uint64_t> size_;    // The size of the block: write-once
+    std::atomic<uint64_t> padding_; // Padding to 16B; can be used as a lock
   };
 
   /// Compute the slabclass for a given size.  Assumes size includes
@@ -69,7 +69,7 @@ class BumpAllocator {
     }
   }
 
- public:
+public:
   /// The size of the header for allocated memory blocks
   static constexpr uint64_t HEADER_SIZE = sizeof(header_t);
 
@@ -89,8 +89,7 @@ class BumpAllocator {
   ///
   /// @return A size to allocate.  Guaranteed to be at least n *sizeof(T) +
   ///         HEADER_SIZE.  Typically larger (i.e., rounded up).
-  template <typename T>
-  uint64_t compute_size(std::size_t n) {
+  template <typename T> uint64_t compute_size(std::size_t n) {
     return calculate_slabclass(sizeof(T) * n + HEADER_SIZE);
   }
 
@@ -150,7 +149,7 @@ class BumpAllocator {
       writer(rdma_ptr<uint64_t>(ptr + offsetof(header_t, padding_)), 0);
       return ptr + HEADER_SIZE;
     }
-    REMUS_FATAL("Out of memory");  // This is actually unreachable
+    REMUS_FATAL("Out of memory"); // This is actually unreachable
   }
 
   /// Try to allocate from a freelist
@@ -204,8 +203,7 @@ class BumpAllocator {
   /// @param ptr    An rdma_ptr
   /// @param size   The size that was read from ptr / the allocation size (not
   ///               sizeof(T))
-  template <typename T>
-  void reclaim(rdma_ptr<T> ptr, uint64_t size) {
+  template <typename T> void reclaim(rdma_ptr<T> ptr, uint64_t size) {
     uint64_t slabclass = calculate_slabclass(size);
     // TODO: Again, small blocks are the common case, hence the branch hint
     if (slabclass > ALLOC_MED_THRESH) [[unlikely]] {
@@ -238,7 +236,7 @@ class BumpAllocator {
     }
   }
 };
-}  // namespace remus::internal
+} // namespace remus::internal
 
 namespace remus {
 ///
@@ -258,7 +256,7 @@ namespace remus {
 /// the underlying features needed by threads wishing to interact with RDMA
 /// memory.
 class ComputeThread {
- protected:
+protected:
   /// @brief An object to reserve and release slots in a staging buffer
   ///        for RDMA communication.
   /// @details
@@ -268,23 +266,22 @@ class ComputeThread {
   /// TODO: All field names should end with an underscore
   class op_counter_t {
     ComputeThread
-        *const ct_;  // The ComputeThread this struct is associated with
-    size_t idx_;     // The index of this op_counter in the ring
+        *const ct_; // The ComputeThread this struct is associated with
+    size_t idx_;    // The index of this op_counter in the ring
     const size_t
-        op_counter_num_;  // The max number of concurrent operations per thread
+        op_counter_num_; // The max number of concurrent operations per thread
 
-   public:
+  public:
     /// @brief Constructs a op_counter_t object
     /// @param ct The ComputeThread this op_counter_t is associated with
     op_counter_t(ComputeThread *ct)
-        : ct_(ct),
-          idx_(0),
+        : ct_(ct), idx_(0),
           op_counter_num_(ct_->args_->uget(remus::CN_OPS_PER_THREAD)) {
       auto result = ring_counter_t::acquire(
           ct_->op_counter_end, ct_->op_counter_assignments, op_counter_num_);
       REMUS_ASSERT(result.has_value(), "op_counter is not available");
       idx_ = result.value();
-///       REMUS_DEBUG("Debug: op_counter_t idx = {}", idx_);
+      ///       REMUS_DEBUG("Debug: op_counter_t idx = {}", idx_);
     }
 
     /// @brief Returns a pointer to the operation counter associated with this
@@ -294,7 +291,7 @@ class ComputeThread {
 
     /// @brief Destructs the op_counter_t object
     ~op_counter_t() {
-///       REMUS_DEBUG("Debug: ~op_counter_t idx = {}", idx_);
+      ///       REMUS_DEBUG("Debug: ~op_counter_t idx = {}", idx_);
       ring_counter_t::release(idx_, ct_->op_counter_start,
                               ct_->op_counter_assignments, op_counter_num_);
     }
@@ -308,20 +305,17 @@ class ComputeThread {
   /// for each coroutine index (coro_idx).
   struct seq_idx_t {
     ComputeThread
-        *const ct_;  // The ComputeThread this seq_idx_t is associated with
-    size_t idx_;     // The index of this seq_idx in the ring
+        *const ct_; // The ComputeThread this seq_idx_t is associated with
+    size_t idx_;    // The index of this seq_idx in the ring
     const uint32_t
-        coro_idx_;  // The coroutine index this seq_idx_t is associated with
-    const size_t
-        seq_op_counter_num_;  // The max number of concurrent operations
+        coro_idx_; // The coroutine index this seq_idx_t is associated with
+    const size_t seq_op_counter_num_; // The max number of concurrent operations
 
     /// @brief Constructs a seq_idx_t object
     /// @param ct The ComputeThread this seq_idx_t is associated with
     /// @param coro_idx The coroutine index this seq_idx_t is associated with
     seq_idx_t(ComputeThread *ct, uint32_t coro_idx)
-        : ct_(ct),
-          idx_(0),
-          coro_idx_(coro_idx),
+        : ct_(ct), idx_(0), coro_idx_(coro_idx),
           seq_op_counter_num_(ct_->args_->uget(remus::CN_OPS_PER_THREAD)) {
       auto result = ring_counter_t::acquire(
           ct_->seq_op_counter_end[coro_idx_],
@@ -348,10 +342,10 @@ class ComputeThread {
   /// @brief A staging_buf_t is a buffer that can be used for staging RDMA
   /// operations
   struct staging_buf_t {
-    ComputeThread *const ct_;  // Pointer to the parent ComputeThread
-    const size_t size_;        // Size of the allocated buffer in bytes
-    const size_t align_;       // Alignment of the buffer in bytes
-    uint8_t *buf_;             // Pointer to the acquired buffer from ring_buf_t
+    ComputeThread *const ct_; // Pointer to the parent ComputeThread
+    const size_t size_;       // Size of the allocated buffer in bytes
+    const size_t align_;      // Alignment of the buffer in bytes
+    uint8_t *buf_;            // Pointer to the acquired buffer from ring_buf_t
 
     /// @brief Constructs a staging_buf_t object
     /// @param ct The ComputeThread this staging_buf_t is associated with
@@ -359,9 +353,7 @@ class ComputeThread {
     /// @param align The alignment of the buffer in bytes
     staging_buf_t(ComputeThread *const ct, const size_t size,
                   const size_t align)
-        : ct_(ct),
-          size_(size),
-          align_(align),
+        : ct_(ct), size_(size), align_(align),
           buf_(ring_buf_t::acquire(
               ct_->staging_buf_, ct_->staging_buf_end, ct_->staging_buf_start,
               ct_->staging_buf_size_, ct_->staging_buf_allocations_, size_,
@@ -371,10 +363,10 @@ class ComputeThread {
     /// @return A pointer to the staging buffer
     uint8_t *val() {
       REMUS_ASSERT(buf_, "staging buf is not enough");
-      REMUS_ASSERT(
-          buf_ >= ct_->staging_buf_ &&
-              buf_ + size_ <= ct_->staging_buf_ + ct_->staging_buf_size_,
-          "Staging buf out of range");
+      REMUS_ASSERT(buf_ >= ct_->staging_buf_ &&
+                       buf_ + size_ <=
+                           ct_->staging_buf_ + ct_->staging_buf_size_,
+                   "Staging buf out of range");
       return buf_;
     }
 
@@ -389,19 +381,17 @@ class ComputeThread {
   /// @brief A seq_staging_buf_t is a buffer that can be used for staging RDMA
   /// operations in a coroutine-local context
   struct seq_staging_buf_t {
-    ComputeThread *const ct_;  // Pointer to the parent ComputeThread
-    const size_t size_;        // Size of the allocated buffer in bytes
-    const size_t align_;       // Alignment of the buffer in bytes
-    uint8_t *buf_;             // Pointer to the acquired buffer from ring_buf_t
+    ComputeThread *const ct_; // Pointer to the parent ComputeThread
+    const size_t size_;       // Size of the allocated buffer in bytes
+    const size_t align_;      // Alignment of the buffer in bytes
+    uint8_t *buf_;            // Pointer to the acquired buffer from ring_buf_t
 
     /// @brief Constructs a seq_staging_buf_t object
     /// @param ct The Co mputeThread this staging_buf_t is associated with
     /// @param size The size of the buffer to acquire in bytes
     /// @param align The alignment of the buffer in bytes
     seq_staging_buf_t(ComputeThread *ct, const size_t size, const size_t align)
-        : ct_(ct),
-          size_(size),
-          align_(align),
+        : ct_(ct), size_(size), align_(align),
           buf_(ring_buf_t::acquire(
               ct_->staging_buf_, ct_->staging_buf_end, ct_->staging_buf_start,
               ct_->staging_buf_size_, ct_->staging_buf_allocations_, size_,
@@ -411,10 +401,10 @@ class ComputeThread {
     /// @return A pointer to the staging buffer
     uint8_t *val() {
       REMUS_ASSERT(buf_, "seq staging buf is not enough");
-      REMUS_ASSERT(
-          buf_ >= ct_->staging_buf_ &&
-              buf_ + size_ <= ct_->staging_buf_ + ct_->staging_buf_size_,
-          "Staging buf out of range");
+      REMUS_ASSERT(buf_ >= ct_->staging_buf_ &&
+                       buf_ + size_ <=
+                           ct_->staging_buf_ + ct_->staging_buf_size_,
+                   "Staging buf out of range");
       return buf_;
     }
 
@@ -428,10 +418,10 @@ class ComputeThread {
 
   /// @brief A cached_buf_t is a buffer that can be reused across operations
   struct cached_buf_t {
-    ComputeThread *const ct_;  // Pointer to the parent ComputeThread
-    const size_t size_;        // Size of the allocated buffer
-    const size_t align_;       // Alignment of the buffer
-    uint8_t *buf_;             // Pointer to the acquired buffer from ring_buf_t
+    ComputeThread *const ct_; // Pointer to the parent ComputeThread
+    const size_t size_;       // Size of the allocated buffer
+    const size_t align_;      // Alignment of the buffer
+    uint8_t *buf_;            // Pointer to the acquired buffer from ring_buf_t
 
     /// @brief Constructs a cached_buf_t object to acquire a buffer from the
     /// right buffer
@@ -441,9 +431,7 @@ class ComputeThread {
     /// @param al The alignment of the buffer in bytes
     cached_buf_t(ComputeThread *const parent_ct, const size_t sz,
                  const size_t al)
-        : ct_(parent_ct),
-          size_(sz),
-          align_(al),
+        : ct_(parent_ct), size_(sz), align_(al),
           buf_(ring_buf_t::acquire(
               parent_ct->cached_buf_, parent_ct->cached_buf_end,
               parent_ct->cached_buf_start, parent_ct->cached_buf_size_,
@@ -453,12 +441,10 @@ class ComputeThread {
     /// cached_buf_t
     /// @param other The other cached_buf_t to move from
     cached_buf_t(cached_buf_t &&other) noexcept
-        : ct_(other.ct_),
-          size_(other.size_),
-          align_(other.align_),
+        : ct_(other.ct_), size_(other.size_), align_(other.align_),
           buf_(other.buf_) {
       other.buf_ =
-          nullptr;  // Critical: Moved-from object no longer owns the buffer
+          nullptr; // Critical: Moved-from object no longer owns the buffer
     }
 
     /// @brief Destructs the cached_buf_t object
@@ -473,14 +459,13 @@ class ComputeThread {
     /// @brief Returns a pointer to the cached buffer
     /// @return The pointer to the cached buffer
     uint8_t *val() const {
-      REMUS_ASSERT(buf_,
-                   "cached_buf_t::val() called on a null buffer "
-                   "(moved-from or failed acquire?)");
-      if (buf_) {  // Only assert range if buf is not null
-        REMUS_ASSERT(
-            buf_ >= ct_->cached_buf_ &&
-                buf_ + size_ <= ct_->cached_buf_ + ct_->cached_buf_size_,
-            "Cached buf out of range");
+      REMUS_ASSERT(buf_, "cached_buf_t::val() called on a null buffer "
+                         "(moved-from or failed acquire?)");
+      if (buf_) { // Only assert range if buf is not null
+        REMUS_ASSERT(buf_ >= ct_->cached_buf_ &&
+                         buf_ + size_ <=
+                             ct_->cached_buf_ + ct_->cached_buf_size_,
+                     "Cached buf out of range");
       }
       return buf_;
     }
@@ -515,12 +500,18 @@ class ComputeThread {
   /// @brief A ComputeThread's staging buffer manager
   std::unordered_map<uint8_t *, cached_buf_t> cached_buf_manager_;
 
+  /// @brief  rdma_ptrs that are scheduled for reclamation
+  ///
+  /// NB: The actual type of these pointers does not matter, since the size
+  ///     information is in the common object header.
+  std::vector<uintptr_t> scheduled_reclamations;
+
   /// @brief Lane object to manage operations per rdma-channel or "Lane"
   ///
   /// TODO: Add underscore to end of field names
   struct Lane {
-    const uint32_t lane_idx;                             // TODO
-    std::vector<std::atomic<size_t>> &lane_op_counters;  // TODO
+    const uint32_t lane_idx;                            // TODO
+    std::vector<std::atomic<size_t>> &lane_op_counters; // TODO
 
     /// @brief Constructs a Lane object, which represents an single RDMA channel
     /// @param lane_idx The index of the lane in the vector of lanes
@@ -530,10 +521,9 @@ class ComputeThread {
         : lane_idx(lane_idx), lane_op_counters(lane_op_counters_) {
       if (lane_op_counters[lane_idx].fetch_add((uint64_t)1) + 1 >=
           remus::internal::kMaxWr) {
-        REMUS_FATAL(
-            "lane_op_counters[{}] is greater than kMaxWr = {}, please "
-            "increase kMaxWr",
-            lane_idx, remus::internal::kMaxWr);
+        REMUS_FATAL("lane_op_counters[{}] is greater than kMaxWr = {}, please "
+                    "increase kMaxWr",
+                    lane_idx, remus::internal::kMaxWr);
       }
     }
 
@@ -558,12 +548,12 @@ class ComputeThread {
     std::vector<send_wr_t> send_wrs;
   };
 
-  uint64_t node_id;                            // The ComputeNode id
-  uint64_t id_;                                // This thread's Id
-  std::shared_ptr<ComputeNode> compute_node_;  // The ComputeNode
+  uint64_t node_id;                           // The ComputeNode id
+  uint64_t id_;                               // This thread's Id
+  std::shared_ptr<ComputeNode> compute_node_; // The ComputeNode
   std::shared_ptr<ArgMap>
-      args_;  // The command-line args to the program
-              /// op_counters for receiving ibv completion events
+      args_; // The command-line args to the program
+             /// op_counters for receiving ibv completion events
   ///
   /// TODO: A vector is overkill until we support async one-sided ops
   std::vector<std::atomic<int>> op_counters_;
@@ -577,7 +567,7 @@ class ComputeThread {
 
   /// The policy for deciding which QP to use when connecting to a MemoryNode
   internal::QpSchedPolicy qp_sched_pol_;
-  internal::BumpAllocator allocator;  // The allocator
+  internal::BumpAllocator allocator; // The allocator
 
   uint64_t staging_buf_size_;
   uint64_t cached_buf_size_;
@@ -588,7 +578,7 @@ class ComputeThread {
   uint8_t *staging_buf_;
   uint8_t *cached_buf_;
 
- public:
+public:
   /// Construct a ComputeThread
   ///
   /// @param id   The thread's zero-based numerical Id
@@ -596,9 +586,7 @@ class ComputeThread {
   /// @param args The command-line arguments to the program
   explicit ComputeThread(uint64_t id, std::shared_ptr<ComputeNode> cn,
                          std::shared_ptr<ArgMap> args)
-      : node_id(id),
-        compute_node_(cn),
-        args_(args),
+      : node_id(id), compute_node_(cn), args_(args),
         op_counters_(args->uget(CN_OPS_PER_THREAD)),
         op_counter_assignments(args->uget(CN_OPS_PER_THREAD),
                                ring_counter_t::State::AVAILABLE),
@@ -608,8 +596,7 @@ class ComputeThread {
                                        ring_counter_t::State::AVAILABLE)),
         seq_op_counter_start(args->uget(CN_OPS_PER_THREAD), 0),
         seq_op_counter_end(args->uget(CN_OPS_PER_THREAD), 0),
-        seq_send_wrs(args->uget(CN_OPS_PER_THREAD)),
-        qp_sched_pol_(args),
+        seq_send_wrs(args->uget(CN_OPS_PER_THREAD)), qp_sched_pol_(args),
         allocator(args) {
     // TODO:  This would be much simpler if we could extract id_ from an
     //        initializer.  Consider switching to a factory?
@@ -658,8 +645,7 @@ class ComputeThread {
   /// @param ptr The rdma_ptr pointing to the object in the RDMA heap
   /// @param fence If true, a fence is issued after the read operation
   /// @return The object read from the RDMA heap
-  template <typename T>
-  T Read(rdma_ptr<T> ptr, bool fence = true) {
+  template <typename T> T Read(rdma_ptr<T> ptr, bool fence = true) {
     /// Use the scheduling policy to select the next connection
     auto lane = Lane{qp_sched_pol_.get_lane_idx(ptr.id()),
                      compute_node_->lane_op_counters_};
@@ -828,7 +814,7 @@ class ComputeThread {
   std::optional<std::vector<T>> ReadSeq(rdma_ptr<T> ptr, bool signal = false,
                                         bool fence = false) {
     auto coro_idx =
-        0;  // because we don't support more than one top level coroutine
+        0; // because we don't support more than one top level coroutine
     auto seq_idx = find_seq_idx(ptr, coro_idx);
     auto &ci = compute_node_->get_conn(
         ptr.raw(), seq_send_wrs[coro_idx][seq_idx].lane->lane_idx);
@@ -907,11 +893,10 @@ class ComputeThread {
 
   /// NB: ensure all ptrs in seq belong to the same memory segment
   template <typename T>
-  std::optional<std::vector<T>> WriteSeq(rdma_ptr<T> ptr, const T &val,
-                                         bool signal = false,
-                                         bool fence = false,
-                                         size_t size = sizeof(T),
-                                         bool local_copy = true) {
+  std::optional<std::vector<T>>
+  WriteSeq(rdma_ptr<T> ptr, const T &val, bool signal = false,
+           bool fence = false, size_t size = sizeof(T),
+           bool local_copy = true) {
     if (local_copy && is_local(ptr)) {
       memcpy((void *)ptr.address(), &val, size);
       _mm_clflush((void *)ptr.address());
@@ -921,7 +906,7 @@ class ComputeThread {
       return std::nullopt;
     }
     auto coro_idx =
-        0;  // because we don't support more than one top level coroutine
+        0; // because we don't support more than one top level coroutine
     auto seq_idx = find_seq_idx(ptr, coro_idx);
     auto &ci = compute_node_->get_conn(
         ptr.raw(), seq_send_wrs[coro_idx][seq_idx].lane->lane_idx);
@@ -961,11 +946,9 @@ class ComputeThread {
 
   // this is a special version that allows write from seg
   template <typename T>
-  std::optional<std::vector<T>> WriteSeq(rdma_ptr<T> ptr, T *seg,
-                                         bool signal = false,
-                                         bool fence = false,
-                                         size_t size = sizeof(T),
-                                         bool local_copy = true) {
+  std::optional<std::vector<T>>
+  WriteSeq(rdma_ptr<T> ptr, T *seg, bool signal = false, bool fence = false,
+           size_t size = sizeof(T), bool local_copy = true) {
     if (local_copy && is_local(ptr)) {
       memcpy((void *)ptr.address(), seg, size);
       _mm_clflush((void *)ptr.address());
@@ -975,7 +958,7 @@ class ComputeThread {
       return std::nullopt;
     }
     auto coro_idx =
-        0;  // because we don't support more than one top level coroutine
+        0; // because we don't support more than one top level coroutine
     auto seq_idx = find_seq_idx(ptr, coro_idx);
     auto &ci = compute_node_->get_conn(
         ptr.raw(), seq_send_wrs[coro_idx][seq_idx].lane->lane_idx);
@@ -1006,14 +989,12 @@ class ComputeThread {
   }
 
   /// Determine if a rdma_ptr is local to the machine
-  template <class T>
-  bool is_local(rdma_ptr<T> ptr) {
+  template <class T> bool is_local(rdma_ptr<T> ptr) {
     return ptr.id() == node_id;
   }
 
   /// @brief Extract the segment id from a rdma_ptr
-  template <typename T>
-  uint64_t seg_id(rdma_ptr<T> ptr) {
+  template <typename T> uint64_t seg_id(rdma_ptr<T> ptr) {
     return ptr.raw() >> args_->uget(SEG_SIZE);
   }
 
@@ -1043,11 +1024,11 @@ class ComputeThread {
   /// @tparam T The type of the object to allocate
   /// @param n The number of elements to allocate, defaults to 1
   /// @return An rdma_ptr<T> pointing to the allocated memory, or an empty
-  template <typename T>
-  rdma_ptr<T> allocate(std::size_t n = 1) {
+  template <typename T> rdma_ptr<T> allocate(std::size_t n = 1) {
     auto size = allocator.compute_size<T>(n);
     auto local = allocator.try_allocate_local(size);
-    if (local.has_value()) return rdma_ptr<T>(local.value());
+    if (local.has_value())
+      return rdma_ptr<T>(local.value());
     // TODO:  The use of four lambdas here is really icky, this should be
     //        refactored at some point.
     auto global = allocator.try_allocate_global(
@@ -1069,8 +1050,7 @@ class ComputeThread {
   /// @tparam T The type of the object to deallocate
   /// @param ptr The rdma_ptr<T> pointing to the memory to deallocate
   /// @return True if the deallocation was successful, false otherwise
-  template <typename T>
-  bool deallocate(rdma_ptr<T> ptr) {
+  template <typename T> bool deallocate(rdma_ptr<T> ptr) {
     auto size = Read<uint64_t>(
         rdma_ptr<uint64_t>(ptr.raw() - internal::BumpAllocator::HEADER_SIZE));
     allocator.reclaim(ptr, size);
@@ -1082,8 +1062,7 @@ class ComputeThread {
   /// @tparam T The type of the object to allocate
   /// @param num_elements The number of elements to allocate, defaults to 1
   /// @return A pointer to the allocated memory, or nullptr if allocation failed
-  template <typename T>
-  T *local_allocate(std::size_t num_elements = 1) {
+  template <typename T> T *local_allocate(std::size_t num_elements = 1) {
     size_t n_bytes = sizeof(T) * num_elements;
     auto temp_obj_owner =
         std::make_unique<cached_buf_t>(this, n_bytes, alignof(T));
@@ -1105,8 +1084,7 @@ class ComputeThread {
   /// @brief Deallocate local memory allocated with local_allocate
   /// @tparam T The type of the object to deallocate
   /// @param buf The pointer to the memory to deallocate
-  template <typename T>
-  void local_deallocate(T *buf) {
+  template <typename T> void local_deallocate(T *buf) {
     cached_buf_manager_.erase((uint8_t *)buf);
   }
 
@@ -1117,8 +1095,7 @@ class ComputeThread {
   /// @tparam T The type of the root pointer
   /// @param root The rdma_ptr<T> pointing to the root object in the RDMA heap
   /// TODO: Should we pass in the memory node and segment id?
-  template <typename T>
-  void set_root(rdma_ptr<T> root) {
+  template <typename T> void set_root(rdma_ptr<T> root) {
     rdma_ptr<uint64_t> root_ptr(compute_node_->get_seg_start(0, 0) +
                                 offsetof(internal::ControlBlock, root_));
     Write(root_ptr, root.raw());
@@ -1128,8 +1105,7 @@ class ComputeThread {
   /// @tparam T The type of the root pointer
   /// @return An rdma_ptr<T> pointing to the root object in the RDMA heap
   /// TODO: Should we pass in the memory node and segment id?
-  template <typename T>
-  rdma_ptr<T> get_root() {
+  template <typename T> rdma_ptr<T> get_root() {
     rdma_ptr<uint64_t> root_ptr(compute_node_->get_seg_start(0, 0) +
                                 offsetof(internal::ControlBlock, root_));
     auto root = Read<uint64_t>(root_ptr);
@@ -1142,8 +1118,7 @@ class ComputeThread {
   /// @param new_root The new root pointer to set if the old one matches
   /// @return The old root pointer if the CAS was successful, or the current
   /// root
-  template <typename T>
-  T cas_root(rdma_ptr<T> old_root, rdma_ptr<T> new_root) {
+  template <typename T> T cas_root(rdma_ptr<T> old_root, rdma_ptr<T> new_root) {
     rdma_ptr<uint64_t> root_ptr(compute_node_->get_seg_start(0, 0) +
                                 offsetof(internal::ControlBlock, root_));
     return CompareAndSwap(root_ptr, old_root.raw(), new_root.raw());
@@ -1153,8 +1128,7 @@ class ComputeThread {
   /// @tparam T The type of the root pointer
   /// @param Add the value to add to the root pointer
   /// @return The old root pointer before the addition
-  template <typename T>
-  T faa_root(size_t add) {
+  template <typename T> T faa_root(size_t add) {
     rdma_ptr<uint64_t> root_ptr(compute_node_->get_seg_start(0, 0) +
                                 offsetof(internal::ControlBlock, root_));
     return FetchAndAdd(root_ptr, add);
@@ -1164,8 +1138,7 @@ class ComputeThread {
   /// @tparam T The type of the object to allocate
   /// @param n The number of elements to allocate, defaults to 1
   /// @return A pointer to the allocated object of type T
-  template <typename T>
-  T *New(std::size_t n = 1) {
+  template <typename T> T *New(std::size_t n = 1) {
     auto ptr = allocate<T>(n);
     REMUS_ASSERT(ptr != nullptr, "Failed to allocate memory");
     return (T *)((uintptr_t)ptr);
@@ -1174,19 +1147,25 @@ class ComputeThread {
   /// @brief Delete an object of type T from the RDMA heap
   /// @tparam T The type of the object to delete
   /// @param ptr The pointer to the object to delete
-  template <typename T>
-  void Delete(T *ptr) {
+  template <typename T> void Delete(T *ptr) {
     REMUS_ASSERT(ptr != nullptr, "Pointer is nullptr");
     deallocate<T>(rdma_ptr<T>((uintptr_t)ptr));
   }
 
-  /// @brief Reclaim a pointer, this is a no-op for now.
+  /// @brief Schedule a pointer for reclamation ome time in the future
   /// @tparam T The type of the object to reclaim
   /// @param ptr The pointer to the object to reclaim
-  template <typename T>
-  void Reclaim(T *ptr) {
+  template <typename T> void SchedReclaim(T *ptr) {
     REMUS_ASSERT(ptr != nullptr, "Pointer is nullptr");
-    // TODO: Implement this, use EBR here in production!
+    scheduled_reclamations.push_back((uintptr_t)ptr);
+  }
+
+  /// Reclaim everything that has been scheduled for reclamation
+  void ReclaimDeferred() {
+    for (uintptr_t x : scheduled_reclamations) {
+      Delete<uintptr_t>((uintptr_t *)x);
+    }
+    scheduled_reclamations.clear();
   }
 
   /// @brief A count of metrics.  For now, we keep it really simple, but we
@@ -1227,11 +1206,10 @@ class ComputeThread {
     //             {}", staging_buf_allocations_.size());
     if (!staging_buf_allocations_.empty()) {
       for (auto &[key, value] : staging_buf_allocations_) {
-        REMUS_INFO(
-            "staging_buf_allocations is not empty, key = {}, in_use = "
-            "{}, next_available_addr = {}",
-            (void *)key, (uint64_t)value.in_use,
-            (void *)value.next_available_addr);
+        REMUS_INFO("staging_buf_allocations is not empty, key = {}, in_use = "
+                   "{}, next_available_addr = {}",
+                   (void *)key, (uint64_t)value.in_use,
+                   (void *)value.next_available_addr);
       }
     }
 
@@ -1254,10 +1232,10 @@ class ComputeThread {
     return true;
   }
 
- protected:
+protected:
   /// @brief Link the sequence send work requests together
-  /// @param seq_idx 
-  /// @param coro_idx 
+  /// @param seq_idx
+  /// @param coro_idx
   inline void link_seq_send_wrs(uint32_t seq_idx, uint32_t coro_idx) {
     for (uint64_t i = 0;
          i < seq_send_wrs[coro_idx][seq_idx].send_wrs.size() - 1; i++) {
@@ -1267,10 +1245,10 @@ class ComputeThread {
     seq_send_wrs[coro_idx][seq_idx].send_wrs.back().wr->next = nullptr;
   }
   /// @brief Get the result of a sequence operation
-  /// @tparam T 
-  /// @param seq_idx 
-  /// @param coro_idx 
-  /// @param result 
+  /// @tparam T
+  /// @param seq_idx
+  /// @param coro_idx
+  /// @param result
   template <typename T>
   inline void get_seq_op_result(uint32_t seq_idx, uint32_t coro_idx,
                                 std::vector<T> &result) {
@@ -1288,11 +1266,11 @@ class ComputeThread {
                   coro_idx, seq_idx);
     }
   }
-  /// @brief 
-  /// @tparam T 
-  /// @param ptr 
-  /// @param coro_idx 
-  /// @return 
+  /// @brief
+  /// @tparam T
+  /// @param ptr
+  /// @param coro_idx
+  /// @return
   template <typename T>
   inline uint32_t find_seq_idx(rdma_ptr<T> ptr, uint32_t coro_idx) {
     /// Use the scheduling policy to select the next connection
@@ -1301,11 +1279,10 @@ class ComputeThread {
       auto last_seq_idx =
           (seq_op_counter_end[coro_idx] + args_->uget(CN_OPS_PER_THREAD) - 1) %
           args_->uget(CN_OPS_PER_THREAD);
-      REMUS_DEBUG(
-          "Debug: seq_op_counter_end[{}] = {}, CN_OPS_PER_THREAD = {}, "
-          "calculated last_seq_idx = {}",
-          coro_idx, seq_op_counter_end[coro_idx],
-          args_->uget(CN_OPS_PER_THREAD), last_seq_idx);
+      REMUS_DEBUG("Debug: seq_op_counter_end[{}] = {}, CN_OPS_PER_THREAD = {}, "
+                  "calculated last_seq_idx = {}",
+                  coro_idx, seq_op_counter_end[coro_idx],
+                  args_->uget(CN_OPS_PER_THREAD), last_seq_idx);
       REMUS_DEBUG("Debug: seq_send_wrs[{}] size = {}", coro_idx,
                   seq_send_wrs[coro_idx].size());
       auto it = seq_send_wrs[coro_idx].find(last_seq_idx);
@@ -1335,4 +1312,4 @@ class ComputeThread {
     return seq_idx;
   }
 };
-}  // namespace remus
+} // namespace remus

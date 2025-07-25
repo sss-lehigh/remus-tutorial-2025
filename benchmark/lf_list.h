@@ -113,11 +113,11 @@ public:
       // Try to unstitch the node.  Unstitch at head if !prev
       if (!prev && This->head.compare_exchange_weak(curr, next, ct)) {
         // [mfs] Need to implement Reclaim
-        ct->Reclaim(curr);
+        ct->SchedReclaim(curr);
         return true;
       } else if (prev && prev->next.compare_exchange_weak(curr, next, ct)) {
         // [mfs] Important!!!
-        ct->Reclaim(curr); // Use EBR here in production!
+        ct->SchedReclaim(curr); // Use EBR here in production!
         return true;
       }
       // CAS failed; retry
