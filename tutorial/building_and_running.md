@@ -48,61 +48,35 @@ add_executable(hello hello.cc)
 target_link_libraries(hello PRIVATE rdma)
 ```
 
-In order to build your new program, type `make` in the **parent** of the
-`benchmark` folder.  You should see output like this:
-
-:::warning
-The following screenshot isn't correct, because it wasn't generated inside of the container.
-:::
+In order to build your new program, type `make --no-print-directory` in the
+**parent** of the `benchmark` folder.  You should see output like this:
 
 ```text
 -- Using standard 20
 -- Using LOG_LEVEL=RELEASE
 -- Configuring done (0.0s)
 -- Generating done (0.0s)
--- Build files have been written to: /home/sss/remus/remus/build
-gmake[1]: Entering directory '/home/sss/remus/remus/build'
-gmake[2]: Entering directory '/home/sss/remus/remus/build'
-gmake[3]: Entering directory '/home/sss/remus/remus/build'
-gmake[3]: Entering directory '/home/sss/remus/remus/build'
-gmake[3]: Entering directory '/home/sss/remus/remus/build'
-gmake[3]: Entering directory '/home/sss/remus/remus/build'
-gmake[3]: Entering directory '/home/sss/remus/remus/build'
-gmake[3]: Entering directory '/home/sss/remus/remus/build'
-gmake[3]: Entering directory '/home/sss/remus/remus/build'
-gmake[3]: Entering directory '/home/sss/remus/remus/build'
-gmake[3]: Leaving directory '/home/sss/remus/remus/build'
-gmake[3]: Leaving directory '/home/sss/remus/remus/build'
-gmake[3]: Leaving directory '/home/sss/remus/remus/build'
-gmake[3]: Leaving directory '/home/sss/remus/remus/build'
-gmake[3]: Leaving directory '/home/sss/remus/remus/build'
-gmake[3]: Leaving directory '/home/sss/remus/remus/build'
-gmake[3]: Leaving directory '/home/sss/remus/remus/build'
-gmake[3]: Leaving directory '/home/sss/remus/remus/build'
-[ 10%] Built target root_test
-[ 20%] Built target alloc_pol_1024
-[ 30%] Built target perftest_1024
-[ 40%] Built target helloworld_test
-gmake[3]: Entering directory '/home/sss/remus/remus/build'
-gmake[3]: Entering directory '/home/sss/remus/remus/build'
-[ 60%] Built target alloc_pol_8
+-- Build files have been written to: /root/remus-tutorial-2025/build
+[ 10%] Building CXX object rdma/CMakeFiles/root_test.dir/test/root.cc.o
+[ 20%] Linking CXX executable root_test
+[ 20%] Built target root_test
+[ 30%] Building CXX object rdma/CMakeFiles/read_test.dir/test/read.cc.o
+[ 40%] Linking CXX executable read_test
+[ 40%] Built target read_test
+[ 50%] Building CXX object rdma/CMakeFiles/write_test.dir/test/write.cc.o
+[ 60%] Linking CXX executable write_test
 [ 60%] Built target write_test
-[ 70%] Built target read_test
-[ 80%] Built target perftest_8
-gmake[3]: Leaving directory '/home/sss/remus/remus/build'
-gmake[3]: Entering directory '/home/sss/remus/remus/build'
-gmake[3]: Leaving directory '/home/sss/remus/remus/build'
-[ 85%] Building CXX object benchmark/CMakeFiles/hello.dir/hello.cc.o
-[ 95%] Built target ds_launch
+[ 70%] Building CXX object rdma/CMakeFiles/helloworld_test.dir/test/helloworld.cc.o
+[ 80%] Linking CXX executable helloworld_test
+[ 80%] Built target helloworld_test
+[ 90%] Building CXX object benchmark/CMakeFiles/hello.dir/hello.cc.o
 [100%] Linking CXX executable hello
-gmake[3]: Leaving directory '/home/sss/remus/remus/build'
 [100%] Built target hello
-gmake[2]: Leaving directory '/home/sss/remus/remus/build'
-gmake[1]: Leaving directory '/home/sss/remus/remus/build'
 ```
 
-The program will be built in the `build/benchmark` subfolder.  You can run it on
-your local machine by typing `./build/benchmark/hello`.
+This output indicates that remus built a few test programs, and then built your
+program.  The program will be built in the `build/benchmark` subfolder.  You can
+run it on your local machine by typing `./build/benchmark/hello`.
 
 ## Managing Command-Line Arguments
 

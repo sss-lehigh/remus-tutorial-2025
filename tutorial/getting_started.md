@@ -33,8 +33,8 @@ the configuration of CloudLab "r320" nodes.  It includes the following software:
 
 To get started, navigate to the folder where you'd like to work, and paste the
 following text as a file named `Dockerfile`.  (Note: the [Remus GitHub
-Repository](https://github.com/sss-lehigh/TBD) also contains a copy of this
-`Dockerfile`.)
+Repository](https://github.com/sss-lehigh/remus-tutorial-2025) also contains a
+copy of this `Dockerfile`.)
 
 ```docker
 FROM ubuntu:24.04
@@ -104,12 +104,8 @@ Docker instance, you are guaranteed that line endings will be correct regardless
 of whether your development machine uses Linux, MacOS, or Windows.
 
 ```bash
-git clone https://github.com/sss-lehigh/TBD.git
+git clone https://github.com/sss-lehigh/remus-tutorial-2025.git
 ```
-
-:::warning
-We need the correct repo link
-:::
 
 :::tip
 If you are working on a private research project, you will probably want to
@@ -125,7 +121,7 @@ in it:
 If you type `ls` from the `remus` subfolder, you should see the following files
 and folders:
 
-```tree
+```text
 .
 ├── .gitignore
 ├── cl.config

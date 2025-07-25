@@ -74,7 +74,7 @@ Remus uses the `ARGS` to do most of the set-up work automatically.  Here is an
 example where there are eight available nodes, and the program was run with
 `--first_mn_id 0 --last_mn_id 3 --first_cn_id 4 --last_cn_id 7`:
 
-![Four Compute Nodes connected to four Memory Nodes](m4c4.png "Four
+![Four Compute Nodes connected to four Memory Nodes](public/m4c4.png "Four
 Compute Nodes, Four Memory Nodes")
 
 The number of Compute Nodes does not need to match the number of Memory Nodes.
@@ -82,20 +82,20 @@ Here is an example with six available nodes, where four are Memory Nodes and two
 are Compute Nodes (`--first_mn_id 0 --last_mn_id 3 --first_cn_id 4 --last_cn_id
 5`):
 
-![Two Compute Nodes connected to four Memory Nodes](m4c2.png "Two Compute
+![Two Compute Nodes connected to four Memory Nodes](public/m4c2.png "Two Compute
 Nodes, Four Memory Nodes")
 
 You might instead need lots of parallelism.  Here is an example with six
 available nodes, where two are Memory Nodes and four are Compute Nodes
 (`--first_mn_id 0 --last_mn_id 1 --first_cn_id 2 --last_cn_id 5`):
 
-![Four Compute Nodes connected to two Memory Nodes](m2c4.png "Four
+![Four Compute Nodes connected to two Memory Nodes](public/m2c4.png "Four
 Compute Nodes, Two Memory Nodes")
 
 Here is an example with four available nodes, all of which are serving as both
 Compute Nodes and Memory Nodes (`--first_mn_id 0 --last_mn_id 3 --first_cn_id 0
 --last_cn_id 3`): ![Four compute+Memory Nodes connected to each
-other](mc4.png "Four Nodes, All Serving In Both Roles")
+other](public/mc4.png "Four Nodes, All Serving In Both Roles")
 
 You should feel free to try out different configurations, but as you do, please
 note the following requirements:
@@ -294,7 +294,7 @@ gigabytes, so choose `seg-size` and `segs-per-mn` carefully.
 To understand how graceful shut-down works, note that Remus reserves the first
 64 bytes of each segment for control data.  The general layout appears below:
 
-![The fields of a segment header](seg_header.png "The fields of a segment header")
+![The fields of a segment header](public/seg_header.png "The fields of a segment header")
 
 The `size` and `allocated` fields are used by every segment, on every Memory
 Node, to enable Remus to allocate memory from each segment, just like `malloc`

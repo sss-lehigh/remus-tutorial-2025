@@ -5,13 +5,12 @@ layout: home
 hero:
   name: "Remus"
   text: "Making RDMA Programming Easy, Without Sacrificing Performance"
-  # tagline: My great project tagline
   actions:
     - theme: brand
       text: Tutorial
       link: /getting_started
     - theme: brand
-      text: API Docs (Eventually Goes To Doxygen)
+      text: API Docs
       link: http://www.cse.lehigh.edu
     - theme: brand
       text: Tutorial Slideshow
@@ -20,15 +19,18 @@ hero:
 
 # Welcome
 
-We're glad you are interested in using Remus.  Above, you can find a link to the
-Remus Tutorial.  Eventually, we'll have a link to doxygen output here, and a
-link to slides from the introductory portion of the tutorial.
+Remus is a C++ library that simplifies the task of using one-sided verbs to
+create distributed data structures that work on systems with RDMA.  Above, you
+will find three links:
 
-If you're developing tutorial material, and don't know much about markdown, then
-the "VitePress Markdown Guide" might be helpful.  It's going to go away
-eventually, so make sure you learn all that you need before it's too late.
+- The "Tutorial" link will take you to an interactive tutorial on how to use
+  Remus on CloudLab.  This tutorial was designed for an in-person event at SPAA
+  2025.
+- The slides from our SPAA 2025 tutorial are available through the "Tutorial
+  Slides" link.
+- The "API Docs" link will take you to automatically-generated documentation for
+  Remus.  This is likely to be helpful as you develop more advanced programs
+  with Remus.
 
-Note: Right now we're using the default styling.  Eventually we should go with
-something more Lehigh-specific, and more SSS-specific.  That's going to be a bit
-tricky, since we also want to support dark mode, so let's not worry about it
-yet.
+If you have any questions about Remus, please raise an issue through our
+[GitHub Page](https://github.com/sss-lehigh/remus-tutorial-2025)

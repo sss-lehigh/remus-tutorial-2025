@@ -30,7 +30,7 @@ export default withMermaid({
           { text: 'Building And Running', link: '/building_and_running' },
           { text: 'Connecting Nodes', link: '/connecting_nodes' },
           { text: 'Allocating and Accessing Memory', link: '/allocating_and_accessing_memory' },
-          { text: 'Building A Concurrent Data Structure', link: '/lock_free_list' },
+          { text: 'Building A Concurrent Data Structure', link: '/lazy_list' },
           { text: 'Advanced Remus Features', link: '/advanced_features' },
         ]
       }
