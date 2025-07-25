@@ -112,15 +112,15 @@ int main(int argc, char **argv) {
             workload.run(ct, args);
             ct->arrive_control_barrier(total_threads);
 
-            // Reclaim memory from prior phase
-            ct->ReclaimDeferred();
-
             // Compute the end time
             auto end_time = std::chrono::high_resolution_clock::now();
             auto duration =
                 std::chrono::duration_cast<std::chrono::microseconds>(
                     end_time - start_time)
                     .count();
+
+            // Reclaim memory from prior phase
+            ct->ReclaimDeferred();
 
             // "lead thread" will reclaim the data structure and then put a
             // global metrics object into the root

@@ -5,7 +5,7 @@
 
 using namespace remus;
 
-/// A lock-based sorted list-based set with wait-free contains
+/// A lock-based, sorted, list-based set with wait-free contains
 ///
 /// @tparam K The type for keys stored in this map.  Must be default
 ///           constructable
@@ -32,6 +32,8 @@ template <typename K> class LazyListSet {
     /// Lock this node.  Assumes it is not already locked by the calling thread.
     /// Also assumes that it is called with `this` being a remote pointer's
     /// value
+    ///
+    /// @param ct The calling thread's Remus context
     void acquire(CT &ct) {
       while (true) {
         if (lock_.compare_exchange_weak(0, 1, ct) == 0) {
@@ -45,6 +47,8 @@ template <typename K> class LazyListSet {
     /// Unlock this node.  Assumes it is called by the thread who locked it, and
     /// that the node is locked.  Also assumes that it is called with `this`
     /// being a remote pointer's value
+    ///
+    /// @param ct The calling thread's Remus context
     void release(CT &ct) { lock_.store(0, ct); }
   };
 
@@ -57,7 +61,7 @@ public:
   ///
   /// @param ct The calling thread's Remus context
   ///
-  /// @return an rdma_ptr to the allocated/initialized list
+  /// @return an rdma_ptr to the newly allocated, initialized, empty list
   static rdma_ptr<LazyListSet> New(CT &ct) {
     auto tail = ct->New<Node>();
     tail->init(K(), ct);
@@ -70,9 +74,10 @@ public:
     return rdma_ptr<LazyListSet>((uintptr_t)list);
   }
 
-  /// Construct a LazyListSet, setting it `This` to a remote memory location.
-  /// Note that every thread in the program could have a unique LazyListSet, but
-  /// if they all use the same `This`, they'll all access the same remote memory
+  /// Construct a LazyListSet, setting its `This` pointer to a remote memory
+  /// location. Note that every thread in the program could have a unique
+  /// LazyListSet, but if they all use the same `This`, they'll all access the
+  /// same remote memory
   ///
   /// @param This A LockFreeList produced by a preceding call to `New()`
   LazyListSet(const remus::rdma_ptr<LazyListSet> &This)
@@ -93,12 +98,6 @@ private:
 
   /// Set the low bit of a pointer
   Node *make_marked(Node *ptr) { return (Node *)set_mark((uintptr_t)ptr); }
-
-  /*
-   * Checking that both curr and pred are both unmarked and that pred's next
-   * pointer points to curr to verify that the entries are adjacent and present
-   * in the list.
-   */
 
   /// Ensure that `pred` and `curr` are unmarked, and that `pred->next_`
   /// references `curr`
@@ -126,7 +125,7 @@ public:
   bool get(const K &key, CT &ct) {
     Node *HEAD = This->head_.load(ct);
     Node *TAIL = This->tail_.load(ct);
-    Node *curr = HEAD;
+    Node *curr = HEAD->next_.load(ct);
 
     while (curr->key_.load(ct) < key && curr != TAIL)
       curr = make_unmarked(curr->next_.load(ct));
@@ -193,7 +192,7 @@ public:
       if (result) {
         curr->next_.store(make_marked(curr->next_.load(ct)), ct);
         pred->next_.store(make_unmarked(curr->next_.load(ct)), ct);
-        ct->SchedReclaim(curr); // [mfs] TODO!
+        ct->SchedReclaim(curr);
       }
       curr->release(ct);
       pred->release(ct);

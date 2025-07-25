@@ -1,6 +1,6 @@
 all:
 	@CXX=clang++-18 cmake -B build -DCMAKE_BUILD_TYPE=Release
-	@cmake --build build -j
+	@cmake --build build
 
 clean:
 	@rm -rf build

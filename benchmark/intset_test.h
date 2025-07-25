@@ -1,6 +1,3 @@
-// [mfs] The only remaining issue in this code is that we only report one
-// thread's RDMA metrics, instead of all threads.
-
 #pragma once
 
 #include <atomic>
@@ -86,7 +83,7 @@ template <typename S, typename K> struct IntSetTest {
   uint64_t thread_id_; // This thread's thread Id
   uint64_t node_id_;   // The Id of the compute node where the thread is running
 
-  /// Construct a ds_workload object
+  /// Construct an IntSetTest object
   ///
   /// @param set            A reference to the data structure
   /// @param thread_id      The thread's Id
