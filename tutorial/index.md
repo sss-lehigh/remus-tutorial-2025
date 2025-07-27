@@ -11,7 +11,7 @@ hero:
       link: /getting_started
     - theme: brand
       text: API Docs
-      link: http://www.cse.lehigh.edu
+      link: https://sss-lehigh.github.io/remus-tutorial-2025/doxygen/index.html
     - theme: brand
       text: Tutorial Slideshow
       link: http://www.cse.lehigh.edu
@@ -32,5 +32,5 @@ will find three links:
   Remus.  This is likely to be helpful as you develop more advanced programs
   with Remus.
 
-If you have any questions about Remus, please raise an issue through our
-[GitHub Page](https://github.com/sss-lehigh/remus-tutorial-2025)
+If you have any questions about Remus, please raise an issue through
+[GitHub](https://github.com/sss-lehigh/remus-tutorial-2025)
