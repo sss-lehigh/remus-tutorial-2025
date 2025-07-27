@@ -107,7 +107,7 @@ function cl_build() {
     exename=$(basename ${exefile})  # The exe to send to CloudLab
 
     # Build the binary, send it to CloudLab
-    make debug
+    make
     for m in ${machines[*]}; do
         scp ${exefile} ${user}@${m}.${domain}:${exename} &
     done
