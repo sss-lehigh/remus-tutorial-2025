@@ -1,0 +1,9 @@
+<map id="remus::ComputeThread" name="remus::ComputeThread">
+<area shape="rect" id="Node000001" title="A ComputeThread is a thread that can perform RDMA operations." alt="" coords="77,211,251,236"/>
+<area shape="rect" id="Node000002" href="$classremus_1_1internal_1_1QpSchedPolicy.html" title="A policy for scheduling QPs (Queue Pairs) to interact with MemoryNodes." alt="" coords="5,108,192,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,158,158,209,154,212,118,161"/>
+<area shape="rect" id="Node000003" href="$classremus_1_1internal_1_1BumpAllocator.html" title="A simple distributed bump allocator." alt="" coords="217,115,442,141"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="304,151,244,189,193,213,191,208,241,184,301,146"/>
+<area shape="rect" id="Node000004" href="$classremus_1_1internal_1_1MnAllocPolicy.html" title="A policy for allocating Segments from MemoryNodes." alt="" coords="239,5,420,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="332,59,332,115,327,115,327,59"/>
+</map>

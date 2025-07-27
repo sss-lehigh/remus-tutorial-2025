@@ -1,0 +1,5 @@
+<map id="remus::AsyncResultVoid::promise_type" name="remus::AsyncResultVoid::promise_type">
+<area shape="rect" id="Node000001" title="The promise_type for AsyncResultVoid." alt="" coords="5,93,184,133"/>
+<area shape="rect" id="Node000002" href="$structremus_1_1CoroutineState.html" title="Define the abort decision enum at namespace level." alt="" coords="11,5,179,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,44,97,93,92,93,92,44"/>
+</map>

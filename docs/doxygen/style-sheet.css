@@ -1,0 +1,35 @@
+:root {
+  --brown-accent: #8B4513;
+  --brown-bg: #F3EEE7;
+  --brown-text: #3E2C1E;
+}
+
+/* Background and text override */
+body {
+  background-color: var(--brown-bg);
+  color: var(--brown-text);
+}
+
+/* Title area */
+#titlearea {
+  background-color: var(--brown-accent);
+  color: white;
+}
+
+/* Project name */
+#projectname {
+  color: white;
+}
+
+/* Headings */
+h1, h2, h3, .title {
+  color: var(--brown-accent);
+}
+
+/* Links */
+a {
+  color: var(--brown-accent);
+}
+a:hover {
+  text-decoration: underline;
+}

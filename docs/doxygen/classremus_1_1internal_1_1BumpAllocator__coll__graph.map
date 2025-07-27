@@ -1,0 +1,5 @@
+<map id="remus::internal::BumpAllocator" name="remus::internal::BumpAllocator">
+<area shape="rect" id="Node000001" title="A simple distributed bump allocator." alt="" coords="5,108,231,133"/>
+<area shape="rect" id="Node000002" href="$classremus_1_1internal_1_1MnAllocPolicy.html" title="A policy for allocating Segments from MemoryNodes." alt="" coords="27,5,209,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,59,121,108,115,108,115,59"/>
+</map>
