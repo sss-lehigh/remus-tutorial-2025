@@ -4,6 +4,7 @@
 
 #include "cloudlab.h"
 
+/// An object that we'll save in remote memory.  It's just an array :)
 struct SharedObject {
   uint64_t values[1024];
 };
