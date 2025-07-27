@@ -98,10 +98,10 @@ You might want to create a script for that command, so it's easier to launch
 containers.
 :::
 
-From inside the container, in the `/root` folder, check out the remus
-repository.  Note that by checking out your repository from *inside* of the
-Docker instance, you are guaranteed that line endings will be correct regardless
-of whether your development machine uses Linux, MacOS, or Windows.
+From inside the container, in the `/root` folder, clone the remus repository.
+Note that by checking out your repository from *inside* of the Docker instance,
+you are guaranteed that line endings will be correct regardless of whether your
+development machine uses Linux, MacOS, or Windows.
 
 ```bash
 git clone https://github.com/sss-lehigh/remus-tutorial-2025.git

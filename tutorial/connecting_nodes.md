@@ -312,8 +312,8 @@ process will start, or when it will reach a specific point in its execution.
 Some of the challenges a program faces are:
 
 - When can threads start accessing distributed memory?
-- How can threads find the data they're going to access?
 - How can Memory Nodes know when it's time to shut down?
+- How can threads find the data they're going to access?
 
 When a Compute Node starts, it tries to connect to every Memory Node before it
 tries to access any memory.  This addresses the first challenge, because Memory
@@ -321,12 +321,12 @@ Nodes initialize themselves before they listen for connections, and Compute
 Nodes do not start using the memory until they've created connections.  Thus all
 Memory Nodes will be initialized.
 
-To address the third problem, Remus uses the control block.  Compute Threads
+To address the second problem, Remus uses the control block.  Compute Threads
 increment the control block of segment 0 on each Memory Node when they destruct,
 and Memory Nodes do not shut down until they see that all Compute Threads have
 shut down.
 
-This leaves the second problem.  To solve it, Remus uses the barrier and root
+This leaves the third problem.  To solve it, Remus uses the barrier and root
 pointer.  After Compute Nodes create all of their Compute Threads, those threads
 should wait at a barrier.  This ensures that all threads are initialized before
 the program starts doing anything that might require threads to interact. Before

@@ -11,6 +11,7 @@ export default withMermaid({
   markdown: { math: true },
   outDir: "./dist",
   appearance: false,
+  base: "/remus-tutorial-2025/",
   themeConfig: {
     logo: "public/lulogo.png",
     // Use `nav` if you want navigation along the top.  See

@@ -14,7 +14,7 @@ hero:
       link: https://sss-lehigh.github.io/remus-tutorial-2025/doxygen/index.html
     - theme: brand
       text: Tutorial Slideshow
-      link: http://www.cse.lehigh.edu
+      link: https://sss-lehigh.github.io/remus-tutorial-2025/SPAA2025Tutorial.pdf
 ---
 
 # Welcome
