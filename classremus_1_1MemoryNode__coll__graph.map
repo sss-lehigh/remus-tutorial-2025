@@ -2,6 +2,6 @@
 <area shape="rect" id="Node000001" title="A MemoryNode is a machine that provides Segments for ComputeNodes." alt="" coords="97,93,256,119"/>
 <area shape="rect" id="Node000002" href="$structremus_1_1MachineInfo.html" title="A simple struct that contains the information needed to identify a machine in the remus system." alt="" coords="5,5,156,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,38,165,91,162,95,102,42"/>
-<area shape="rect" id="Node000003" href="$classremus_1_1internal_1_1Segment.html" title="A Segment object to represent a slab of RDMA memory." alt="" coords="181,5,367,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="181,5,367,31"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="252,42,192,95,188,91,249,38"/>
 </map>

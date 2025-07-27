@@ -1,21 +1,13 @@
 var searchData=
 [
-  ['rand_0',['rand',['../classremus_1_1internal_1_1rdtsc__rand__t.html#a8a4a316b524e10b095f68b9bf4864fb7',1,'remus::internal::rdtsc_rand_t']]],
-  ['raw_1',['raw',['../classremus_1_1rdma__ptr.html#a41ebae5bc43bebe9cd6a2d891fb97260',1,'remus::rdma_ptr::raw()'],['../classremus_1_1internal_1_1Segment.html#a1a2d86c09bfddd51e88c1c98dc958581',1,'remus::internal::Segment::raw()']]],
-  ['rdma_5fptr_2',['rdma_ptr',['../classremus_1_1rdma__ptr.html#af97968bcdf0b3e99b8fe569854564605',1,'remus::rdma_ptr::rdma_ptr()'],['../classremus_1_1rdma__ptr.html#a7abd434bb1af4017370da4e7aea7d00f',1,'remus::rdma_ptr::rdma_ptr(uint64_t raw)'],['../classremus_1_1rdma__ptr.html#af1ec77377ccb68e762660bf7bac2053c',1,'remus::rdma_ptr::rdma_ptr(uint64_t id, T *address)'],['../classremus_1_1rdma__ptr.html#aaab7ee2fb32200b026f1b27c23f4ac32',1,'remus::rdma_ptr::rdma_ptr(id_type id, uint64_t address)'],['../classremus_1_1rdma__ptr.html#a6dcbd405e5218883c1e8358c261818ee',1,'remus::rdma_ptr::rdma_ptr(std::nullptr_t)'],['../classremus_1_1rdma__ptr.html#a7b4a01f6e1f9fe5910819a95eead673b',1,'remus::rdma_ptr::rdma_ptr(const rdma_ptr &amp;p)'],['../classremus_1_1rdma__ptr.html#aaa9fe53dab0f8e96a65b440d20385b68',1,'remus::rdma_ptr::rdma_ptr(rdma_ptr &amp;&amp;p)']]],
-  ['rdtsc_5frand_5ft_3',['rdtsc_rand_t',['../classremus_1_1internal_1_1rdtsc__rand__t.html#aa3a34d3c29b60ea132096639c3506394',1,'remus::internal::rdtsc_rand_t']]],
-  ['read_4',['read',['../classremus_1_1ComputeThread.html#aa96e02001f260b265b6c6c92cbd39dda',1,'remus::ComputeThread::Read(rdma_ptr&lt; T &gt; ptr, bool fence=true)'],['../classremus_1_1ComputeThread.html#ab82ea50a127889e4066365f1f4fb0a99',1,'remus::ComputeThread::Read(rdma_ptr&lt; T &gt; ptr, T *seg, bool fence=true, size_t size=sizeof(T))']]],
-  ['readasync_5',['ReadAsync',['../classremus_1_1SimpleAsyncComputeThread.html#af1503574cd2b7c15ef8b0eb405c5ebe8',1,'remus::SimpleAsyncComputeThread']]],
-  ['readconfig_6',['ReadConfig',['../namespaceremus_1_1internal.html#a2fada2c5eeffb65ef7e5850d2630adb9',1,'remus::internal']]],
-  ['readseq_7',['readseq',['../classremus_1_1ComputeThread.html#a255461eae2338f8c1430e4a3a4075f17',1,'remus::ComputeThread::ReadSeq(rdma_ptr&lt; T &gt; ptr, T *seg, bool signal=false, bool fence=false, size_t size=sizeof(T))'],['../classremus_1_1ComputeThread.html#af372deca3fb03f10f1340aae86ab8a9b',1,'remus::ComputeThread::ReadSeq(rdma_ptr&lt; T &gt; ptr, bool signal=false, bool fence=false)']]],
-  ['readseqasync_8',['readseqasync',['../classremus_1_1SimpleAsyncComputeThread.html#a335bedbc8c3cc5bc448e87eb1ae08f92',1,'remus::SimpleAsyncComputeThread::ReadSeqAsync(rdma_ptr&lt; T &gt; ptr, bool signal=false, bool fence=false)'],['../classremus_1_1SimpleAsyncComputeThread.html#a363712a2c94b48a8581c3bb66bfaee2b',1,'remus::SimpleAsyncComputeThread::ReadSeqAsync(rdma_ptr&lt; T &gt; ptr, T *seg, bool signal=false, bool fence=false, size_t size=sizeof(T))']]],
-  ['reclaim_9',['reclaim',['../classremus_1_1internal_1_1BumpAllocator.html#a97001b490b08d54890cd9c4db5a95bab',1,'remus::internal::BumpAllocator::reclaim()'],['../classremus_1_1ComputeThread.html#ac021bbcd8274a5b0637753f46c3bbbaa',1,'remus::ComputeThread::Reclaim()']]],
-  ['register_5fthread_10',['register_thread',['../classremus_1_1ComputeNode.html#aff934374616ade67384380d7c2074e84',1,'remus::ComputeNode']]],
-  ['registerwithpd_11',['registerWithPd',['../classremus_1_1internal_1_1Segment.html#af4fbafd28a8d9c6e83f21c8134321b7f',1,'remus::internal::Segment']]],
-  ['release_12',['release',['../structremus_1_1ring__counter__t.html#aa24265bf476f861d2027b93dc5ead44b',1,'remus::ring_counter_t::release()'],['../structremus_1_1ring__buf__t.html#a0f9f754f3c3da48d126bbd79f22a1024',1,'remus::ring_buf_t::release()']]],
-  ['report_5fconfig_13',['report_config',['../classremus_1_1ArgMap.html#aa3d804dee1acefb5427612a4a0c39301',1,'remus::ArgMap']]],
-  ['reset_5fcache_5fslice_14',['reset_cache_slice',['../classremus_1_1ComputeThread.html#a0770490c654da204f15bbce8cafc0738',1,'remus::ComputeThread']]],
-  ['resume_15',['resume',['../structremus_1_1AsyncResult.html#a83b744f99c3509253fe17601088642e2',1,'remus::AsyncResult::resume()'],['../structremus_1_1AsyncResultVoid.html#ac90715bcc95392cbcd17e298b80c5e41',1,'remus::AsyncResultVoid::resume()']]],
-  ['return_5fvalue_16',['return_value',['../structremus_1_1AsyncResult_1_1promise__type.html#a841d190c2c2814755baa9b12a9bc2244',1,'remus::AsyncResult::promise_type']]],
-  ['return_5fvoid_17',['return_void',['../structremus_1_1AsyncResultVoid_1_1promise__type.html#ab2d4a248018a457156faa93fbb516f03',1,'remus::AsyncResultVoid::promise_type']]]
+  ['seg_5fid_0',['seg_id',['../classremus_1_1ComputeThread.html#ac37330fcf7e4cbc851f8a022b0373d22',1,'remus::ComputeThread']]],
+  ['seq_5fidx_5ft_1',['seq_idx_t',['../structremus_1_1ComputeThread_1_1seq__idx__t.html#a61ed9014c8ebdf9703715034e26b243a',1,'remus::ComputeThread::seq_idx_t']]],
+  ['seq_5fstaging_5fbuf_5ft_2',['seq_staging_buf_t',['../structremus_1_1ComputeThread_1_1seq__staging__buf__t.html#a049eb3719520db263716534541c6e3f6',1,'remus::ComputeThread::seq_staging_buf_t']]],
+  ['set_5froot_3',['set_root',['../classremus_1_1ComputeThread.html#a0f8f79b210b795eb0eab0f87efce4b3e',1,'remus::ComputeThread']]],
+  ['sget_4',['sget',['../classremus_1_1ArgMap.html#a1b1c63ac41fb4a38493addc4fe8d314b',1,'remus::ArgMap']]],
+  ['simpleasynccomputethread_5',['SimpleAsyncComputeThread',['../classremus_1_1SimpleAsyncComputeThread.html#a4af6514c3e512d794f40ac600f5b3657',1,'remus::SimpleAsyncComputeThread']]],
+  ['staging_5fbuf_5ft_6',['staging_buf_t',['../structremus_1_1ComputeThread_1_1staging__buf__t.html#a404e9434cd2a99e9b3c0e08c1af36014',1,'remus::ComputeThread::staging_buf_t']]],
+  ['store_7',['store',['../classremus_1_1Atomic.html#a3dc8ea03587555c40d7cbc61a9fa07bd',1,'remus::Atomic']]],
+  ['str_5farg_8',['STR_ARG',['../namespaceremus.html#ac3c67f16df18604d6321520bcf46e826',1,'remus']]],
+  ['str_5farg_5fopt_9',['STR_ARG_OPT',['../namespaceremus.html#adc395bd06462c90c70727a212d4be280',1,'remus']]]
 ];

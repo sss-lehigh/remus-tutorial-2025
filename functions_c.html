@@ -9,15 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="style-sheet.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -52,22 +47,6 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('functions_c.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -100,34 +79,26 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <li>cached_buf_size_&#160;:&#160;<a class="el" href="classremus_1_1ComputeThread.html#a508af45611e41d76e94745f7ed758c5c">remus::ComputeThread</a></li>
 <li>cached_buf_start&#160;:&#160;<a class="el" href="classremus_1_1ComputeThread.html#a261bee1a6f3d921d51957dba7178db06">remus::ComputeThread</a></li>
 <li>cached_buf_t()&#160;:&#160;<a class="el" href="structremus_1_1ComputeThread_1_1cached__buf__t.html#a258972b33c45f55c81e8b22fe272ef7e">remus::ComputeThread::cached_buf_t</a></li>
-<li>capacity()&#160;:&#160;<a class="el" href="classremus_1_1internal_1_1Segment.html#a2507a40ce14dd40fdd52300114b2a758">remus::internal::Segment</a></li>
 <li>cas&#160;:&#160;<a class="el" href="classremus_1_1ComputeThread.html#acd1f14af92b6c81c416a3271be489971">remus::ComputeThread</a></li>
 <li>cas_root()&#160;:&#160;<a class="el" href="classremus_1_1ComputeThread.html#a236a3457d3a670d547cd85a4ae8ef321">remus::ComputeThread</a></li>
 <li>compare_exchange_strong()&#160;:&#160;<a class="el" href="classremus_1_1Atomic.html#aea9e8c7456d940595896c5795e76fd23">remus::Atomic&lt; T &gt;</a></li>
 <li>compare_exchange_weak()&#160;:&#160;<a class="el" href="classremus_1_1Atomic.html#aabf5841c6cfc2c76964d0ef13179f506">remus::Atomic&lt; T &gt;</a></li>
 <li>CompareAndSwap()&#160;:&#160;<a class="el" href="classremus_1_1ComputeThread.html#a05494ba64ca3b8e83377d1c90b655030">remus::ComputeThread</a></li>
 <li>compute_node_&#160;:&#160;<a class="el" href="classremus_1_1ComputeThread.html#a4c4bddca57c1ebd8da38c7dfdd9fdfe2">remus::ComputeThread</a></li>
-<li>compute_size()&#160;:&#160;<a class="el" href="classremus_1_1internal_1_1BumpAllocator.html#aa59bff1b9f2269606367c2b8b3da895f">remus::internal::BumpAllocator</a></li>
 <li>ComputeNode()&#160;:&#160;<a class="el" href="classremus_1_1ComputeNode.html#add0bb59c365838c4ccde0b9490310a1a">remus::ComputeNode</a></li>
 <li>ComputeThread()&#160;:&#160;<a class="el" href="classremus_1_1ComputeThread.html#aa18fcb4e8f2241021c267a6eeca04c1c">remus::ComputeThread</a></li>
 <li>conn_param_&#160;:&#160;<a class="el" href="structremus_1_1MemoryNode_1_1IdContext.html#ab1301ed8a1715fd85c24cdad28f94dc5">remus::MemoryNode::IdContext</a></li>
 <li>connect_local()&#160;:&#160;<a class="el" href="classremus_1_1ComputeNode.html#a6cbf893ce780b632fbb0df3af76d4ba6">remus::ComputeNode</a></li>
 <li>connect_remote()&#160;:&#160;<a class="el" href="classremus_1_1ComputeNode.html#af3b2bb267d90857d9c9f8b363a0bdbcf">remus::ComputeNode</a></li>
-<li>Connection()&#160;:&#160;<a class="el" href="classremus_1_1internal_1_1Connection.html#a48b47b915967371f18127df78ac2ccfd">remus::internal::Connection</a></li>
 <li>ConnPtr&#160;:&#160;<a class="el" href="classremus_1_1MemoryNode.html#a0b1e24af0fbdf3cd85642e0c47d32869">remus::MemoryNode</a></li>
 <li>conns_&#160;:&#160;<a class="el" href="classremus_1_1MemoryNode.html#aafd78320081297747eb7c00c7731070d">remus::MemoryNode</a></li>
-<li>control_flag_&#160;:&#160;<a class="el" href="structremus_1_1internal_1_1ControlBlock.html#af627532f830f4005c5c2dfc05aba543c">remus::internal::ControlBlock</a></li>
-<li>ControlBlock()&#160;:&#160;<a class="el" href="structremus_1_1internal_1_1ControlBlock.html#ab1fc8ccd2f2a6cae0d5b93ceeca82846">remus::internal::ControlBlock</a></li>
 <li>coro_idx_&#160;:&#160;<a class="el" href="structremus_1_1ComputeThread_1_1seq__idx__t.html#af85880c2843678c46ce042b0891ff80b">remus::ComputeThread::seq_idx_t</a></li>
 <li>ct_&#160;:&#160;<a class="el" href="structremus_1_1ComputeThread_1_1cached__buf__t.html#a843beb44535a12183c3d942c3914f51d">remus::ComputeThread::cached_buf_t</a>, <a class="el" href="structremus_1_1ComputeThread_1_1seq__idx__t.html#a7a40b8ff30ed963b094b764f56ee55f9">remus::ComputeThread::seq_idx_t</a>, <a class="el" href="structremus_1_1ComputeThread_1_1seq__staging__buf__t.html#aff734bcd6a6d421fc040e1c207eacd6e">remus::ComputeThread::seq_staging_buf_t</a>, <a class="el" href="structremus_1_1ComputeThread_1_1staging__buf__t.html#ac4a2d9dcace59115aa89996ebf33394c">remus::ComputeThread::staging_buf_t</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
 </body>
 </html>

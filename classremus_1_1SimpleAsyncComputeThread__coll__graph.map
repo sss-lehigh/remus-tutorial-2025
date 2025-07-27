@@ -1,11 +1,9 @@
 <map id="remus::SimpleAsyncComputeThread" name="remus::SimpleAsyncComputeThread">
-<area shape="rect" id="Node000001" title="A simple ComputeThread that uses coroutines to perform asynchronous operations." alt="" coords="57,285,271,325"/>
-<area shape="rect" id="Node000002" href="$classremus_1_1ComputeThread.html" title="A ComputeThread is a thread that can perform RDMA operations." alt="" coords="77,211,251,236"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,250,167,285,161,285,161,250"/>
-<area shape="rect" id="Node000003" href="$classremus_1_1internal_1_1QpSchedPolicy.html" title="A policy for scheduling QPs (Queue Pairs) to interact with MemoryNodes." alt="" coords="5,108,192,148"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="122,158,158,209,154,212,118,161"/>
-<area shape="rect" id="Node000004" href="$classremus_1_1internal_1_1BumpAllocator.html" title="A simple distributed bump allocator." alt="" coords="217,115,442,141"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="304,151,244,189,193,213,191,208,241,184,301,146"/>
-<area shape="rect" id="Node000005" href="$classremus_1_1internal_1_1MnAllocPolicy.html" title="A policy for allocating Segments from MemoryNodes." alt="" coords="239,5,420,45"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="332,59,332,115,327,115,327,59"/>
+<area shape="rect" id="Node000001" title="A simple ComputeThread that uses coroutines to perform asynchronous operations." alt="" coords="106,183,321,223"/>
+<area shape="rect" id="Node000002" href="$classremus_1_1ComputeThread.html" title="A ComputeThread is a thread that can perform RDMA operations." alt="" coords="126,108,301,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,147,216,183,211,183,211,147"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,192,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="134,52,201,106,197,110,131,56"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="217,13,442,38"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="312,50,274,86,237,110,234,106,270,82,309,46"/>
 </map>

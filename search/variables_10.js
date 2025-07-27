@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['t_0',['t',['../structremus_1_1Status.html#a736bd7e958db411e4a5e31b83974ac44',1,'remus::Status']]],
-  ['total_5fthreads_5f_1',['total_threads_',['../classremus_1_1MemoryNode.html#aa11e003bb3358d96ba8cc043f824fa09',1,'remus::MemoryNode']]],
-  ['type_2',['type',['../structremus_1_1Arg.html#a213fe7fab711000644bbfda2e7672ae5',1,'remus::Arg']]]
+  ['val_0',['val',['../structremus_1_1StatusVal.html#a23be4ef8e3ebf7b5829eb136a48babe5',1,'remus::StatusVal::val'],['../structremus_1_1AsyncResult_1_1promise__type.html#afa0bfb2f493d8286971af53430ec4c15',1,'remus::AsyncResult::promise_type::val']]],
+  ['value_1',['value',['../structremus_1_1Arg.html#ac604897e3012ea239dad2959501908e8',1,'remus::Arg']]]
 ];

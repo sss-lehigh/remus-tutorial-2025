@@ -9,15 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="style-sheet.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -51,23 +46,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classremus_1_1ComputeThread.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -89,6 +67,11 @@ $(document).ready(function(){initNavTree('classremus_1_1ComputeThread.html','');
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceremus.html">remus</a></li><li class="navelem"><a class="el" href="classremus_1_1ComputeThread.html">ComputeThread</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -114,21 +97,19 @@ Inheritance diagram for remus::ComputeThread:</div>
 <area shape="rect" href="classremus_1_1SimpleAsyncComputeThread.html" title="A simple ComputeThread that uses coroutines to perform asynchronous operations." alt="" coords="5,79,220,119"/>
 <area shape="poly" title=" " alt="" coords="115,44,115,79,110,79,110,44"/>
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for remus::ComputeThread:</div>
 <div class="dyncontent">
 <div class="center"><img src="classremus_1_1ComputeThread__coll__graph.png" border="0" usemap="#aremus_1_1ComputeThread_coll__map" alt="Collaboration graph"/></div>
 <map name="aremus_1_1ComputeThread_coll__map" id="aremus_1_1ComputeThread_coll__map">
-<area shape="rect" title="A ComputeThread is a thread that can perform RDMA operations." alt="" coords="77,211,251,236"/>
-<area shape="rect" href="classremus_1_1internal_1_1QpSchedPolicy.html" title="A policy for scheduling QPs (Queue Pairs) to interact with MemoryNodes." alt="" coords="5,108,192,148"/>
-<area shape="poly" title=" " alt="" coords="122,158,158,209,154,212,118,161"/>
-<area shape="rect" href="classremus_1_1internal_1_1BumpAllocator.html" title="A simple distributed bump allocator." alt="" coords="217,115,442,141"/>
-<area shape="poly" title=" " alt="" coords="304,151,244,189,193,213,191,208,241,184,301,146"/>
-<area shape="rect" href="classremus_1_1internal_1_1MnAllocPolicy.html" title="A policy for allocating Segments from MemoryNodes." alt="" coords="239,5,420,45"/>
-<area shape="poly" title=" " alt="" coords="332,59,332,115,327,115,327,59"/>
+<area shape="rect" title="A ComputeThread is a thread that can perform RDMA operations." alt="" coords="126,108,301,133"/>
+<area shape="rect" title=" " alt="" coords="5,5,192,45"/>
+<area shape="poly" title=" " alt="" coords="134,52,201,106,197,110,131,56"/>
+<area shape="rect" title=" " alt="" coords="217,13,442,38"/>
+<area shape="poly" title=" " alt="" coords="312,50,274,86,237,110,234,106,270,82,309,46"/>
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -339,10 +320,10 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a73f34eded79568dc62141ea96cb1f57f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0680c8c5c05d295e89458f99796b92e3" id="r_a0680c8c5c05d295e89458f99796b92e3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unordered_map&lt; uint32_t, <a class="el" href="structremus_1_1ComputeThread_1_1seq__send__wrs__t.html">seq_send_wrs_t</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1ComputeThread.html#a0680c8c5c05d295e89458f99796b92e3">seq_send_wrs</a></td></tr>
 <tr class="separator:a0680c8c5c05d295e89458f99796b92e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d8bdbf99c6b08e72ff8c715b3e79439" id="r_a1d8bdbf99c6b08e72ff8c715b3e79439"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classremus_1_1internal_1_1QpSchedPolicy.html">internal::QpSchedPolicy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1ComputeThread.html#a1d8bdbf99c6b08e72ff8c715b3e79439">qp_sched_pol_</a></td></tr>
+<tr class="memitem:a1d8bdbf99c6b08e72ff8c715b3e79439" id="r_a1d8bdbf99c6b08e72ff8c715b3e79439"><td class="memItemLeft" align="right" valign="top">internal::QpSchedPolicy&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1ComputeThread.html#a1d8bdbf99c6b08e72ff8c715b3e79439">qp_sched_pol_</a></td></tr>
 <tr class="memdesc:a1d8bdbf99c6b08e72ff8c715b3e79439"><td class="mdescLeft">&#160;</td><td class="mdescRight">The policy for deciding which QP to use when connecting to a <a class="el" href="classremus_1_1MemoryNode.html" title="A MemoryNode is a machine that provides Segments for ComputeNodes.">MemoryNode</a>.  <br /></td></tr>
 <tr class="separator:a1d8bdbf99c6b08e72ff8c715b3e79439"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd1fc9c6edb17a67e21821f56656693a" id="r_acd1fc9c6edb17a67e21821f56656693a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classremus_1_1internal_1_1BumpAllocator.html">internal::BumpAllocator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1ComputeThread.html#acd1fc9c6edb17a67e21821f56656693a">allocator</a></td></tr>
+<tr class="memitem:acd1fc9c6edb17a67e21821f56656693a" id="r_acd1fc9c6edb17a67e21821f56656693a"><td class="memItemLeft" align="right" valign="top">internal::BumpAllocator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1ComputeThread.html#acd1fc9c6edb17a67e21821f56656693a">allocator</a></td></tr>
 <tr class="separator:acd1fc9c6edb17a67e21821f56656693a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a942f28439af4ffdf5fc37a90ae9c7ff3" id="r_a942f28439af4ffdf5fc37a90ae9c7ff3"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1ComputeThread.html#a942f28439af4ffdf5fc37a90ae9c7ff3">staging_buf_size_</a></td></tr>
 <tr class="separator:a942f28439af4ffdf5fc37a90ae9c7ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1903,7 +1884,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classremus_1_1internal_1_1BumpAllocator.html">internal::BumpAllocator</a> remus::ComputeThread::allocator</td>
+          <td class="memname">internal::BumpAllocator remus::ComputeThread::allocator</td>
         </tr>
       </table>
   </td>
@@ -2312,7 +2293,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classremus_1_1internal_1_1QpSchedPolicy.html">internal::QpSchedPolicy</a> remus::ComputeThread::qp_sched_pol_</td>
+          <td class="memname">internal::QpSchedPolicy remus::ComputeThread::qp_sched_pol_</td>
         </tr>
       </table>
   </td>
@@ -2558,13 +2539,9 @@ template&lt;typename T &gt; </div>
 <li><a class="el" href="compute__thread_8h_source.html">compute_thread.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespaceremus.html">remus</a></li><li class="navelem"><a class="el" href="classremus_1_1ComputeThread.html">ComputeThread</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
 </body>
 </html>

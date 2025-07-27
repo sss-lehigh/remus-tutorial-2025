@@ -9,15 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="style-sheet.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -51,23 +46,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classremus_1_1MemoryNode.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -89,6 +67,11 @@ $(document).ready(function(){initNavTree('classremus_1_1MemoryNode.html',''); in
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceremus.html">remus</a></li><li class="navelem"><a class="el" href="classremus_1_1MemoryNode.html">MemoryNode</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -113,10 +96,10 @@ Collaboration diagram for remus::MemoryNode:</div>
 <area shape="rect" title="A MemoryNode is a machine that provides Segments for ComputeNodes." alt="" coords="97,93,256,119"/>
 <area shape="rect" href="structremus_1_1MachineInfo.html" title="A simple struct that contains the information needed to identify a machine in the remus system." alt="" coords="5,5,156,31"/>
 <area shape="poly" title=" " alt="" coords="105,38,165,91,162,95,102,42"/>
-<area shape="rect" href="classremus_1_1internal_1_1Segment.html" title="A Segment object to represent a slab of RDMA memory." alt="" coords="181,5,367,31"/>
+<area shape="rect" title=" " alt="" coords="181,5,367,31"/>
 <area shape="poly" title=" " alt="" coords="252,42,192,95,188,91,249,38"/>
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -134,14 +117,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acf7b65b8b4ebdd9b75253f75fe4f907a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23a92b1a0c0f6c5ecca7927dac3c97ed" id="r_a23a92b1a0c0f6c5ecca7927dac3c97ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1MemoryNode.html#a23a92b1a0c0f6c5ecca7927dac3c97ed">MemoryNode</a> (const <a class="el" href="structremus_1_1MachineInfo.html">MachineInfo</a> &amp;self, std::shared_ptr&lt; <a class="el" href="classremus_1_1ArgMap.html">remus::ArgMap</a> &gt; args)</td></tr>
 <tr class="separator:a23a92b1a0c0f6c5ecca7927dac3c97ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef24f2bc7597006bb687de2978e1a051" id="r_aef24f2bc7597006bb687de2978e1a051"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structremus_1_1internal_1_1RegionInfo.html">internal::RegionInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1MemoryNode.html#aef24f2bc7597006bb687de2978e1a051">get_local_rkeys</a> ()</td></tr>
+<tr class="memitem:aef24f2bc7597006bb687de2978e1a051" id="r_aef24f2bc7597006bb687de2978e1a051"><td class="memItemLeft" align="right" valign="top">std::vector&lt; internal::RegionInfo &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1MemoryNode.html#aef24f2bc7597006bb687de2978e1a051">get_local_rkeys</a> ()</td></tr>
 <tr class="separator:aef24f2bc7597006bb687de2978e1a051"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae40a6aea42e7f99305c5fad74d345dd" id="r_aae40a6aea42e7f99305c5fad74d345dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1MemoryNode.html#aae40a6aea42e7f99305c5fad74d345dd">init_done</a> ()</td></tr>
 <tr class="separator:aae40a6aea42e7f99305c5fad74d345dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-types" name="pro-types"></a>
 Protected Types</h2></td></tr>
-<tr class="memitem:a0b1e24af0fbdf3cd85642e0c47d32869" id="r_a0b1e24af0fbdf3cd85642e0c47d32869"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1MemoryNode.html#a0b1e24af0fbdf3cd85642e0c47d32869">ConnPtr</a> = std::shared_ptr&lt; <a class="el" href="classremus_1_1internal_1_1Connection.html">internal::Connection</a> &gt;</td></tr>
+<tr class="memitem:a0b1e24af0fbdf3cd85642e0c47d32869" id="r_a0b1e24af0fbdf3cd85642e0c47d32869"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1MemoryNode.html#a0b1e24af0fbdf3cd85642e0c47d32869">ConnPtr</a> = std::shared_ptr&lt; internal::Connection &gt;</td></tr>
 <tr class="memdesc:a0b1e24af0fbdf3cd85642e0c47d32869"><td class="mdescLeft">&#160;</td><td class="mdescRight">A shared pointer to a Connection object.  <br /></td></tr>
 <tr class="separator:a0b1e24af0fbdf3cd85642e0c47d32869"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -167,7 +150,7 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a3a2833d8b39669f868cd575eb873ffa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa85b3cd8d63c1ea851247fb53a18dc6f" id="r_aa85b3cd8d63c1ea851247fb53a18dc6f"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1MemoryNode.html#aa85b3cd8d63c1ea851247fb53a18dc6f">port_</a></td></tr>
 <tr class="separator:aa85b3cd8d63c1ea851247fb53a18dc6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9c44330824bf3f474ebcb873a39d418" id="r_ac9c44330824bf3f474ebcb873a39d418"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structremus_1_1internal_1_1RegionInfo.html">internal::RegionInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1MemoryNode.html#ac9c44330824bf3f474ebcb873a39d418">ris_</a></td></tr>
+<tr class="memitem:ac9c44330824bf3f474ebcb873a39d418" id="r_ac9c44330824bf3f474ebcb873a39d418"><td class="memItemLeft" align="right" valign="top">std::vector&lt; internal::RegionInfo &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1MemoryNode.html#ac9c44330824bf3f474ebcb873a39d418">ris_</a></td></tr>
 <tr class="separator:ac9c44330824bf3f474ebcb873a39d418"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5df18d9fbe4af76ef18634ba9b62adae" id="r_a5df18d9fbe4af76ef18634ba9b62adae"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1MemoryNode.html#a5df18d9fbe4af76ef18634ba9b62adae">remaining_conns_</a></td></tr>
 <tr class="separator:a5df18d9fbe4af76ef18634ba9b62adae"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,9 +160,9 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:aafd78320081297747eb7c00c7731070d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dfa9a041602a192628cabd0aa023469" id="r_a2dfa9a041602a192628cabd0aa023469"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structremus_1_1MemoryNode_1_1SegInfo.html">SegInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1MemoryNode.html#a2dfa9a041602a192628cabd0aa023469">segs_</a></td></tr>
 <tr class="separator:a2dfa9a041602a192628cabd0aa023469"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3ee26e30d727d8072172fc4628e6e51" id="r_ad3ee26e30d727d8072172fc4628e6e51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classremus_1_1internal_1_1Segment.html">internal::Segment</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1MemoryNode.html#ad3ee26e30d727d8072172fc4628e6e51">send_seg_</a></td></tr>
+<tr class="memitem:ad3ee26e30d727d8072172fc4628e6e51" id="r_ad3ee26e30d727d8072172fc4628e6e51"><td class="memItemLeft" align="right" valign="top">internal::Segment&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1MemoryNode.html#ad3ee26e30d727d8072172fc4628e6e51">send_seg_</a></td></tr>
 <tr class="separator:ad3ee26e30d727d8072172fc4628e6e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb735c7ec2ee8e43492901be1cd53521" id="r_abb735c7ec2ee8e43492901be1cd53521"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceremus_1_1internal.html#ad19c6642dcb03734777590a5a5fecb62">internal::ibv_mr_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1MemoryNode.html#abb735c7ec2ee8e43492901be1cd53521">mr_</a></td></tr>
+<tr class="memitem:abb735c7ec2ee8e43492901be1cd53521" id="r_abb735c7ec2ee8e43492901be1cd53521"><td class="memItemLeft" align="right" valign="top">internal::ibv_mr_ptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1MemoryNode.html#abb735c7ec2ee8e43492901be1cd53521">mr_</a></td></tr>
 <tr class="separator:abb735c7ec2ee8e43492901be1cd53521"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa11e003bb3358d96ba8cc043f824fa09" id="r_aa11e003bb3358d96ba8cc043f824fa09"><td class="memItemLeft" align="right" valign="top">const uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremus_1_1MemoryNode.html#aa11e003bb3358d96ba8cc043f824fa09">total_threads_</a></td></tr>
 <tr class="separator:aa11e003bb3358d96ba8cc043f824fa09"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -201,7 +184,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classremus_1_1MemoryNode.html#a0b1e24af0fbdf3cd85642e0c47d32869">remus::MemoryNode::ConnPtr</a> =  std::shared_ptr&lt;<a class="el" href="classremus_1_1internal_1_1Connection.html">internal::Connection</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classremus_1_1MemoryNode.html#a0b1e24af0fbdf3cd85642e0c47d32869">remus::MemoryNode::ConnPtr</a> =  std::shared_ptr&lt;internal::Connection&gt;</td>
         </tr>
       </table>
   </td>
@@ -292,7 +275,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="structremus_1_1internal_1_1RegionInfo.html">internal::RegionInfo</a> &gt; remus::MemoryNode::get_local_rkeys </td>
+          <td class="memname">std::vector&lt; internal::RegionInfo &gt; remus::MemoryNode::get_local_rkeys </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -531,7 +514,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceremus_1_1internal.html#ad19c6642dcb03734777590a5a5fecb62">internal::ibv_mr_ptr</a> remus::MemoryNode::mr_</td>
+          <td class="memname">internal::ibv_mr_ptr remus::MemoryNode::mr_</td>
         </tr>
       </table>
   </td>
@@ -597,7 +580,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="structremus_1_1internal_1_1RegionInfo.html">internal::RegionInfo</a>&gt; remus::MemoryNode::ris_</td>
+          <td class="memname">std::vector&lt;internal::RegionInfo&gt; remus::MemoryNode::ris_</td>
         </tr>
       </table>
   </td>
@@ -685,7 +668,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classremus_1_1internal_1_1Segment.html">internal::Segment</a> remus::MemoryNode::send_seg_</td>
+          <td class="memname">internal::Segment remus::MemoryNode::send_seg_</td>
         </tr>
       </table>
   </td>
@@ -725,13 +708,9 @@ Protected Attributes</h2></td></tr>
 <li><a class="el" href="mem__node_8h_source.html">mem_node.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespaceremus.html">remus</a></li><li class="navelem"><a class="el" href="classremus_1_1MemoryNode.html">MemoryNode</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
 </body>
 </html>

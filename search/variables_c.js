@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['port_5f_0',['port_',['../classremus_1_1MemoryNode.html#aa85b3cd8d63c1ea851247fb53a18dc6f',1,'remus::MemoryNode']]],
-  ['posted_1',['posted',['../structremus_1_1ComputeThread_1_1seq__send__wrs__t.html#af6036befff9f7351e0113fdc539f26f9',1,'remus::ComputeThread::seq_send_wrs_t']]]
+  ['qp_5flanes_0',['QP_LANES',['../namespaceremus.html#a739bfe98f0c99cb75fd22c3fd195aec5',1,'remus']]],
+  ['qp_5fsched_5fpol_1',['QP_SCHED_POL',['../namespaceremus.html#a22235794b308dcd6ff9e4206cdaa1cd3',1,'remus']]],
+  ['qp_5fsched_5fpol_5f_2',['qp_sched_pol_',['../classremus_1_1ComputeThread.html#a1d8bdbf99c6b08e72ff8c715b3e79439',1,'remus::ComputeThread']]]
 ];

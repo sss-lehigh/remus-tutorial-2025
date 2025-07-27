@@ -9,15 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="style-sheet.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -56,23 +51,6 @@ $(function() {
 $(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('connection_8h_source.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -94,6 +72,11 @@ $(document).ready(function(){initNavTree('connection_8h_source.html',''); initRe
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6018a8c26b29d29a4775030b4bbe88f7.html">rdma</a></li><li class="navelem"><a class="el" href="dir_13214eeb4531427aa19820af67ea12da.html">include</a></li><li class="navelem"><a class="el" href="dir_7996da782ac42abdde6a605c7784f653.html">remus</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">connection.h</div></div>
 </div><!--header-->
@@ -115,18 +98,17 @@ $(document).ready(function(){initNavTree('connection_8h_source.html',''); initRe
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="segment_8h.html">segment.h</a>&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="util_8h.html">util.h</a>&quot;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceremus_1_1internal.html">remus::internal</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span>remus::internal {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classremus_1_1internal_1_1Connection.html">   36</a></span><span class="keyword">class </span><a class="code hl_class" href="classremus_1_1internal_1_1Connection.html">Connection</a> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">class </span>Connection {</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  rdma_cm_id *id_;         <span class="comment">// Pointer to the QP for sends/receives</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">const</span> <span class="keywordtype">bool</span> is_loopback_; <span class="comment">// Track if this is a Loopback (self) connection</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">requires</span> std::ranges::contiguous_range&lt;T&gt;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <a class="code hl_struct" href="structremus_1_1Status.html">remus::Status</a> SendMessage(T &amp;&amp;msg, <a class="code hl_class" href="classremus_1_1internal_1_1Segment.html">Segment</a> &amp;seg, ibv_mr *mr) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <a class="code hl_struct" href="structremus_1_1Status.html">remus::Status</a> SendMessage(T &amp;&amp;msg, Segment &amp;seg, ibv_mr *mr) {</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">static_assert</span>(std::ranges::sized_range&lt;T&gt;);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">auto</span> msg_ptr = std::ranges::data(std::forward&lt;T&gt;(msg));</div>
@@ -142,11 +124,11 @@ $(document).ready(function(){initNavTree('connection_8h_source.html',''); initRe
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment">// NB:  We could ask the programmer to put the message into a Segment, which</span></div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">//      would avoid this copy, but we don&#39;t, because Send throughput isn&#39;t</span></div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="comment">//      our priority.</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    std::memcpy(seg.<a class="code hl_function" href="classremus_1_1internal_1_1Segment.html#a1a2d86c09bfddd51e88c1c98dc958581">raw</a>(), msg_ptr, msg_size);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    std::memcpy(seg.raw(), msg_ptr, msg_size);</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="comment">// Describe the command we&#39;re going to send to the RNIC</span></div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    ibv_sge sge; <span class="comment">// NB: we don&#39;t zero it because we set all its fields below</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    sge.addr = <span class="keyword">reinterpret_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(seg.<a class="code hl_function" href="classremus_1_1internal_1_1Segment.html#a1a2d86c09bfddd51e88c1c98dc958581">raw</a>());</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    sge.addr = <span class="keyword">reinterpret_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(seg.raw());</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    sge.length = msg_size;</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    sge.lkey = mr-&gt;lkey;</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
@@ -188,7 +170,7 @@ $(document).ready(function(){initNavTree('connection_8h_source.html',''); initRe
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="structremus_1_1Status.html#a403a5929ddf0d7752afba3fdca27fc97">remus::Status::Ok</a>();</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  }</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <a class="code hl_struct" href="structremus_1_1StatusVal.html">remus::StatusVal&lt;std::vector&lt;uint8_t&gt;</a>&gt; TryDeliverMessage(<a class="code hl_class" href="classremus_1_1internal_1_1Segment.html">Segment</a> &amp;seg) {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <a class="code hl_struct" href="structremus_1_1StatusVal.html">remus::StatusVal&lt;std::vector&lt;uint8_t&gt;</a>&gt; TryDeliverMessage(Segment &amp;seg) {</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    ibv_wc wc;</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keyword">auto</span> ret = rdma_get_recv_comp(id_, &amp;wc);</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordflow">if</span> (ret &lt; 0 &amp;&amp; errno != EAGAIN) {</div>
@@ -203,7 +185,7 @@ $(document).ready(function(){initNavTree('connection_8h_source.html',''); initRe
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordflow">return</span> {{<a class="code hl_enumvalue" href="namespaceremus.html#a492a224bb783d5a0b144a54f838b4a84aa96d80a7a6472f6cb9ba9dcd4e752c4d">remus::Aborted</a>, <span class="stringliteral">&quot;QP in error state&quot;</span>}, {}};</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      <span class="keywordflow">case</span> IBV_WC_SUCCESS: {</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <span class="comment">// Prepare the response.</span></div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        std::span&lt;uint8_t&gt; recv_span{seg.<a class="code hl_function" href="classremus_1_1internal_1_1Segment.html#a1a2d86c09bfddd51e88c1c98dc958581">raw</a>(), wc.byte_len};</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        std::span&lt;uint8_t&gt; recv_span{seg.raw(), wc.byte_len};</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <a class="code hl_struct" href="structremus_1_1StatusVal.html">remus::StatusVal&lt;std::vector&lt;uint8_t&gt;</a>&gt; res = {</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            <a class="code hl_function" href="structremus_1_1Status.html#a403a5929ddf0d7752afba3fdca27fc97">remus::Status::Ok</a>(), std::make_optional(std::vector&lt;uint8_t&gt;(</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                                     recv_span.begin(), recv_span.end()))};</div>
@@ -219,7 +201,7 @@ $(document).ready(function(){initNavTree('connection_8h_source.html',''); initRe
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  }</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  <a class="code hl_struct" href="structremus_1_1StatusVal.html">remus::StatusVal&lt;std::vector&lt;T&gt;</a>&gt; TryDeliverVec(<a class="code hl_class" href="classremus_1_1internal_1_1Segment.html">Segment</a> &amp;seg) {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  <a class="code hl_struct" href="structremus_1_1StatusVal.html">remus::StatusVal&lt;std::vector&lt;T&gt;</a>&gt; TryDeliverVec(Segment &amp;seg) {</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <a class="code hl_struct" href="structremus_1_1StatusVal.html">remus::StatusVal&lt;std::vector&lt;uint8_t&gt;</a>&gt; msg_or = TryDeliverMessage(seg);</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keywordflow">if</span> (msg_or.<a class="code hl_variable" href="structremus_1_1StatusVal.html#a7f33042470ad80bec63ee8b6565298bc">status</a>.<a class="code hl_variable" href="structremus_1_1Status.html#a736bd7e958db411e4a5e31b83974ac44">t</a> == <a class="code hl_enumvalue" href="namespaceremus.html#a492a224bb783d5a0b144a54f838b4a84ac5eec072999ebc5a0e6771f486eb9714">remus::Ok</a>) {</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>      std::vector&lt;T&gt; vec(msg_or.<a class="code hl_variable" href="structremus_1_1StatusVal.html#a23be4ef8e3ebf7b5829eb136a48babe5">val</a>.value().size() / <span class="keyword">sizeof</span>(T));</div>
@@ -231,35 +213,28 @@ $(document).ready(function(){initNavTree('connection_8h_source.html',''); initRe
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  }</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00176" data-start="{" data-end="}">
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="classremus_1_1internal_1_1Connection.html#a48b47b915967371f18127df78ac2ccfd">  176</a></span>  <a class="code hl_function" href="classremus_1_1internal_1_1Connection.html#a48b47b915967371f18127df78ac2ccfd">Connection</a>(uint32_t src_id, uint32_t dst_id, rdma_cm_id *channel_id)</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  Connection(uint32_t src_id, uint32_t dst_id, rdma_cm_id *channel_id)</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>      : id_(channel_id), is_loopback_(src_id == dst_id) {}</div>
-</div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="classremus_1_1internal_1_1Connection.html#af60a9cc7437d125dc7fe229c19c9e2c3">  179</a></span>  <a class="code hl_function" href="classremus_1_1internal_1_1Connection.html#af60a9cc7437d125dc7fe229c19c9e2c3">Connection</a>(<span class="keyword">const</span> <a class="code hl_class" href="classremus_1_1internal_1_1Connection.html">Connection</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="classremus_1_1internal_1_1Connection.html#aa27f88c73de7328f0b82684b2c0af62c">  180</a></span>  <a class="code hl_function" href="classremus_1_1internal_1_1Connection.html#aa27f88c73de7328f0b82684b2c0af62c">Connection</a>(<a class="code hl_class" href="classremus_1_1internal_1_1Connection.html">Connection</a> &amp;&amp;c) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>  Connection(<span class="keyword">const</span> Connection &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  Connection(Connection &amp;&amp;c) = <span class="keyword">delete</span>;</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keyword">requires</span> std::ranges::contiguous_range&lt;T&gt;</div>
-<div class="foldopen" id="foldopen00194" data-start="{" data-end="}">
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="classremus_1_1internal_1_1Connection.html#a63d5071bfe57cc55927e8e812895efa6">  194</a></span>  <a class="code hl_struct" href="structremus_1_1Status.html">remus::Status</a> <a class="code hl_function" href="classremus_1_1internal_1_1Connection.html#a63d5071bfe57cc55927e8e812895efa6">Send</a>(T &amp;&amp;msg, <a class="code hl_class" href="classremus_1_1internal_1_1Segment.html">Segment</a> &amp;seg, ibv_mr *mr) {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  <a class="code hl_struct" href="structremus_1_1Status.html">remus::Status</a> Send(T &amp;&amp;msg, Segment &amp;seg, ibv_mr *mr) {</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordflow">return</span> SendMessage(std::forward&lt;T&gt;(msg), seg, mr);</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  }</div>
-</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00206" data-start="{" data-end="}">
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="classremus_1_1internal_1_1Connection.html#a309f20771dbb940380ec3ade1db5c4b6">  206</a></span>  <a class="code hl_struct" href="structremus_1_1StatusVal.html">remus::StatusVal&lt;std::vector&lt;T&gt;</a>&gt; <a class="code hl_function" href="classremus_1_1internal_1_1Connection.html#a309f20771dbb940380ec3ade1db5c4b6">DeliverVec</a>(<a class="code hl_class" href="classremus_1_1internal_1_1Segment.html">Segment</a> &amp;seg) {</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <a class="code hl_struct" href="structremus_1_1StatusVal.html">remus::StatusVal&lt;std::vector&lt;T&gt;</a>&gt; DeliverVec(Segment &amp;seg) {</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keyword">auto</span> p = this-&gt;TryDeliverVec&lt;T&gt;(seg);</div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keywordflow">while</span> (p.status.t == <a class="code hl_enumvalue" href="namespaceremus.html#a492a224bb783d5a0b144a54f838b4a84a9ea9a182ac46c6dd91c3adcccc6285d8">remus::Unavailable</a>) {</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>      p = this-&gt;TryDeliverVec&lt;T&gt;(seg);</div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    }</div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="keywordflow">return</span> p;</div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  }</div>
-</div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
-<div class="foldopen" id="foldopen00215" data-start="{" data-end="}">
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="classremus_1_1internal_1_1Connection.html#afc60a6d43367ad4cfa1088dceec64cb8">  215</a></span>  <a class="code hl_function" href="classremus_1_1internal_1_1Connection.html#afc60a6d43367ad4cfa1088dceec64cb8">~Connection</a>() {</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>  ~Connection() {</div>
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="comment">// A loopback connection is made manually, so we do not need to deal with</span></div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="comment">// the regular `rdma_cm` handling. Similarly, we avoid destroying the event</span></div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <span class="comment">// channel below since it is destroyed along with the id.</span></div>
@@ -284,39 +259,20 @@ $(document).ready(function(){initNavTree('connection_8h_source.html',''); initRe
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!is_loopback_)</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>      rdma_destroy_event_channel(channel);</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  }</div>
-</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
-<div class="foldopen" id="foldopen00247" data-start="{" data-end="}">
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno"><a class="line" href="classremus_1_1internal_1_1Connection.html#acc9f80c0025a9d842f970ce81e6b1fdd">  247</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classremus_1_1internal_1_1Connection.html#acc9f80c0025a9d842f970ce81e6b1fdd">send_onesided</a>(ibv_send_wr *send_wr) {</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>  <span class="keywordtype">void</span> send_onesided(ibv_send_wr *send_wr) {</div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    ibv_send_wr *bad = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    <a class="code hl_define" href="logging_8h.html#a0b1dcb0a1f77ae64b627f2c5aab00cea">RDMA_CM_ASSERT</a>(ibv_post_send, id_-&gt;qp, send_wr, &amp;bad);</div>
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  }</div>
-</div>
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
-<div class="foldopen" id="foldopen00258" data-start="{" data-end="}">
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno"><a class="line" href="classremus_1_1internal_1_1Connection.html#a62810220c2e90a9d591ec78ae26e0b3f">  258</a></span>  <span class="keywordtype">int</span> <a class="code hl_function" href="classremus_1_1internal_1_1Connection.html#a62810220c2e90a9d591ec78ae26e0b3f">poll_cq</a>(<span class="keywordtype">int</span> num, ibv_wc *wc) {</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  <span class="keywordtype">int</span> poll_cq(<span class="keywordtype">int</span> num, ibv_wc *wc) {</div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <span class="keywordflow">return</span> ibv_poll_cq(id_-&gt;send_cq, num, wc);</div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>  }</div>
-</div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno"><a class="line" href="classremus_1_1internal_1_1Connection.html#aa3593a3c68f6879a92df208306c96bd3">  263</a></span>  ibv_pd *<a class="code hl_function" href="classremus_1_1internal_1_1Connection.html#aa3593a3c68f6879a92df208306c96bd3">pd</a>() { <span class="keywordflow">return</span> id_-&gt;pd; }</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>  ibv_pd *pd() { <span class="keywordflow">return</span> id_-&gt;pd; }</div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>};</div>
-</div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>} <span class="comment">// namespace remus::internal</span></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Connection_html"><div class="ttname"><a href="classremus_1_1internal_1_1Connection.html">remus::internal::Connection</a></div><div class="ttdoc">A connection object for RDMA communication.</div><div class="ttdef"><b>Definition</b> connection.h:36</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Connection_html_a309f20771dbb940380ec3ade1db5c4b6"><div class="ttname"><a href="classremus_1_1internal_1_1Connection.html#a309f20771dbb940380ec3ade1db5c4b6">remus::internal::Connection::DeliverVec</a></div><div class="ttdeci">remus::StatusVal&lt; std::vector&lt; T &gt; &gt; DeliverVec(Segment &amp;seg)</div><div class="ttdef"><b>Definition</b> connection.h:206</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Connection_html_a48b47b915967371f18127df78ac2ccfd"><div class="ttname"><a href="classremus_1_1internal_1_1Connection.html#a48b47b915967371f18127df78ac2ccfd">remus::internal::Connection::Connection</a></div><div class="ttdeci">Connection(uint32_t src_id, uint32_t dst_id, rdma_cm_id *channel_id)</div><div class="ttdef"><b>Definition</b> connection.h:176</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Connection_html_a62810220c2e90a9d591ec78ae26e0b3f"><div class="ttname"><a href="classremus_1_1internal_1_1Connection.html#a62810220c2e90a9d591ec78ae26e0b3f">remus::internal::Connection::poll_cq</a></div><div class="ttdeci">int poll_cq(int num, ibv_wc *wc)</div><div class="ttdef"><b>Definition</b> connection.h:258</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Connection_html_a63d5071bfe57cc55927e8e812895efa6"><div class="ttname"><a href="classremus_1_1internal_1_1Connection.html#a63d5071bfe57cc55927e8e812895efa6">remus::internal::Connection::Send</a></div><div class="ttdeci">remus::Status Send(T &amp;&amp;msg, Segment &amp;seg, ibv_mr *mr)</div><div class="ttdef"><b>Definition</b> connection.h:194</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Connection_html_aa27f88c73de7328f0b82684b2c0af62c"><div class="ttname"><a href="classremus_1_1internal_1_1Connection.html#aa27f88c73de7328f0b82684b2c0af62c">remus::internal::Connection::Connection</a></div><div class="ttdeci">Connection(Connection &amp;&amp;c)=delete</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Connection_html_aa3593a3c68f6879a92df208306c96bd3"><div class="ttname"><a href="classremus_1_1internal_1_1Connection.html#aa3593a3c68f6879a92df208306c96bd3">remus::internal::Connection::pd</a></div><div class="ttdeci">ibv_pd * pd()</div><div class="ttdoc">Return the protection domain associated with this Connection.</div><div class="ttdef"><b>Definition</b> connection.h:263</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Connection_html_acc9f80c0025a9d842f970ce81e6b1fdd"><div class="ttname"><a href="classremus_1_1internal_1_1Connection.html#acc9f80c0025a9d842f970ce81e6b1fdd">remus::internal::Connection::send_onesided</a></div><div class="ttdeci">void send_onesided(ibv_send_wr *send_wr)</div><div class="ttdef"><b>Definition</b> connection.h:247</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Connection_html_af60a9cc7437d125dc7fe229c19c9e2c3"><div class="ttname"><a href="classremus_1_1internal_1_1Connection.html#af60a9cc7437d125dc7fe229c19c9e2c3">remus::internal::Connection::Connection</a></div><div class="ttdeci">Connection(const Connection &amp;)=delete</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Connection_html_afc60a6d43367ad4cfa1088dceec64cb8"><div class="ttname"><a href="classremus_1_1internal_1_1Connection.html#afc60a6d43367ad4cfa1088dceec64cb8">remus::internal::Connection::~Connection</a></div><div class="ttdeci">~Connection()</div><div class="ttdoc">TODO.</div><div class="ttdef"><b>Definition</b> connection.h:215</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Segment_html"><div class="ttname"><a href="classremus_1_1internal_1_1Segment.html">remus::internal::Segment</a></div><div class="ttdoc">A Segment object to represent a slab of RDMA memory.</div><div class="ttdef"><b>Definition</b> segment.h:104</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Segment_html_a1a2d86c09bfddd51e88c1c98dc958581"><div class="ttname"><a href="classremus_1_1internal_1_1Segment.html#a1a2d86c09bfddd51e88c1c98dc958581">remus::internal::Segment::raw</a></div><div class="ttdeci">uint8_t * raw() const</div><div class="ttdoc">Return the local address of the start of this Segment.</div><div class="ttdef"><b>Definition</b> segment.h:197</div></div>
 <div class="ttc" id="alogging_8h_html_a0b1dcb0a1f77ae64b627f2c5aab00cea"><div class="ttname"><a href="logging_8h.html#a0b1dcb0a1f77ae64b627f2c5aab00cea">RDMA_CM_ASSERT</a></div><div class="ttdeci">#define RDMA_CM_ASSERT(func,...)</div><div class="ttdoc">Fail if func does not return 0.</div><div class="ttdef"><b>Definition</b> logging.h:138</div></div>
-<div class="ttc" id="anamespaceremus_1_1internal_html"><div class="ttname"><a href="namespaceremus_1_1internal.html">remus::internal</a></div><div class="ttdef"><b>Definition</b> compute_node.h:25</div></div>
 <div class="ttc" id="anamespaceremus_html_a492a224bb783d5a0b144a54f838b4a84a9ea9a182ac46c6dd91c3adcccc6285d8"><div class="ttname"><a href="namespaceremus.html#a492a224bb783d5a0b144a54f838b4a84a9ea9a182ac46c6dd91c3adcccc6285d8">remus::Unavailable</a></div><div class="ttdeci">@ Unavailable</div><div class="ttdef"><b>Definition</b> logging.h:20</div></div>
 <div class="ttc" id="anamespaceremus_html_a492a224bb783d5a0b144a54f838b4a84aa96d80a7a6472f6cb9ba9dcd4e752c4d"><div class="ttname"><a href="namespaceremus.html#a492a224bb783d5a0b144a54f838b4a84aa96d80a7a6472f6cb9ba9dcd4e752c4d">remus::Aborted</a></div><div class="ttdeci">@ Aborted</div><div class="ttdef"><b>Definition</b> logging.h:21</div></div>
 <div class="ttc" id="anamespaceremus_html_a492a224bb783d5a0b144a54f838b4a84ac5eec072999ebc5a0e6771f486eb9714"><div class="ttname"><a href="namespaceremus.html#a492a224bb783d5a0b144a54f838b4a84ac5eec072999ebc5a0e6771f486eb9714">remus::Ok</a></div><div class="ttdeci">@ Ok</div><div class="ttdef"><b>Definition</b> logging.h:18</div></div>
@@ -330,13 +286,9 @@ $(document).ready(function(){initNavTree('connection_8h_source.html',''); initRe
 <div class="ttc" id="astructremus_1_1Status_html_a736bd7e958db411e4a5e31b83974ac44"><div class="ttname"><a href="structremus_1_1Status.html#a736bd7e958db411e4a5e31b83974ac44">remus::Status::t</a></div><div class="ttdeci">StatusType t</div><div class="ttdef"><b>Definition</b> logging.h:29</div></div>
 <div class="ttc" id="autil_8h_html"><div class="ttname"><a href="util_8h.html">util.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_6018a8c26b29d29a4775030b4bbe88f7.html">rdma</a></li><li class="navelem"><a class="el" href="dir_13214eeb4531427aa19820af67ea12da.html">include</a></li><li class="navelem"><a class="el" href="dir_7996da782ac42abdde6a605c7784f653.html">remus</a></li><li class="navelem"><a class="el" href="connection_8h.html">connection.h</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
 </body>
 </html>
