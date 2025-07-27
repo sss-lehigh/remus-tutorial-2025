@@ -1,8 +1,12 @@
 var searchData=
 [
-  ['rdma_5fptr_0',['rdma_ptr',['../classremus_1_1rdma__ptr.html',1,'remus']]],
-  ['rdtsc_5frand_5ft_1',['rdtsc_rand_t',['../classremus_1_1internal_1_1rdtsc__rand__t.html',1,'remus::internal']]],
-  ['regioninfo_2',['RegionInfo',['../structremus_1_1internal_1_1RegionInfo.html',1,'remus::internal']]],
-  ['ring_5fbuf_5ft_3',['ring_buf_t',['../structremus_1_1ring__buf__t.html',1,'remus']]],
-  ['ring_5fcounter_5ft_4',['ring_counter_t',['../structremus_1_1ring__counter__t.html',1,'remus']]]
+  ['seginfo_0',['SegInfo',['../structremus_1_1MemoryNode_1_1SegInfo.html',1,'remus::MemoryNode']]],
+  ['send_5fwr_5ft_1',['send_wr_t',['../structremus_1_1ComputeThread_1_1seq__send__wrs__t_1_1send__wr__t.html',1,'remus::ComputeThread::seq_send_wrs_t']]],
+  ['seq_5fidx_5ft_2',['seq_idx_t',['../structremus_1_1ComputeThread_1_1seq__idx__t.html',1,'remus::ComputeThread']]],
+  ['seq_5fsend_5fwrs_5ft_3',['seq_send_wrs_t',['../structremus_1_1ComputeThread_1_1seq__send__wrs__t.html',1,'remus::ComputeThread']]],
+  ['seq_5fstaging_5fbuf_5ft_4',['seq_staging_buf_t',['../structremus_1_1ComputeThread_1_1seq__staging__buf__t.html',1,'remus::ComputeThread']]],
+  ['simpleasynccomputethread_5',['SimpleAsyncComputeThread',['../classremus_1_1SimpleAsyncComputeThread.html',1,'remus']]],
+  ['staging_5fbuf_5ft_6',['staging_buf_t',['../structremus_1_1ComputeThread_1_1staging__buf__t.html',1,'remus::ComputeThread']]],
+  ['status_7',['Status',['../structremus_1_1Status.html',1,'remus']]],
+  ['statusval_8',['StatusVal',['../structremus_1_1StatusVal.html',1,'remus']]]
 ];

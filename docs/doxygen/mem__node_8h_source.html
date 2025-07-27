@@ -9,15 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="style-sheet.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -56,23 +51,6 @@ $(function() {
 $(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('mem__node_8h_source.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -94,6 +72,11 @@ $(document).ready(function(){initNavTree('mem__node_8h_source.html',''); initRes
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6018a8c26b29d29a4775030b4bbe88f7.html">rdma</a></li><li class="navelem"><a class="el" href="dir_13214eeb4531427aa19820af67ea12da.html">include</a></li><li class="navelem"><a class="el" href="dir_7996da782ac42abdde6a605c7784f653.html">remus</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">mem_node.h</div></div>
 </div><!--header-->
@@ -135,7 +118,7 @@ $(document).ready(function(){initNavTree('mem__node_8h_source.html',''); initRes
 <div class="foldopen" id="foldopen00067" data-start="{" data-end="};">
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="structremus_1_1MemoryNode_1_1SegInfo.html">   67</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structremus_1_1MemoryNode_1_1SegInfo.html">SegInfo</a> {</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="structremus_1_1MemoryNode_1_1SegInfo.html#a0e657826218c213e1f84c8f48de672e8">   68</a></span>    std::unique_ptr&lt;internal::Segment&gt; <a class="code hl_variable" href="structremus_1_1MemoryNode_1_1SegInfo.html#a0e657826218c213e1f84c8f48de672e8">seg_</a>;  <span class="comment">// A Segment</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structremus_1_1MemoryNode_1_1SegInfo.html#a5dd49b034ff1062969a511bd6e0a19d9">   69</a></span>    <a class="code hl_typedef" href="namespaceremus_1_1internal.html#ad19c6642dcb03734777590a5a5fecb62">internal::ibv_mr_ptr</a> <a class="code hl_variable" href="structremus_1_1MemoryNode_1_1SegInfo.html#a5dd49b034ff1062969a511bd6e0a19d9">mr_</a>;                 <span class="comment">// The associated mr</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structremus_1_1MemoryNode_1_1SegInfo.html#a5dd49b034ff1062969a511bd6e0a19d9">   69</a></span>    internal::ibv_mr_ptr <a class="code hl_variable" href="structremus_1_1MemoryNode_1_1SegInfo.html#a5dd49b034ff1062969a511bd6e0a19d9">mr_</a>;                 <span class="comment">// The associated mr</span></div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  };</div>
 </div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
@@ -152,8 +135,8 @@ $(document).ready(function(){initNavTree('mem__node_8h_source.html',''); initRes
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classremus_1_1MemoryNode.html#aafd78320081297747eb7c00c7731070d">   83</a></span>  std::vector&lt;ConnPtr&gt; <a class="code hl_variable" href="classremus_1_1MemoryNode.html#aafd78320081297747eb7c00c7731070d">conns_</a>;                    <span class="comment">// All open connections</span></div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classremus_1_1MemoryNode.html#a2dfa9a041602a192628cabd0aa023469">   84</a></span>  std::vector&lt;SegInfo&gt; <a class="code hl_variable" href="classremus_1_1MemoryNode.html#a2dfa9a041602a192628cabd0aa023469">segs_</a>;                     <span class="comment">// The RDMA heaps</span></div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classremus_1_1MemoryNode.html#ad3ee26e30d727d8072172fc4628e6e51">   93</a></span>  <a class="code hl_class" href="classremus_1_1internal_1_1Segment.html">internal::Segment</a> <a class="code hl_variable" href="classremus_1_1MemoryNode.html#ad3ee26e30d727d8072172fc4628e6e51">send_seg_</a>;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classremus_1_1MemoryNode.html#abb735c7ec2ee8e43492901be1cd53521">   94</a></span>  <a class="code hl_typedef" href="namespaceremus_1_1internal.html#ad19c6642dcb03734777590a5a5fecb62">internal::ibv_mr_ptr</a> <a class="code hl_variable" href="classremus_1_1MemoryNode.html#abb735c7ec2ee8e43492901be1cd53521">mr_</a>;  <span class="comment">// MemoryRegistration for send_seg_</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classremus_1_1MemoryNode.html#ad3ee26e30d727d8072172fc4628e6e51">   93</a></span>  internal::Segment <a class="code hl_variable" href="classremus_1_1MemoryNode.html#ad3ee26e30d727d8072172fc4628e6e51">send_seg_</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classremus_1_1MemoryNode.html#abb735c7ec2ee8e43492901be1cd53521">   94</a></span>  internal::ibv_mr_ptr <a class="code hl_variable" href="classremus_1_1MemoryNode.html#abb735c7ec2ee8e43492901be1cd53521">mr_</a>;  <span class="comment">// MemoryRegistration for send_seg_</span></div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
 <div class="foldopen" id="foldopen00100" data-start="{" data-end="}">
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classremus_1_1MemoryNode.html#a1e8e4d698d5ab2d8d18af4e750dc45a7">  100</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classremus_1_1MemoryNode.html#a1e8e4d698d5ab2d8d18af4e750dc45a7">handle_connections</a>() {</div>
@@ -242,7 +225,7 @@ $(document).ready(function(){initNavTree('mem__node_8h_source.html',''); initRes
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <a class="code hl_define" href="logging_8h.html#acaf341353eb37d85648afac69d08c855">REMUS_ASSERT</a>(ret == 0, <span class="stringliteral">&quot;rdma_set_option(): {}&quot;</span>, strerror(errno));</div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="comment">// Create a new QP for the connection.</span></div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    ibv_qp_init_attr init_attr = <a class="code hl_function" href="namespaceremus_1_1internal.html#ae05d6e2c012f1986655039ad835750b7">internal::make_default_qp_init_attrs</a>();</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    ibv_qp_init_attr init_attr = internal::make_default_qp_init_attrs();</div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    ret = rdma_create_qp(<span class="keywordtype">id</span>, pd, &amp;init_attr);</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <a class="code hl_define" href="logging_8h.html#acaf341353eb37d85648afac69d08c855">REMUS_ASSERT</a>(ret == 0, <span class="stringliteral">&quot;rdma_create_qp(): {}&quot;</span>, strerror(errno));</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
@@ -260,11 +243,11 @@ $(document).ready(function(){initNavTree('mem__node_8h_source.html',''); initRes
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    context-&gt;conn_param_.responder_resources = 255;</div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    context-&gt;conn_param_.initiator_depth = 255;</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keywordtype">id</span>-&gt;context = context;</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <a class="code hl_function" href="namespaceremus_1_1internal.html#a73f978a6ab18265049cad0986e32ffb2">internal::make_nonblocking</a>(id-&gt;recv_cq-&gt;channel-&gt;fd);</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <a class="code hl_function" href="namespaceremus_1_1internal.html#a73f978a6ab18265049cad0986e32ffb2">internal::make_nonblocking</a>(id-&gt;send_cq-&gt;channel-&gt;fd);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    internal::make_nonblocking(id-&gt;recv_cq-&gt;channel-&gt;fd);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    internal::make_nonblocking(id-&gt;send_cq-&gt;channel-&gt;fd);</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="comment">// Save the connection and ack it</span></div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keyword">auto</span> conn = <span class="keyword">new</span> <a class="code hl_class" href="classremus_1_1internal_1_1Connection.html">internal::Connection</a>(<a class="code hl_variable" href="classremus_1_1MemoryNode.html#a3eb46341d958400600fa89364b056a8b">self_</a>.<a class="code hl_variable" href="structremus_1_1MachineInfo.html#a005e03cfd5f9bebbec0c1c01071f9dec">id</a>, machine_id, <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keyword">auto</span> conn = <span class="keyword">new</span> internal::Connection(<a class="code hl_variable" href="classremus_1_1MemoryNode.html#a3eb46341d958400600fa89364b056a8b">self_</a>.<a class="code hl_variable" href="structremus_1_1MachineInfo.html#a005e03cfd5f9bebbec0c1c01071f9dec">id</a>, machine_id, <span class="keywordtype">id</span>);</div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <a class="code hl_variable" href="classremus_1_1MemoryNode.html#aafd78320081297747eb7c00c7731070d">conns_</a>.emplace_back(conn);</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    ret = rdma_accept(<span class="keywordtype">id</span>,</div>
@@ -306,7 +289,7 @@ $(document).ready(function(){initNavTree('mem__node_8h_source.html',''); initRes
 <div class="foldopen" id="foldopen00247" data-start="{" data-end="}">
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno"><a class="line" href="classremus_1_1MemoryNode.html#acf7b65b8b4ebdd9b75253f75fe4f907a">  247</a></span>  <a class="code hl_function" href="classremus_1_1MemoryNode.html#acf7b65b8b4ebdd9b75253f75fe4f907a">~MemoryNode</a>() {</div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <span class="keyword">auto</span> cb_ptr =</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <span class="keyword">reinterpret_cast&lt;</span><a class="code hl_struct" href="structremus_1_1internal_1_1ControlBlock.html">internal::ControlBlock</a> *<span class="keyword">&gt;</span>(<a class="code hl_variable" href="classremus_1_1MemoryNode.html#a2dfa9a041602a192628cabd0aa023469">segs_</a>[0].seg_-&gt;raw());</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <span class="keyword">reinterpret_cast&lt;</span>internal::ControlBlock *<span class="keyword">&gt;</span>(<a class="code hl_variable" href="classremus_1_1MemoryNode.html#a2dfa9a041602a192628cabd0aa023469">segs_</a>[0].seg_-&gt;raw());</div>
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="keywordflow">while</span> (cb_ptr-&gt;control_flag_.load() != <a class="code hl_variable" href="classremus_1_1MemoryNode.html#aa11e003bb3358d96ba8cc043f824fa09">total_threads_</a>) {</div>
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>      std::this_thread::yield();</div>
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    }</div>
@@ -340,16 +323,16 @@ $(document).ready(function(){initNavTree('mem__node_8h_source.html',''); initRes
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
 <div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    <span class="comment">// Make the listening endpoint, and register the sending segment with it</span></div>
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    uint16_t port = args-&gt;uget(<a class="code hl_variable" href="namespaceremus.html#a9fc144c8cd47e6a445225002a65675c5">remus::MN_PORT</a>);</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    <a class="code hl_variable" href="classremus_1_1MemoryNode.html#ac50a81d813704cea668101626284a6b7">listen_id_</a> = <a class="code hl_function" href="namespaceremus_1_1internal.html#ae7cdf93ac6a95ef4b1d9bea6a1ba118a">remus::internal::make_listen_id</a>(self.<a class="code hl_variable" href="structremus_1_1MachineInfo.html#a91ad5e4dbbb150d34884947dc8a35042">address</a>, port);</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    <a class="code hl_variable" href="classremus_1_1MemoryNode.html#ac50a81d813704cea668101626284a6b7">listen_id_</a> = remus::internal::make_listen_id(self.<a class="code hl_variable" href="structremus_1_1MachineInfo.html#a91ad5e4dbbb150d34884947dc8a35042">address</a>, port);</div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <a class="code hl_define" href="logging_8h.html#acaf341353eb37d85648afac69d08c855">REMUS_ASSERT</a>(<a class="code hl_variable" href="classremus_1_1MemoryNode.html#ac50a81d813704cea668101626284a6b7">listen_id_</a>-&gt;pd != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Error creating protection domain&quot;</span>);</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <a class="code hl_variable" href="classremus_1_1MemoryNode.html#abb735c7ec2ee8e43492901be1cd53521">mr_</a> = <a class="code hl_variable" href="classremus_1_1MemoryNode.html#ad3ee26e30d727d8072172fc4628e6e51">send_seg_</a>.<a class="code hl_function" href="classremus_1_1internal_1_1Segment.html#af4fbafd28a8d9c6e83f21c8134321b7f">registerWithPd</a>(<a class="code hl_variable" href="classremus_1_1MemoryNode.html#ac50a81d813704cea668101626284a6b7">listen_id_</a>-&gt;pd);</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <a class="code hl_variable" href="classremus_1_1MemoryNode.html#abb735c7ec2ee8e43492901be1cd53521">mr_</a> = <a class="code hl_variable" href="classremus_1_1MemoryNode.html#ad3ee26e30d727d8072172fc4628e6e51">send_seg_</a>.registerWithPd(<a class="code hl_variable" href="classremus_1_1MemoryNode.html#ac50a81d813704cea668101626284a6b7">listen_id_</a>-&gt;pd);</div>
 <div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <span class="comment">// Construct the memory pools, configure their control region, and register</span></div>
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    <span class="comment">// them with the listening endpoint</span></div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    <span class="keywordflow">for</span> (uint64_t i = 0; i &lt; num_segs; ++i) {</div>
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>      <span class="keyword">auto</span> seg = std::make_unique&lt;internal::Segment&gt;(1ULL &lt;&lt; seg_size_bits);</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>      <span class="keyword">new</span> ((<a class="code hl_struct" href="structremus_1_1internal_1_1ControlBlock.html">internal::ControlBlock</a> *)(seg-&gt;raw()))</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>          <a class="code hl_struct" href="structremus_1_1internal_1_1ControlBlock.html">internal::ControlBlock</a>(1ULL &lt;&lt; seg_size_bits);</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>      <span class="keyword">new</span> ((internal::ControlBlock *)(seg-&gt;raw()))</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>          internal::ControlBlock(1ULL &lt;&lt; seg_size_bits);</div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>      <span class="keyword">auto</span> mr = seg-&gt;registerWithPd(<a class="code hl_variable" href="classremus_1_1MemoryNode.html#ac50a81d813704cea668101626284a6b7">listen_id_</a>-&gt;pd);</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>      <a class="code hl_variable" href="classremus_1_1MemoryNode.html#a2dfa9a041602a192628cabd0aa023469">segs_</a>.emplace_back(<a class="code hl_struct" href="structremus_1_1MemoryNode_1_1SegInfo.html">SegInfo</a>{std::move(seg), std::move(mr)});</div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    }</div>
@@ -378,7 +361,7 @@ $(document).ready(function(){initNavTree('mem__node_8h_source.html',''); initRes
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    <span class="keywordflow">if</span> (rdma_migrate_id(<a class="code hl_variable" href="classremus_1_1MemoryNode.html#ac50a81d813704cea668101626284a6b7">listen_id_</a>, <a class="code hl_variable" href="classremus_1_1MemoryNode.html#a71a29d9d6cb6e74578928cc957785a4d">listen_channel_</a>) != 0) {</div>
 <div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>      <a class="code hl_define" href="logging_8h.html#aaf75f2d6d29bcbac82f689bf5290daea">REMUS_FATAL</a>(<span class="stringliteral">&quot;rdma_migrate_id(): {}&quot;</span>, strerror(errno));</div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    }</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    <a class="code hl_function" href="namespaceremus_1_1internal.html#a73f978a6ab18265049cad0986e32ffb2">internal::make_nonblocking</a>(<a class="code hl_variable" href="classremus_1_1MemoryNode.html#ac50a81d813704cea668101626284a6b7">listen_id_</a>-&gt;channel-&gt;fd);</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    internal::make_nonblocking(<a class="code hl_variable" href="classremus_1_1MemoryNode.html#ac50a81d813704cea668101626284a6b7">listen_id_</a>-&gt;channel-&gt;fd);</div>
 <div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    <span class="keywordflow">if</span> (rdma_listen(<a class="code hl_variable" href="classremus_1_1MemoryNode.html#ac50a81d813704cea668101626284a6b7">listen_id_</a>, 0) != 0) {</div>
 <div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>      <a class="code hl_define" href="logging_8h.html#aaf75f2d6d29bcbac82f689bf5290daea">REMUS_FATAL</a>(<span class="stringliteral">&quot;rdma_listen(): {}&quot;</span>, strerror(errno));</div>
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    }</div>
@@ -395,7 +378,7 @@ $(document).ready(function(){initNavTree('mem__node_8h_source.html',''); initRes
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    std::vector&lt;internal::RegionInfo&gt; res;</div>
 <div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;p : <a class="code hl_variable" href="classremus_1_1MemoryNode.html#a2dfa9a041602a192628cabd0aa023469">segs_</a>)</div>
 <div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>      res.push_back(</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>          <a class="code hl_struct" href="structremus_1_1internal_1_1RegionInfo.html">internal::RegionInfo</a>{(uintptr_t)p.seg_-&gt;raw(), p.mr_-&gt;<a class="code hl_variable" href="structremus_1_1internal_1_1RegionInfo.html#a94d24c527059ee9d41fa1eff3ba9991d">rkey</a>});</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>          internal::RegionInfo{(uintptr_t)p.seg_-&gt;raw(), p.mr_-&gt;rkey});</div>
 <div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>    <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>  }</div>
 </div>
@@ -439,18 +422,11 @@ $(document).ready(function(){initNavTree('mem__node_8h_source.html',''); initRes
 <div class="ttc" id="aclassremus_1_1MemoryNode_html_aef24f2bc7597006bb687de2978e1a051"><div class="ttname"><a href="classremus_1_1MemoryNode.html#aef24f2bc7597006bb687de2978e1a051">remus::MemoryNode::get_local_rkeys</a></div><div class="ttdeci">std::vector&lt; internal::RegionInfo &gt; get_local_rkeys()</div><div class="ttdef"><b>Definition</b> mem_node.h:340</div></div>
 <div class="ttc" id="aclassremus_1_1MemoryNode_html_af4f416826460d2ef587b93fb955d61a1"><div class="ttname"><a href="classremus_1_1MemoryNode.html#af4f416826460d2ef587b93fb955d61a1">remus::MemoryNode::on_disconnect</a></div><div class="ttdeci">void on_disconnect(rdma_cm_id *id)</div><div class="ttdef"><b>Definition</b> mem_node.h:230</div></div>
 <div class="ttc" id="aclassremus_1_1MemoryNode_html_af533ae0d6e83d23a038b5747666a4ac0"><div class="ttname"><a href="classremus_1_1MemoryNode.html#af533ae0d6e83d23a038b5747666a4ac0">remus::MemoryNode::on_connect</a></div><div class="ttdeci">void on_connect(rdma_cm_id *id, rdma_cm_event *event, ibv_pd *pd)</div><div class="ttdoc">Handler to run when a connection request arrives.</div><div class="ttdef"><b>Definition</b> mem_node.h:170</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Connection_html"><div class="ttname"><a href="classremus_1_1internal_1_1Connection.html">remus::internal::Connection</a></div><div class="ttdoc">A connection object for RDMA communication.</div><div class="ttdef"><b>Definition</b> connection.h:36</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Segment_html"><div class="ttname"><a href="classremus_1_1internal_1_1Segment.html">remus::internal::Segment</a></div><div class="ttdoc">A Segment object to represent a slab of RDMA memory.</div><div class="ttdef"><b>Definition</b> segment.h:104</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Segment_html_af4fbafd28a8d9c6e83f21c8134321b7f"><div class="ttname"><a href="classremus_1_1internal_1_1Segment.html#af4fbafd28a8d9c6e83f21c8134321b7f">remus::internal::Segment::registerWithPd</a></div><div class="ttdeci">ibv_mr_ptr registerWithPd(ibv_pd *pd)</div><div class="ttdef"><b>Definition</b> segment.h:178</div></div>
 <div class="ttc" id="aconnection_8h_html"><div class="ttname"><a href="connection_8h.html">connection.h</a></div></div>
 <div class="ttc" id="alogging_8h_html"><div class="ttname"><a href="logging_8h.html">logging.h</a></div></div>
 <div class="ttc" id="alogging_8h_html_a2df62c11662bc3b2d27536880f687a0d"><div class="ttname"><a href="logging_8h.html#a2df62c11662bc3b2d27536880f687a0d">REMUS_INFO</a></div><div class="ttdeci">#define REMUS_INFO(...)</div><div class="ttdoc">Print an information message.</div><div class="ttdef"><b>Definition</b> logging.h:112</div></div>
 <div class="ttc" id="alogging_8h_html_aaf75f2d6d29bcbac82f689bf5290daea"><div class="ttname"><a href="logging_8h.html#aaf75f2d6d29bcbac82f689bf5290daea">REMUS_FATAL</a></div><div class="ttdeci">#define REMUS_FATAL(...)</div><div class="ttdoc">Terminate with a message on a fatal error.</div><div class="ttdef"><b>Definition</b> logging.h:115</div></div>
 <div class="ttc" id="alogging_8h_html_acaf341353eb37d85648afac69d08c855"><div class="ttname"><a href="logging_8h.html#acaf341353eb37d85648afac69d08c855">REMUS_ASSERT</a></div><div class="ttdeci">#define REMUS_ASSERT(check,...)</div><div class="ttdef"><b>Definition</b> logging.h:125</div></div>
-<div class="ttc" id="anamespaceremus_1_1internal_html_a73f978a6ab18265049cad0986e32ffb2"><div class="ttname"><a href="namespaceremus_1_1internal.html#a73f978a6ab18265049cad0986e32ffb2">remus::internal::make_nonblocking</a></div><div class="ttdeci">void make_nonblocking(int fd)</div><div class="ttdoc">Set the file descriptor fd as O_NONBLOCK.</div><div class="ttdef"><b>Definition</b> util.h:52</div></div>
-<div class="ttc" id="anamespaceremus_1_1internal_html_ad19c6642dcb03734777590a5a5fecb62"><div class="ttname"><a href="namespaceremus_1_1internal.html#ad19c6642dcb03734777590a5a5fecb62">remus::internal::ibv_mr_ptr</a></div><div class="ttdeci">std::unique_ptr&lt; ibv_mr, ibv_mr_deleter &gt; ibv_mr_ptr</div><div class="ttdef"><b>Definition</b> util.h:173</div></div>
-<div class="ttc" id="anamespaceremus_1_1internal_html_ae05d6e2c012f1986655039ad835750b7"><div class="ttname"><a href="namespaceremus_1_1internal.html#ae05d6e2c012f1986655039ad835750b7">remus::internal::make_default_qp_init_attrs</a></div><div class="ttdeci">ibv_qp_init_attr make_default_qp_init_attrs()</div><div class="ttdef"><b>Definition</b> util.h:104</div></div>
-<div class="ttc" id="anamespaceremus_1_1internal_html_ae7cdf93ac6a95ef4b1d9bea6a1ba118a"><div class="ttname"><a href="namespaceremus_1_1internal.html#ae7cdf93ac6a95ef4b1d9bea6a1ba118a">remus::internal::make_listen_id</a></div><div class="ttdeci">rdma_cm_id * make_listen_id(const std::string &amp;address, uint16_t port)</div><div class="ttdef"><b>Definition</b> util.h:118</div></div>
 <div class="ttc" id="anamespaceremus_html"><div class="ttname"><a href="namespaceremus.html">remus</a></div><div class="ttdef"><b>Definition</b> Atomic.h:7</div></div>
 <div class="ttc" id="anamespaceremus_html_a0998b875745cc94a8a727a7868c75075"><div class="ttname"><a href="namespaceremus.html#a0998b875745cc94a8a727a7868c75075">remus::LAST_CN_ID</a></div><div class="ttdeci">constexpr const char * LAST_CN_ID</div><div class="ttdoc">The node-id of the last node that performs computations.</div><div class="ttdef"><b>Definition</b> cfg.h:22</div></div>
 <div class="ttc" id="anamespaceremus_html_a48807228cb6b8763101be0f13505d5cb"><div class="ttname"><a href="namespaceremus.html#a48807228cb6b8763101be0f13505d5cb">remus::SEG_SIZE</a></div><div class="ttdeci">constexpr const char * SEG_SIZE</div><div class="ttdef"><b>Definition</b> cfg.h:16</div></div>
@@ -473,18 +449,11 @@ $(document).ready(function(){initNavTree('mem__node_8h_source.html',''); initRes
 <div class="ttc" id="astructremus_1_1MemoryNode_1_1SegInfo_html"><div class="ttname"><a href="structremus_1_1MemoryNode_1_1SegInfo.html">remus::MemoryNode::SegInfo</a></div><div class="ttdoc">SegInfo is a convenience type for associating a MemoryRegistration with one of the remote-accessible ...</div><div class="ttdef"><b>Definition</b> mem_node.h:67</div></div>
 <div class="ttc" id="astructremus_1_1MemoryNode_1_1SegInfo_html_a0e657826218c213e1f84c8f48de672e8"><div class="ttname"><a href="structremus_1_1MemoryNode_1_1SegInfo.html#a0e657826218c213e1f84c8f48de672e8">remus::MemoryNode::SegInfo::seg_</a></div><div class="ttdeci">std::unique_ptr&lt; internal::Segment &gt; seg_</div><div class="ttdef"><b>Definition</b> mem_node.h:68</div></div>
 <div class="ttc" id="astructremus_1_1MemoryNode_1_1SegInfo_html_a5dd49b034ff1062969a511bd6e0a19d9"><div class="ttname"><a href="structremus_1_1MemoryNode_1_1SegInfo.html#a5dd49b034ff1062969a511bd6e0a19d9">remus::MemoryNode::SegInfo::mr_</a></div><div class="ttdeci">internal::ibv_mr_ptr mr_</div><div class="ttdef"><b>Definition</b> mem_node.h:69</div></div>
-<div class="ttc" id="astructremus_1_1internal_1_1ControlBlock_html"><div class="ttname"><a href="structremus_1_1internal_1_1ControlBlock.html">remus::internal::ControlBlock</a></div><div class="ttdoc">A control block for managing segments in the distributed memory system.</div><div class="ttdef"><b>Definition</b> util.h:182</div></div>
-<div class="ttc" id="astructremus_1_1internal_1_1RegionInfo_html"><div class="ttname"><a href="structremus_1_1internal_1_1RegionInfo.html">remus::internal::RegionInfo</a></div><div class="ttdoc">A structure to hold information about a memory region.</div><div class="ttdef"><b>Definition</b> util.h:160</div></div>
-<div class="ttc" id="astructremus_1_1internal_1_1RegionInfo_html_a94d24c527059ee9d41fa1eff3ba9991d"><div class="ttname"><a href="structremus_1_1internal_1_1RegionInfo.html#a94d24c527059ee9d41fa1eff3ba9991d">remus::internal::RegionInfo::rkey</a></div><div class="ttdeci">uint32_t rkey</div><div class="ttdef"><b>Definition</b> util.h:162</div></div>
 <div class="ttc" id="autil_8h_html"><div class="ttname"><a href="util_8h.html">util.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_6018a8c26b29d29a4775030b4bbe88f7.html">rdma</a></li><li class="navelem"><a class="el" href="dir_13214eeb4531427aa19820af67ea12da.html">include</a></li><li class="navelem"><a class="el" href="dir_7996da782ac42abdde6a605c7784f653.html">remus</a></li><li class="navelem"><a class="el" href="mem__node_8h.html">mem_node.h</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
 </body>
 </html>

@@ -9,15 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="style-sheet.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -56,23 +51,6 @@ $(function() {
 $(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('mn__alloc__pol_8h_source.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -94,6 +72,11 @@ $(document).ready(function(){initNavTree('mn__alloc__pol_8h_source.html',''); in
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6018a8c26b29d29a4775030b4bbe88f7.html">rdma</a></li><li class="navelem"><a class="el" href="dir_13214eeb4531427aa19820af67ea12da.html">include</a></li><li class="navelem"><a class="el" href="dir_7996da782ac42abdde6a605c7784f653.html">remus</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">mn_alloc_pol.h</div></div>
 </div><!--header-->
@@ -110,34 +93,31 @@ $(document).ready(function(){initNavTree('mn__alloc__pol_8h_source.html',''); in
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="logging_8h.html">logging.h</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="util_8h.html">util.h</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceremus_1_1internal.html">remus::internal</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>remus::internal {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classremus_1_1internal_1_1MnAllocPolicy.html">   19</a></span><span class="keyword">class </span><a class="code hl_class" href="classremus_1_1internal_1_1MnAllocPolicy.html">MnAllocPolicy</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span>MnAllocPolicy {</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="comment">// TODO: why class+public?  Make it a struct?</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220af36867e2b87930ed5fee463a7ff0936f">   25</a></span>  <span class="keyword">enum</span> <a class="code hl_enumeration" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220">Policy</a> { <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220a6c9f44f7bdd10904a569496bf4c340ff">NONE</a>, <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220af36867e2b87930ed5fee463a7ff0936f">GLOBAL_MOD</a>, <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220a6a877f04e06876a2804c90b58698b20f">GLOBAL_RR</a>, <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220acbb12b2b03a0b2e9e0b9338d996b7521">RAND</a>, <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220a9e60e4f3d6198c175a12535d5d4fa912">LOCAL_RR</a>, <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220aed3fc3a868ad56726c0875f15edf00fe">LOCAL_MOD</a> };</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keyword">enum</span> Policy { NONE, GLOBAL_MOD, GLOBAL_RR, RAND, LOCAL_RR, LOCAL_MOD };</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classremus_1_1internal_1_1MnAllocPolicy.html#a7d25fae3ba835b5a0ba0de5cd5cc1f43">   31</a></span>  <span class="keyword">static</span> <a class="code hl_enumeration" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220">Policy</a> <a class="code hl_function" href="classremus_1_1internal_1_1MnAllocPolicy.html#a7d25fae3ba835b5a0ba0de5cd5cc1f43">to_policy</a>(std::string policy) {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">static</span> Policy to_policy(std::string policy) {</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">if</span> (policy == <span class="stringliteral">&quot;RAND&quot;</span>) {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220acbb12b2b03a0b2e9e0b9338d996b7521">RAND</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      <span class="keywordflow">return</span> RAND;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (policy == <span class="stringliteral">&quot;GLOBAL-RR&quot;</span>) {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220a6a877f04e06876a2804c90b58698b20f">GLOBAL_RR</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      <span class="keywordflow">return</span> GLOBAL_RR;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (policy == <span class="stringliteral">&quot;GLOBAL-MOD&quot;</span>) {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220af36867e2b87930ed5fee463a7ff0936f">GLOBAL_MOD</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      <span class="keywordflow">return</span> GLOBAL_MOD;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (policy == <span class="stringliteral">&quot;LOCAL-RR&quot;</span>) {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220a9e60e4f3d6198c175a12535d5d4fa912">LOCAL_RR</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      <span class="keywordflow">return</span> LOCAL_RR;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (policy == <span class="stringliteral">&quot;LOCAL-MOD&quot;</span>) {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220aed3fc3a868ad56726c0875f15edf00fe">LOCAL_MOD</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      <span class="keywordflow">return</span> LOCAL_MOD;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_define" href="logging_8h.html#aaf75f2d6d29bcbac82f689bf5290daea">REMUS_FATAL</a>(<span class="stringliteral">&quot;Invalid MnAllocPolicy {}&quot;</span>, policy);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  }</div>
-</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <a class="code hl_enumeration" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220">Policy</a> policy_;             <span class="comment">// The chosen policy</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <a class="code hl_class" href="classremus_1_1internal_1_1rdtsc__rand__t.html">rdtsc_rand_t</a> prng_;         <span class="comment">// A pseudorandom number generator</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  Policy policy_;             <span class="comment">// The chosen policy</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  rdtsc_rand_t prng_;         <span class="comment">// A pseudorandom number generator</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">const</span> uint32_t num_segs_;   <span class="comment">// The number of Segments per MemoryNode</span></div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keyword">const</span> uint32_t num_mns_;    <span class="comment">// The number of MemoryNodes</span></div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keyword">const</span> uint32_t total_segs_; <span class="comment">// The total number of Segments</span></div>
@@ -145,16 +125,13 @@ $(document).ready(function(){initNavTree('mn__alloc__pol_8h_source.html',''); in
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  uint32_t last_seg_;         <span class="comment">// The last segment we tried</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classremus_1_1internal_1_1MnAllocPolicy.html#aa8482114257de391c73d1128074fc41a">   60</a></span>  <a class="code hl_function" href="classremus_1_1internal_1_1MnAllocPolicy.html#aa8482114257de391c73d1128074fc41a">MnAllocPolicy</a>(std::shared_ptr&lt;remus::ArgMap&gt; args)</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      : policy_(<a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220a6c9f44f7bdd10904a569496bf4c340ff">NONE</a>), num_segs_(args-&gt;uget(<a class="code hl_variable" href="namespaceremus.html#a5305d5f39f5169851628ea477f16de59">SEGS_PER_MN</a>)),</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  MnAllocPolicy(std::shared_ptr&lt;remus::ArgMap&gt; args)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      : policy_(NONE), num_segs_(args-&gt;uget(<a class="code hl_variable" href="namespaceremus.html#a5305d5f39f5169851628ea477f16de59">SEGS_PER_MN</a>)),</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="comment">// TODO: This assumes MemoryNode Ids start at 0</span></div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        num_mns_(args-&gt;uget(<a class="code hl_variable" href="namespaceremus.html#adbdd2f194e6d79740ac2072b9c6b8c4b">LAST_MN_ID</a>) + 1), total_segs_(num_segs_ * num_mns_),</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        last_mn_(0), last_seg_(0) {}</div>
-</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classremus_1_1internal_1_1MnAllocPolicy.html#ace297b28e4208f43e3671f3ba80fcb70">   71</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classremus_1_1internal_1_1MnAllocPolicy.html#ace297b28e4208f43e3671f3ba80fcb70">set_policy</a>(<a class="code hl_enumeration" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220">Policy</a> policy, std::shared_ptr&lt;ArgMap&gt; args,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keywordtype">void</span> set_policy(Policy policy, std::shared_ptr&lt;ArgMap&gt; args,</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                  uint64_t thread_id) {</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="comment">// Figure out the number of ComputeNodes and ComputeThreads</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    uint64_t m0 = args-&gt;uget(<a class="code hl_variable" href="namespaceremus.html#a6797821722decb0687660796f7244c0c">FIRST_MN_ID</a>);</div>
@@ -165,77 +142,58 @@ $(document).ready(function(){initNavTree('mn__alloc__pol_8h_source.html',''); in
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    uint64_t thread_uid = (args-&gt;uget(<a class="code hl_variable" href="namespaceremus.html#a7121903ccfe7d038f30908f17498796c">NODE_ID</a>) - c0) * num_threads + thread_id;</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    policy_ = policy;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">if</span> (policy_ == <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220af36867e2b87930ed5fee463a7ff0936f">GLOBAL_MOD</a>) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">if</span> (policy_ == GLOBAL_MOD) {</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      uint64_t seg_uid = thread_uid % total_segs_;</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      last_mn_ = seg_uid / num_segs_;</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>      last_seg_ = seg_uid % num_segs_;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (policy_ == <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220a6a877f04e06876a2804c90b58698b20f">GLOBAL_RR</a>) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (policy_ == GLOBAL_RR) {</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      <span class="comment">// Randomize starting point</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>      last_mn_ = prng_.<a class="code hl_function" href="classremus_1_1internal_1_1rdtsc__rand__t.html#a8a4a316b524e10b095f68b9bf4864fb7">rand</a>() % num_mns_;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      last_seg_ = prng_.<a class="code hl_function" href="classremus_1_1internal_1_1rdtsc__rand__t.html#a8a4a316b524e10b095f68b9bf4864fb7">rand</a>() % num_segs_;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (policy_ == <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220aed3fc3a868ad56726c0875f15edf00fe">LOCAL_MOD</a>) {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>      last_mn_ = prng_.rand() % num_mns_;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      last_seg_ = prng_.rand() % num_segs_;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (policy_ == LOCAL_MOD) {</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      <a class="code hl_define" href="logging_8h.html#acaf341353eb37d85648afac69d08c855">REMUS_ASSERT</a>(c0 == m0 &amp;&amp; cn == mn,</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                   <span class="stringliteral">&quot;LOCAL_MOD requires every node to be Compute and Memory&quot;</span>);</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>      last_mn_ = args-&gt;uget(<a class="code hl_variable" href="namespaceremus.html#a7121903ccfe7d038f30908f17498796c">NODE_ID</a>);</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>      last_seg_ = thread_id % num_segs_;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (policy_ == <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220a9e60e4f3d6198c175a12535d5d4fa912">LOCAL_RR</a>) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (policy_ == LOCAL_RR) {</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      <a class="code hl_define" href="logging_8h.html#acaf341353eb37d85648afac69d08c855">REMUS_ASSERT</a>(c0 == m0 &amp;&amp; cn == mn,</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                   <span class="stringliteral">&quot;LOCAL_RR requires every node to be Compute and Memory&quot;</span>);</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      last_mn_ = args-&gt;uget(<a class="code hl_variable" href="namespaceremus.html#a7121903ccfe7d038f30908f17498796c">NODE_ID</a>);</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      last_seg_ = prng_.<a class="code hl_function" href="classremus_1_1internal_1_1rdtsc__rand__t.html#a8a4a316b524e10b095f68b9bf4864fb7">rand</a>() % num_segs_;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (policy_ == <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220acbb12b2b03a0b2e9e0b9338d996b7521">RAND</a>) {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      last_seg_ = prng_.rand() % num_segs_;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (policy_ == RAND) {</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      <span class="comment">// No initialization needed</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (policy_ == <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220a6c9f44f7bdd10904a569496bf4c340ff">NONE</a>) {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (policy_ == NONE) {</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      last_mn_ = 0;</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      last_seg_ = 0;</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      <a class="code hl_define" href="logging_8h.html#aaf75f2d6d29bcbac82f689bf5290daea">REMUS_FATAL</a>(<span class="stringliteral">&quot;Unrecognized MnAllocPol {}&quot;</span>, (uint32_t)policy_);</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    }</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  }</div>
-</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad3458396a4e09b0401333ae0916f8d93">  115</a></span>  std::pair&lt;uint32_t, uint32_t&gt; <a class="code hl_function" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad3458396a4e09b0401333ae0916f8d93">get_mn_seg</a>() {</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">if</span> (policy_ == <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220af36867e2b87930ed5fee463a7ff0936f">GLOBAL_MOD</a> || policy_ == <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220aed3fc3a868ad56726c0875f15edf00fe">LOCAL_MOD</a> || policy_ == <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220a6c9f44f7bdd10904a569496bf4c340ff">NONE</a>) {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  std::pair&lt;uint32_t, uint32_t&gt; get_mn_seg() {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">if</span> (policy_ == GLOBAL_MOD || policy_ == LOCAL_MOD || policy_ == NONE) {</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      <span class="comment">// Don&#39;t change last_mn_ or last_seg_</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (policy_ == <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220a6a877f04e06876a2804c90b58698b20f">GLOBAL_RR</a>) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (policy_ == GLOBAL_RR) {</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>      <span class="comment">// Go to next seg, if that causes overflow, go to next MemoryNode</span></div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>      last_seg_ = (++last_seg_) % num_segs_;</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      <span class="keywordflow">if</span> (last_seg_ == 0) {</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        last_mn_ = (++last_mn_) % num_mns_;</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      }</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (policy_ == <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220a9e60e4f3d6198c175a12535d5d4fa912">LOCAL_RR</a>) {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (policy_ == LOCAL_RR) {</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      <span class="comment">// Don&#39;t change MemoryNodes on overflow, just start back at 0</span></div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>      last_seg_ = (++last_seg_) % num_segs_;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (policy_ == <a class="code hl_enumvalue" href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220acbb12b2b03a0b2e9e0b9338d996b7521">RAND</a>) {</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>      last_mn_ = prng_.<a class="code hl_function" href="classremus_1_1internal_1_1rdtsc__rand__t.html#a8a4a316b524e10b095f68b9bf4864fb7">rand</a>() % num_mns_;</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>      last_seg_ = prng_.<a class="code hl_function" href="classremus_1_1internal_1_1rdtsc__rand__t.html#a8a4a316b524e10b095f68b9bf4864fb7">rand</a>() % num_segs_;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (policy_ == RAND) {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>      last_mn_ = prng_.rand() % num_mns_;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>      last_seg_ = prng_.rand() % num_segs_;</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    }</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordflow">return</span> {last_mn_, last_seg_};</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  }</div>
-</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>};</div>
-</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>} <span class="comment">// namespace remus::internal</span></div>
 <div class="ttc" id="acfg_8h_html"><div class="ttname"><a href="cfg_8h.html">cfg.h</a></div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1MnAllocPolicy_html"><div class="ttname"><a href="classremus_1_1internal_1_1MnAllocPolicy.html">remus::internal::MnAllocPolicy</a></div><div class="ttdoc">A policy for allocating Segments from MemoryNodes.</div><div class="ttdef"><b>Definition</b> mn_alloc_pol.h:19</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1MnAllocPolicy_html_a7d25fae3ba835b5a0ba0de5cd5cc1f43"><div class="ttname"><a href="classremus_1_1internal_1_1MnAllocPolicy.html#a7d25fae3ba835b5a0ba0de5cd5cc1f43">remus::internal::MnAllocPolicy::to_policy</a></div><div class="ttdeci">static Policy to_policy(std::string policy)</div><div class="ttdef"><b>Definition</b> mn_alloc_pol.h:31</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1MnAllocPolicy_html_aa8482114257de391c73d1128074fc41a"><div class="ttname"><a href="classremus_1_1internal_1_1MnAllocPolicy.html#aa8482114257de391c73d1128074fc41a">remus::internal::MnAllocPolicy::MnAllocPolicy</a></div><div class="ttdeci">MnAllocPolicy(std::shared_ptr&lt; remus::ArgMap &gt; args)</div><div class="ttdef"><b>Definition</b> mn_alloc_pol.h:60</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1MnAllocPolicy_html_ace297b28e4208f43e3671f3ba80fcb70"><div class="ttname"><a href="classremus_1_1internal_1_1MnAllocPolicy.html#ace297b28e4208f43e3671f3ba80fcb70">remus::internal::MnAllocPolicy::set_policy</a></div><div class="ttdeci">void set_policy(Policy policy, std::shared_ptr&lt; ArgMap &gt; args, uint64_t thread_id)</div><div class="ttdef"><b>Definition</b> mn_alloc_pol.h:71</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1MnAllocPolicy_html_ad3458396a4e09b0401333ae0916f8d93"><div class="ttname"><a href="classremus_1_1internal_1_1MnAllocPolicy.html#ad3458396a4e09b0401333ae0916f8d93">remus::internal::MnAllocPolicy::get_mn_seg</a></div><div class="ttdeci">std::pair&lt; uint32_t, uint32_t &gt; get_mn_seg()</div><div class="ttdef"><b>Definition</b> mn_alloc_pol.h:115</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1MnAllocPolicy_html_ad9a38aae41f6f8266db85043098f6220"><div class="ttname"><a href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220">remus::internal::MnAllocPolicy::Policy</a></div><div class="ttdeci">Policy</div><div class="ttdef"><b>Definition</b> mn_alloc_pol.h:25</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1MnAllocPolicy_html_ad9a38aae41f6f8266db85043098f6220a6a877f04e06876a2804c90b58698b20f"><div class="ttname"><a href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220a6a877f04e06876a2804c90b58698b20f">remus::internal::MnAllocPolicy::GLOBAL_RR</a></div><div class="ttdeci">@ GLOBAL_RR</div><div class="ttdef"><b>Definition</b> mn_alloc_pol.h:25</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1MnAllocPolicy_html_ad9a38aae41f6f8266db85043098f6220a6c9f44f7bdd10904a569496bf4c340ff"><div class="ttname"><a href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220a6c9f44f7bdd10904a569496bf4c340ff">remus::internal::MnAllocPolicy::NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdef"><b>Definition</b> mn_alloc_pol.h:25</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1MnAllocPolicy_html_ad9a38aae41f6f8266db85043098f6220a9e60e4f3d6198c175a12535d5d4fa912"><div class="ttname"><a href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220a9e60e4f3d6198c175a12535d5d4fa912">remus::internal::MnAllocPolicy::LOCAL_RR</a></div><div class="ttdeci">@ LOCAL_RR</div><div class="ttdef"><b>Definition</b> mn_alloc_pol.h:25</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1MnAllocPolicy_html_ad9a38aae41f6f8266db85043098f6220acbb12b2b03a0b2e9e0b9338d996b7521"><div class="ttname"><a href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220acbb12b2b03a0b2e9e0b9338d996b7521">remus::internal::MnAllocPolicy::RAND</a></div><div class="ttdeci">@ RAND</div><div class="ttdef"><b>Definition</b> mn_alloc_pol.h:25</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1MnAllocPolicy_html_ad9a38aae41f6f8266db85043098f6220aed3fc3a868ad56726c0875f15edf00fe"><div class="ttname"><a href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220aed3fc3a868ad56726c0875f15edf00fe">remus::internal::MnAllocPolicy::LOCAL_MOD</a></div><div class="ttdeci">@ LOCAL_MOD</div><div class="ttdef"><b>Definition</b> mn_alloc_pol.h:25</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1MnAllocPolicy_html_ad9a38aae41f6f8266db85043098f6220af36867e2b87930ed5fee463a7ff0936f"><div class="ttname"><a href="classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220af36867e2b87930ed5fee463a7ff0936f">remus::internal::MnAllocPolicy::GLOBAL_MOD</a></div><div class="ttdeci">@ GLOBAL_MOD</div><div class="ttdef"><b>Definition</b> mn_alloc_pol.h:25</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1rdtsc__rand__t_html"><div class="ttname"><a href="classremus_1_1internal_1_1rdtsc__rand__t.html">remus::internal::rdtsc_rand_t</a></div><div class="ttdoc">A pseudorandom number generator based on rdtsc.</div><div class="ttdef"><b>Definition</b> util.h:202</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1rdtsc__rand__t_html_a8a4a316b524e10b095f68b9bf4864fb7"><div class="ttname"><a href="classremus_1_1internal_1_1rdtsc__rand__t.html#a8a4a316b524e10b095f68b9bf4864fb7">remus::internal::rdtsc_rand_t::rand</a></div><div class="ttdeci">uint32_t rand()</div><div class="ttdoc">Generate a random number and update the seed.</div><div class="ttdef"><b>Definition</b> util.h:210</div></div>
 <div class="ttc" id="alogging_8h_html"><div class="ttname"><a href="logging_8h.html">logging.h</a></div></div>
 <div class="ttc" id="alogging_8h_html_aaf75f2d6d29bcbac82f689bf5290daea"><div class="ttname"><a href="logging_8h.html#aaf75f2d6d29bcbac82f689bf5290daea">REMUS_FATAL</a></div><div class="ttdeci">#define REMUS_FATAL(...)</div><div class="ttdoc">Terminate with a message on a fatal error.</div><div class="ttdef"><b>Definition</b> logging.h:115</div></div>
 <div class="ttc" id="alogging_8h_html_acaf341353eb37d85648afac69d08c855"><div class="ttname"><a href="logging_8h.html#acaf341353eb37d85648afac69d08c855">REMUS_ASSERT</a></div><div class="ttdeci">#define REMUS_ASSERT(check,...)</div><div class="ttdef"><b>Definition</b> logging.h:125</div></div>
-<div class="ttc" id="anamespaceremus_1_1internal_html"><div class="ttname"><a href="namespaceremus_1_1internal.html">remus::internal</a></div><div class="ttdef"><b>Definition</b> compute_node.h:25</div></div>
 <div class="ttc" id="anamespaceremus_html_a0998b875745cc94a8a727a7868c75075"><div class="ttname"><a href="namespaceremus.html#a0998b875745cc94a8a727a7868c75075">remus::LAST_CN_ID</a></div><div class="ttdeci">constexpr const char * LAST_CN_ID</div><div class="ttdoc">The node-id of the last node that performs computations.</div><div class="ttdef"><b>Definition</b> cfg.h:22</div></div>
 <div class="ttc" id="anamespaceremus_html_a5199dcaa2e1693887f6249f63d81edbc"><div class="ttname"><a href="namespaceremus.html#a5199dcaa2e1693887f6249f63d81edbc">remus::CN_THREADS</a></div><div class="ttdeci">constexpr const char * CN_THREADS</div><div class="ttdoc">The number of threads to run on each compute node.</div><div class="ttdef"><b>Definition</b> cfg.h:35</div></div>
 <div class="ttc" id="anamespaceremus_html_a5305d5f39f5169851628ea477f16de59"><div class="ttname"><a href="namespaceremus.html#a5305d5f39f5169851628ea477f16de59">remus::SEGS_PER_MN</a></div><div class="ttdeci">constexpr const char * SEGS_PER_MN</div><div class="ttdoc">The number of remotely-accessible memory segments on each.</div><div class="ttdef"><b>Definition</b> cfg.h:18</div></div>
@@ -245,13 +203,9 @@ $(document).ready(function(){initNavTree('mn__alloc__pol_8h_source.html',''); in
 <div class="ttc" id="anamespaceremus_html_adbdd2f194e6d79740ac2072b9c6b8c4b"><div class="ttname"><a href="namespaceremus.html#adbdd2f194e6d79740ac2072b9c6b8c4b">remus::LAST_MN_ID</a></div><div class="ttdeci">constexpr const char * LAST_MN_ID</div><div class="ttdoc">The node-id of the last node that hosts memory segments.</div><div class="ttdef"><b>Definition</b> cfg.h:13</div></div>
 <div class="ttc" id="autil_8h_html"><div class="ttname"><a href="util_8h.html">util.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_6018a8c26b29d29a4775030b4bbe88f7.html">rdma</a></li><li class="navelem"><a class="el" href="dir_13214eeb4531427aa19820af67ea12da.html">include</a></li><li class="navelem"><a class="el" href="dir_7996da782ac42abdde6a605c7784f653.html">remus</a></li><li class="navelem"><a class="el" href="mn__alloc__pol_8h.html">mn_alloc_pol.h</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
 </body>
 </html>

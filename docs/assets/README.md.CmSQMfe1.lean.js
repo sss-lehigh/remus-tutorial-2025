@@ -1,0 +1,1 @@
+import{_ as t,c as o,o as a,a0 as i}from"./chunks/framework.Cf11ooiF.js";const p=JSON.parse('{"title":"Tutorial Website","description":"","frontmatter":{},"headers":[],"relativePath":"README.md","filePath":"README.md"}'),s={name:"README.md"};function n(r,e,d,l,h,c){return a(),o("div",null,e[0]||(e[0]=[i("",9)]))}const m=t(s,[["render",n]]);export{p as __pageData,m as default};

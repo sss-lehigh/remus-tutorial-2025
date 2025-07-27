@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['header_5fsize_0',['HEADER_SIZE',['../classremus_1_1internal_1_1BumpAllocator.html#a84ebdb1e99c6cc1fcdfadc7cc1795765',1,'remus::internal::BumpAllocator']]],
-  ['help_1',['HELP',['../namespaceremus.html#a8b87e4589ca54b4bc0a3690ba7456770',1,'remus']]]
+  ['help_0',['HELP',['../namespaceremus.html#a8b87e4589ca54b4bc0a3690ba7456770',1,'remus']]]
 ];

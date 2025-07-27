@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['local_5fmod_0',['LOCAL_MOD',['../classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220aed3fc3a868ad56726c0875f15edf00fe',1,'remus::internal::MnAllocPolicy']]],
-  ['local_5frr_1',['LOCAL_RR',['../classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220a9e60e4f3d6198c175a12535d5d4fa912',1,'remus::internal::MnAllocPolicy']]]
+  ['str_0',['STR',['../structremus_1_1Arg.html#ada9c2546008ce89dc2d23bf283cc169fa0c4f5ad96bd15104573da7411a12b7f5',1,'remus::Arg']]]
 ];

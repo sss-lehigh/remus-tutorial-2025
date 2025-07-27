@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['to_5faddress_0',['to_address',['../classremus_1_1rdma__ptr.html#a8a5051ce20918f8b9de4da4010c38304',1,'remus::rdma_ptr']]],
-  ['to_5fpolicy_1',['to_policy',['../classremus_1_1internal_1_1MnAllocPolicy.html#a7d25fae3ba835b5a0ba0de5cd5cc1f43',1,'remus::internal::MnAllocPolicy::to_policy()'],['../classremus_1_1internal_1_1QpSchedPolicy.html#af59d6c58f69e7cde91169234434c6c84',1,'remus::internal::QpSchedPolicy::to_policy()']]],
-  ['try_5fallocate_5fglobal_2',['try_allocate_global',['../classremus_1_1internal_1_1BumpAllocator.html#a43ecd80f1b599ceba27e4bdff1c5a048',1,'remus::internal::BumpAllocator']]],
-  ['try_5fallocate_5flocal_3',['try_allocate_local',['../classremus_1_1internal_1_1BumpAllocator.html#a060c91b34b05ea24a6cc2fb27fe16581',1,'remus::internal::BumpAllocator']]]
+  ['u64_5farg_0',['U64_ARG',['../namespaceremus.html#afd576d603e1d50a8f79a432b3f96ec8f',1,'remus']]],
+  ['u64_5farg_5fopt_1',['U64_ARG_OPT',['../namespaceremus.html#a9b93475d8327628a81fa96435a665a91',1,'remus']]],
+  ['uget_2',['uget',['../classremus_1_1ArgMap.html#ab3ce51ab55dfaab293f06b60897a713a',1,'remus::ArgMap']]],
+  ['unhandled_5fexception_3',['unhandled_exception',['../structremus_1_1AsyncResult_1_1promise__type.html#a2efa117533e2d9f689d6bed95d33cc76',1,'remus::AsyncResult::promise_type::unhandled_exception()'],['../structremus_1_1AsyncResultVoid_1_1promise__type.html#a4d995c3cbb20b751a357f65dfcac129e',1,'remus::AsyncResultVoid::promise_type::unhandled_exception()']]],
+  ['usage_4',['usage',['../classremus_1_1ArgMap.html#ae64aff316b695db3b716d518a0a2359a',1,'remus::ArgMap']]]
 ];

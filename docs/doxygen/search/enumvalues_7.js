@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['none_0',['none',['../classremus_1_1internal_1_1MnAllocPolicy.html#ad9a38aae41f6f8266db85043098f6220a6c9f44f7bdd10904a569496bf4c340ff',1,'remus::internal::MnAllocPolicy::NONE'],['../classremus_1_1internal_1_1QpSchedPolicy.html#a392ab2bf54a8aea01d6ae4c577199300a1c2c6d97d5035a634ef1b15c99eb7eeb',1,'remus::internal::QpSchedPolicy::NONE']]]
+  ['u64_0',['U64',['../structremus_1_1Arg.html#ada9c2546008ce89dc2d23bf283cc169fa8c1310c1b2b710cba8c2d89cc6c48819',1,'remus::Arg']]],
+  ['unavailable_1',['Unavailable',['../namespaceremus.html#a492a224bb783d5a0b144a54f838b4a84a9ea9a182ac46c6dd91c3adcccc6285d8',1,'remus']]]
 ];

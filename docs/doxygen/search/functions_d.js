@@ -7,7 +7,7 @@ var searchData=
   ['operator_20rdma_5fptr_3c_20u_20_3e_4',['operator rdma_ptr&lt; U &gt;',['../classremus_1_1rdma__ptr.html#a90538df09dec951ad6e0e3c56fc10fde',1,'remus::rdma_ptr']]],
   ['operator_20t_2a_5',['operator T*',['../classremus_1_1rdma__ptr.html#aff6dec358ebce27fd57574d637dddfa7',1,'remus::rdma_ptr']]],
   ['operator_20uint64_5ft_6',['operator uint64_t',['../classremus_1_1rdma__ptr.html#a90b21f0f4efd9ae797094ae32768bfaf',1,'remus::rdma_ptr']]],
-  ['operator_28_29_7',['operator()',['../structstd_1_1hash_3_01remus_1_1rdma__ptr_3_01T_01_4_01_4.html#a00f4d43edef4bf0b68d60ed0c907b53e',1,'std::hash&lt; remus::rdma_ptr&lt; T &gt; &gt;::operator()()'],['../structremus_1_1internal_1_1ibv__mr__deleter.html#a3d131d73f662fbd7ce9486263432665f',1,'remus::internal::ibv_mr_deleter::operator()()']]],
+  ['operator_28_29_7',['operator()',['../structstd_1_1hash_3_01remus_1_1rdma__ptr_3_01T_01_4_01_4.html#a00f4d43edef4bf0b68d60ed0c907b53e',1,'std::hash&lt; remus::rdma_ptr&lt; T &gt; &gt;']]],
   ['operator_2a_8',['operator*',['../classremus_1_1rdma__ptr.html#a0de1c03eef3cd3baa4164cbd9ba5b0ee',1,'remus::rdma_ptr']]],
   ['operator_2b_9',['operator+',['../classremus_1_1rdma__ptr.html#aadb4a5e95967e1c04d153d9a2bd6a9c3',1,'remus::rdma_ptr']]],
   ['operator_2b_2b_10',['operator++',['../classremus_1_1rdma__ptr.html#a8547a5e9dd3fcffa3ace4f0296f410c1',1,'remus::rdma_ptr::operator++()'],['../classremus_1_1rdma__ptr.html#a301c8a3e28d2f37090d177a4267a892a',1,'remus::rdma_ptr::operator++(int)']]],

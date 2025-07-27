@@ -9,15 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="style-sheet.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -56,23 +51,6 @@ $(function() {
 $(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('compute__node_8h_source.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -94,6 +72,11 @@ $(document).ready(function(){initNavTree('compute__node_8h_source.html',''); ini
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6018a8c26b29d29a4775030b4bbe88f7.html">rdma</a></li><li class="navelem"><a class="el" href="dir_13214eeb4531427aa19820af67ea12da.html">include</a></li><li class="navelem"><a class="el" href="dir_7996da782ac42abdde6a605c7784f653.html">remus</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">compute_node.h</div></div>
 </div><!--header-->
@@ -122,15 +105,13 @@ $(document).ready(function(){initNavTree('compute__node_8h_source.html',''); ini
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="ring_8h.html">ring.h</a>&quot;</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="util_8h.html">util.h</a>&quot;</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="namespaceremus_1_1internal.html">   25</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceremus_1_1internal.html">remus::internal</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">namespace </span>remus::internal {</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="namespaceremus_1_1internal.html#aa052afb40659f6c923369dc902db2827">   28</a></span><span class="keyword">constexpr</span> uint32_t <a class="code hl_variable" href="namespaceremus_1_1internal.html#aa052afb40659f6c923369dc902db2827">connect_backoff_min_us</a> = 100;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">constexpr</span> uint32_t connect_backoff_min_us = 100;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="namespaceremus_1_1internal.html#ac888de708a1a3ecd348dc593f8b0ab41">   31</a></span><span class="keyword">constexpr</span> uint32_t <a class="code hl_variable" href="namespaceremus_1_1internal.html#ac888de708a1a3ecd348dc593f8b0ab41">connect_backoff_max_us</a> = 5000000;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">constexpr</span> uint32_t connect_backoff_max_us = 5000000;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="namespaceremus_1_1internal.html#a01c2f327ddb134546185243b768c50af">   42</a></span><span class="keyword">inline</span> rdma_cm_id *<a class="code hl_function" href="namespaceremus_1_1internal.html#a01c2f327ddb134546185243b768c50af">initialize_ep</a>(std::string_view address, uint16_t port) {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">inline</span> rdma_cm_id *initialize_ep(std::string_view address, uint16_t port) {</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="comment">// Compute the info for the node we&#39;re connecting to</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">auto</span> port_str = std::to_string(htons(port));</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  rdma_addrinfo hints, *resolved = <span class="keyword">nullptr</span>;</div>
@@ -151,7 +132,7 @@ $(document).ready(function(){initNavTree('compute__node_8h_source.html',''); ini
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  }</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="comment">// Start making a connection</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  ibv_qp_init_attr init_attr = <a class="code hl_function" href="namespaceremus_1_1internal.html#ae05d6e2c012f1986655039ad835750b7">make_default_qp_init_attrs</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  ibv_qp_init_attr init_attr = make_default_qp_init_attrs();</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  rdma_cm_id *<span class="keywordtype">id</span> = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keyword">auto</span> err = rdma_create_ep(&amp;<span class="keywordtype">id</span>, resolved, <span class="keyword">nullptr</span>, &amp;init_attr);</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  rdma_freeaddrinfo(resolved);</div>
@@ -160,26 +141,24 @@ $(document).ready(function(){initNavTree('compute__node_8h_source.html',''); ini
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  }</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keywordflow">return</span> id;</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
-</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="namespaceremus_1_1internal.html#a315ca89ef09d664e1807a23ee94b49d2">   84</a></span><span class="keyword">inline</span> <a class="code hl_class" href="classremus_1_1internal_1_1Connection.html">Connection</a> *<a class="code hl_function" href="namespaceremus_1_1internal.html#a315ca89ef09d664e1807a23ee94b49d2">connect_remote</a>(uint32_t my_id, uint32_t mn_id,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keyword">inline</span> Connection *connect_remote(uint32_t my_id, uint32_t mn_id,</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                                  std::string_view mn_addr, uint16_t port,</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                                  <a class="code hl_class" href="classremus_1_1internal_1_1Segment.html">internal::Segment</a> &amp;seg,</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                                  internal::Segment &amp;seg,</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                                  std::vector&lt;internal::ibv_mr_ptr&gt; &amp;mrs) {</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  uint32_t backoff_us_ = 0;</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="comment">// TODO: Need a one-line comment here explaining this block of code</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    rdma_cm_id *<span class="keywordtype">id</span> = <a class="code hl_function" href="namespaceremus_1_1internal.html#a01c2f327ddb134546185243b768c50af">initialize_ep</a>(mn_addr, port);</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keyword">auto</span> mr = seg.<a class="code hl_function" href="classremus_1_1internal_1_1Segment.html#af4fbafd28a8d9c6e83f21c8134321b7f">registerWithPd</a>(id-&gt;pd);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <a class="code hl_define" href="logging_8h.html#a0b1dcb0a1f77ae64b627f2c5aab00cea">RDMA_CM_ASSERT</a>(rdma_post_recv, <span class="keywordtype">id</span>, <span class="keyword">nullptr</span>, seg.<a class="code hl_function" href="classremus_1_1internal_1_1Segment.html#a1a2d86c09bfddd51e88c1c98dc958581">raw</a>(), seg.<a class="code hl_function" href="classremus_1_1internal_1_1Segment.html#a2507a40ce14dd40fdd52300114b2a758">capacity</a>(),</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    rdma_cm_id *<span class="keywordtype">id</span> = initialize_ep(mn_addr, port);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keyword">auto</span> mr = seg.registerWithPd(id-&gt;pd);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <a class="code hl_define" href="logging_8h.html#a0b1dcb0a1f77ae64b627f2c5aab00cea">RDMA_CM_ASSERT</a>(rdma_post_recv, <span class="keywordtype">id</span>, <span class="keyword">nullptr</span>, seg.raw(), seg.capacity(),</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                   mr.get());</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    mrs.push_back(std::move(mr));</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="comment">// Migrate the new endpoint to a nonblocking event channel and do more</span></div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="comment">// config</span></div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keyword">auto</span> *event_channel = rdma_create_event_channel();</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <a class="code hl_function" href="namespaceremus_1_1internal.html#a73f978a6ab18265049cad0986e32ffb2">make_nonblocking</a>(event_channel-&gt;fd);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    make_nonblocking(event_channel-&gt;fd);</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">if</span> (rdma_migrate_id(<span class="keywordtype">id</span>, event_channel) != 0) {</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>      <a class="code hl_define" href="logging_8h.html#aaf75f2d6d29bcbac82f689bf5290daea">REMUS_FATAL</a>(<span class="stringliteral">&quot;rdma_migrate_id(): {}&quot;</span>, strerror(errno));</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    }</div>
@@ -222,12 +201,12 @@ $(document).ready(function(){initNavTree('compute__node_8h_source.html',''); ini
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>      <span class="comment">// On an &quot;established&quot; event, we can make and save the connection</span></div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>      <span class="keywordflow">if</span> (cm_event == RDMA_CM_EVENT_ESTABLISHED) {</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <a class="code hl_function" href="namespaceremus_1_1internal.html#aa8783740ff64c72d005d2461114eadd8">make_sync</a>(event_channel-&gt;fd);</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <a class="code hl_function" href="namespaceremus_1_1internal.html#a73f978a6ab18265049cad0986e32ffb2">make_nonblocking</a>(id-&gt;recv_cq-&gt;channel-&gt;fd);</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <a class="code hl_function" href="namespaceremus_1_1internal.html#a73f978a6ab18265049cad0986e32ffb2">make_nonblocking</a>(id-&gt;send_cq-&gt;channel-&gt;fd);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        make_sync(event_channel-&gt;fd);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        make_nonblocking(id-&gt;recv_cq-&gt;channel-&gt;fd);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        make_nonblocking(id-&gt;send_cq-&gt;channel-&gt;fd);</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="comment">// Make and return the connection</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="classremus_1_1internal_1_1Connection.html">Connection</a>(my_id, mn_id, <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> Connection(my_id, mn_id, <span class="keywordtype">id</span>);</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>      }</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>      <span class="comment">// On an ADDR_RESOLVED, we just ack (which we did above)</span></div>
@@ -240,8 +219,8 @@ $(document).ready(function(){initNavTree('compute__node_8h_source.html',''); ini
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        rdma_destroy_event_channel(event_channel);</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        backoff_us_ = backoff_us_ &gt; 0</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                          ? std::min((backoff_us_ + (100 * my_id)) * 2,</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                                     <a class="code hl_variable" href="namespaceremus_1_1internal.html#ac888de708a1a3ecd348dc593f8b0ab41">connect_backoff_max_us</a>)</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                          : <a class="code hl_variable" href="namespaceremus_1_1internal.html#aa052afb40659f6c923369dc902db2827">connect_backoff_min_us</a>;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                                     connect_backoff_max_us)</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                          : connect_backoff_min_us;</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        std::this_thread::sleep_for(std::chrono::microseconds(backoff_us_));</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>      }</div>
@@ -253,13 +232,11 @@ $(document).ready(function(){initNavTree('compute__node_8h_source.html',''); ini
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    }</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  }</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>}</div>
-</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
-<div class="foldopen" id="foldopen00183" data-start="{" data-end="}">
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="namespaceremus_1_1internal.html#a561ac422c2e4130f250bc4bcbcc955f1">  183</a></span><span class="keyword">inline</span> <a class="code hl_class" href="classremus_1_1internal_1_1Connection.html">Connection</a> *<a class="code hl_function" href="namespaceremus_1_1internal.html#a561ac422c2e4130f250bc4bcbcc955f1">connect_loopback</a>(uint32_t my_id, std::string_view address,</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="keyword">inline</span> Connection *connect_loopback(uint32_t my_id, std::string_view address,</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                                    uint16_t port) {</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>  <span class="comment">// Do the initial endpoint configuration</span></div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  rdma_cm_id *<span class="keywordtype">id</span> = <a class="code hl_function" href="namespaceremus_1_1internal.html#a01c2f327ddb134546185243b768c50af">initialize_ep</a>(address, port);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  rdma_cm_id *<span class="keywordtype">id</span> = initialize_ep(address, port);</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  <span class="comment">// Query the ports to find one that is available and appropriate</span></div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  ibv_device_attr dev_attr;</div>
@@ -362,15 +339,13 @@ $(document).ready(function(){initNavTree('compute__node_8h_source.html',''); ini
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  <span class="keywordflow">if</span> (ibv_modify_qp(id-&gt;qp, &amp;attr, attr_mask) != 0) {</div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <a class="code hl_define" href="logging_8h.html#aaf75f2d6d29bcbac82f689bf5290daea">REMUS_FATAL</a>(<span class="stringliteral">&quot;ibv_modify_qp(): {}&quot;</span>, strerror(errno));</div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  }</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  <a class="code hl_function" href="namespaceremus_1_1internal.html#a73f978a6ab18265049cad0986e32ffb2">make_nonblocking</a>(id-&gt;recv_cq-&gt;channel-&gt;fd);</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>  <a class="code hl_function" href="namespaceremus_1_1internal.html#a73f978a6ab18265049cad0986e32ffb2">make_nonblocking</a>(id-&gt;send_cq-&gt;channel-&gt;fd);</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  make_nonblocking(id-&gt;recv_cq-&gt;channel-&gt;fd);</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>  make_nonblocking(id-&gt;send_cq-&gt;channel-&gt;fd);</div>
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>  <span class="comment">// Make and return the connection</span></div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>  <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="classremus_1_1internal_1_1Connection.html">Connection</a>(my_id, my_id, <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>  <span class="keywordflow">return</span> <span class="keyword">new</span> Connection(my_id, my_id, <span class="keywordtype">id</span>);</div>
 <div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>}</div>
-</div>
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>} <span class="comment">// namespace remus::internal</span></div>
-</div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span> </div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceremus.html">remus</a> {</div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
@@ -385,7 +360,7 @@ $(document).ready(function(){initNavTree('compute__node_8h_source.html',''); ini
 <div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>  std::vector&lt;internal::ibv_mr_ptr&gt; mrs_; <span class="comment">// MRs for seg_</span></div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>  <span class="keyword">const</span> uint64_t num_threads_;            <span class="comment">// Number of threads to support</span></div>
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>  <span class="keyword">const</span> uint64_t thread_bufsz_;           <span class="comment">// Segment size for each thread</span></div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>  <a class="code hl_class" href="classremus_1_1internal_1_1Segment.html">internal::Segment</a> seg_;                 <span class="comment">// The segment shared by the threads</span></div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>  internal::Segment seg_;                 <span class="comment">// The segment shared by the threads</span></div>
 <div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>  std::atomic&lt;uint64_t&gt; threads_;         <span class="comment">// Number of registered threads</span></div>
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span> </div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>  <span class="keyword">using </span>conn_map = std::unordered_map&lt;uint16_t, std::vector&lt;conn_info&gt;&gt;;</div>
@@ -410,7 +385,7 @@ $(document).ready(function(){initNavTree('compute__node_8h_source.html',''); ini
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
 <div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>  std::shared_ptr&lt;remus::ArgMap&gt; args_; <span class="comment">// The program&#39;s command-line args</span></div>
 <div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span> </div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>  <span class="keywordtype">void</span> save_conn(uint16_t node_id, <a class="code hl_class" href="classremus_1_1internal_1_1Connection.html">internal::Connection</a> *conn, uint32_t lkey) {</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>  <span class="keywordtype">void</span> save_conn(uint16_t node_id, internal::Connection *conn, uint32_t lkey) {</div>
 <div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>    <span class="keywordflow">if</span> (node_connections_.find(node_id) == node_connections_.end())</div>
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>      node_connections_.insert({node_id, std::vector&lt;conn_info&gt;()});</div>
 <div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>    node_connections_[node_id].emplace_back(</div>
@@ -437,7 +412,7 @@ $(document).ready(function(){initNavTree('compute__node_8h_source.html',''); ini
 <div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>      <span class="comment">// NB:  Rather than do an rdma_read, we assume that nothing has been</span></div>
 <div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>      <span class="comment">//      allocated yet, and thus the bump allocator FAA hint should be the</span></div>
 <div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>      <span class="comment">//      tail of the segment&#39;s metadata.</span></div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>      segs_[node_id].emplace_back(key, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structremus_1_1internal_1_1ControlBlock.html">internal::ControlBlock</a>));</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>      segs_[node_id].emplace_back(key, <span class="keyword">sizeof</span>(internal::ControlBlock));</div>
 <div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>    }</div>
 <div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>  }</div>
 <div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span> </div>
@@ -492,8 +467,8 @@ $(document).ready(function(){initNavTree('compute__node_8h_source.html',''); ini
 <div class="line"><a id="l00481" name="l00481"></a><span class="lineno">  481</span>          <span class="comment">// Connect, then register the big segment with that connection</span></div>
 <div class="line"><a id="l00482" name="l00482"></a><span class="lineno">  482</span>          <a class="code hl_define" href="logging_8h.html#a2df62c11662bc3b2d27536880f687a0d">REMUS_INFO</a>(<span class="stringliteral">&quot;Connecting to localhost {}:{} (id = {})&quot;</span>, p.address, port,</div>
 <div class="line"><a id="l00483" name="l00483"></a><span class="lineno">  483</span>                     p.id);</div>
-<div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span>          <span class="keyword">auto</span> conn = <a class="code hl_function" href="namespaceremus_1_1internal.html#a561ac422c2e4130f250bc4bcbcc955f1">internal::connect_loopback</a>(self_.<a class="code hl_variable" href="structremus_1_1MachineInfo.html#a005e03cfd5f9bebbec0c1c01071f9dec">id</a>, self_.<a class="code hl_variable" href="structremus_1_1MachineInfo.html#a91ad5e4dbbb150d34884947dc8a35042">address</a>, port);</div>
-<div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span>          mrs_.push_back(seg_.<a class="code hl_function" href="classremus_1_1internal_1_1Segment.html#af4fbafd28a8d9c6e83f21c8134321b7f">registerWithPd</a>(conn-&gt;<a class="code hl_function" href="classremus_1_1internal_1_1Connection.html#aa3593a3c68f6879a92df208306c96bd3">pd</a>()));</div>
+<div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span>          <span class="keyword">auto</span> conn = internal::connect_loopback(self_.<a class="code hl_variable" href="structremus_1_1MachineInfo.html#a005e03cfd5f9bebbec0c1c01071f9dec">id</a>, self_.<a class="code hl_variable" href="structremus_1_1MachineInfo.html#a91ad5e4dbbb150d34884947dc8a35042">address</a>, port);</div>
+<div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span>          mrs_.push_back(seg_.registerWithPd(conn-&gt;pd()));</div>
 <div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span> </div>
 <div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>          <span class="comment">// Save the connection and the regions</span></div>
 <div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>          <span class="keyword">auto</span> lkey = mrs_.back()-&gt;lkey;</div>
@@ -519,7 +494,7 @@ $(document).ready(function(){initNavTree('compute__node_8h_source.html',''); ini
 <div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>          <span class="comment">// Connect, then register the big segment with that connection</span></div>
 <div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>          <a class="code hl_define" href="logging_8h.html#a2df62c11662bc3b2d27536880f687a0d">REMUS_INFO</a>(<span class="stringliteral">&quot;Connecting to remote machine {}:{} (id = {}) from {}&quot;</span>,</div>
 <div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>                     p.address, port, p.id, self_.<a class="code hl_variable" href="structremus_1_1MachineInfo.html#a005e03cfd5f9bebbec0c1c01071f9dec">id</a>);</div>
-<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>          <span class="keyword">auto</span> conn = <a class="code hl_function" href="namespaceremus_1_1internal.html#a315ca89ef09d664e1807a23ee94b49d2">internal::connect_remote</a>(self_.<a class="code hl_variable" href="structremus_1_1MachineInfo.html#a005e03cfd5f9bebbec0c1c01071f9dec">id</a>, p.id, p.address, port,</div>
+<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>          <span class="keyword">auto</span> conn = internal::connect_remote(self_.<a class="code hl_variable" href="structremus_1_1MachineInfo.html#a005e03cfd5f9bebbec0c1c01071f9dec">id</a>, p.id, p.address, port,</div>
 <div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>                                               seg_, mrs_);</div>
 <div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span> </div>
 <div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>          <span class="comment">// Get the RegionInfo vector</span></div>
@@ -547,7 +522,7 @@ $(document).ready(function(){initNavTree('compute__node_8h_source.html',''); ini
 <div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span>          <span class="stringliteral">&quot;register_thread produced thread #{} when only {} are supported&quot;</span>, <span class="keywordtype">id</span>,</div>
 <div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>          num_threads_);</div>
 <div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>    }</div>
-<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>    uint8_t *res = seg_.<a class="code hl_function" href="classremus_1_1internal_1_1Segment.html#a1a2d86c09bfddd51e88c1c98dc958581">raw</a>() + (<span class="keywordtype">id</span> * thread_bufsz_);</div>
+<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>    uint8_t *res = seg_.raw() + (<span class="keywordtype">id</span> * thread_bufsz_);</div>
 <div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>    <span class="keywordflow">return</span> {id, res};</div>
 <div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>  }</div>
 </div>
@@ -578,12 +553,6 @@ $(document).ready(function(){initNavTree('compute__node_8h_source.html',''); ini
 <div class="ttc" id="aclassremus_1_1ComputeNode_html_ae831b3123432ccb5bb5ad31d1f46adba"><div class="ttname"><a href="classremus_1_1ComputeNode.html#ae831b3123432ccb5bb5ad31d1f46adba">remus::ComputeNode::get_alloc_hint</a></div><div class="ttdeci">std::atomic&lt; uint64_t &gt; &amp; get_alloc_hint(uint64_t mn_id, uint64_t seg_id)</div><div class="ttdef"><b>Definition</b> compute_node.h:564</div></div>
 <div class="ttc" id="aclassremus_1_1ComputeNode_html_af3b2bb267d90857d9c9f8b363a0bdbcf"><div class="ttname"><a href="classremus_1_1ComputeNode.html#af3b2bb267d90857d9c9f8b363a0bdbcf">remus::ComputeNode::connect_remote</a></div><div class="ttdeci">void connect_remote(std::vector&lt; MachineInfo &gt; &amp;memnodes)</div><div class="ttdef"><b>Definition</b> compute_node.h:502</div></div>
 <div class="ttc" id="aclassremus_1_1ComputeNode_html_aff934374616ade67384380d7c2074e84"><div class="ttname"><a href="classremus_1_1ComputeNode.html#aff934374616ade67384380d7c2074e84">remus::ComputeNode::register_thread</a></div><div class="ttdeci">std::pair&lt; uint64_t, uint8_t * &gt; register_thread()</div><div class="ttdef"><b>Definition</b> compute_node.h:535</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Connection_html"><div class="ttname"><a href="classremus_1_1internal_1_1Connection.html">remus::internal::Connection</a></div><div class="ttdoc">A connection object for RDMA communication.</div><div class="ttdef"><b>Definition</b> connection.h:36</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Connection_html_aa3593a3c68f6879a92df208306c96bd3"><div class="ttname"><a href="classremus_1_1internal_1_1Connection.html#aa3593a3c68f6879a92df208306c96bd3">remus::internal::Connection::pd</a></div><div class="ttdeci">ibv_pd * pd()</div><div class="ttdoc">Return the protection domain associated with this Connection.</div><div class="ttdef"><b>Definition</b> connection.h:263</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Segment_html"><div class="ttname"><a href="classremus_1_1internal_1_1Segment.html">remus::internal::Segment</a></div><div class="ttdoc">A Segment object to represent a slab of RDMA memory.</div><div class="ttdef"><b>Definition</b> segment.h:104</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Segment_html_a1a2d86c09bfddd51e88c1c98dc958581"><div class="ttname"><a href="classremus_1_1internal_1_1Segment.html#a1a2d86c09bfddd51e88c1c98dc958581">remus::internal::Segment::raw</a></div><div class="ttdeci">uint8_t * raw() const</div><div class="ttdoc">Return the local address of the start of this Segment.</div><div class="ttdef"><b>Definition</b> segment.h:197</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Segment_html_a2507a40ce14dd40fdd52300114b2a758"><div class="ttname"><a href="classremus_1_1internal_1_1Segment.html#a2507a40ce14dd40fdd52300114b2a758">remus::internal::Segment::capacity</a></div><div class="ttdeci">uint64_t capacity() const</div><div class="ttdoc">Return the Segment size.</div><div class="ttdef"><b>Definition</b> segment.h:200</div></div>
-<div class="ttc" id="aclassremus_1_1internal_1_1Segment_html_af4fbafd28a8d9c6e83f21c8134321b7f"><div class="ttname"><a href="classremus_1_1internal_1_1Segment.html#af4fbafd28a8d9c6e83f21c8134321b7f">remus::internal::Segment::registerWithPd</a></div><div class="ttdeci">ibv_mr_ptr registerWithPd(ibv_pd *pd)</div><div class="ttdef"><b>Definition</b> segment.h:178</div></div>
 <div class="ttc" id="acli_8h_html"><div class="ttname"><a href="cli_8h.html">cli.h</a></div></div>
 <div class="ttc" id="aconnection_8h_html"><div class="ttname"><a href="connection_8h.html">connection.h</a></div></div>
 <div class="ttc" id="alogging_8h_html"><div class="ttname"><a href="logging_8h.html">logging.h</a></div></div>
@@ -591,15 +560,6 @@ $(document).ready(function(){initNavTree('compute__node_8h_source.html',''); ini
 <div class="ttc" id="alogging_8h_html_a2df62c11662bc3b2d27536880f687a0d"><div class="ttname"><a href="logging_8h.html#a2df62c11662bc3b2d27536880f687a0d">REMUS_INFO</a></div><div class="ttdeci">#define REMUS_INFO(...)</div><div class="ttdoc">Print an information message.</div><div class="ttdef"><b>Definition</b> logging.h:112</div></div>
 <div class="ttc" id="alogging_8h_html_aaf75f2d6d29bcbac82f689bf5290daea"><div class="ttname"><a href="logging_8h.html#aaf75f2d6d29bcbac82f689bf5290daea">REMUS_FATAL</a></div><div class="ttdeci">#define REMUS_FATAL(...)</div><div class="ttdoc">Terminate with a message on a fatal error.</div><div class="ttdef"><b>Definition</b> logging.h:115</div></div>
 <div class="ttc" id="alogging_8h_html_acaf341353eb37d85648afac69d08c855"><div class="ttname"><a href="logging_8h.html#acaf341353eb37d85648afac69d08c855">REMUS_ASSERT</a></div><div class="ttdeci">#define REMUS_ASSERT(check,...)</div><div class="ttdef"><b>Definition</b> logging.h:125</div></div>
-<div class="ttc" id="anamespaceremus_1_1internal_html"><div class="ttname"><a href="namespaceremus_1_1internal.html">remus::internal</a></div><div class="ttdef"><b>Definition</b> compute_node.h:25</div></div>
-<div class="ttc" id="anamespaceremus_1_1internal_html_a01c2f327ddb134546185243b768c50af"><div class="ttname"><a href="namespaceremus_1_1internal.html#a01c2f327ddb134546185243b768c50af">remus::internal::initialize_ep</a></div><div class="ttdeci">rdma_cm_id * initialize_ep(std::string_view address, uint16_t port)</div><div class="ttdef"><b>Definition</b> compute_node.h:42</div></div>
-<div class="ttc" id="anamespaceremus_1_1internal_html_a315ca89ef09d664e1807a23ee94b49d2"><div class="ttname"><a href="namespaceremus_1_1internal.html#a315ca89ef09d664e1807a23ee94b49d2">remus::internal::connect_remote</a></div><div class="ttdeci">Connection * connect_remote(uint32_t my_id, uint32_t mn_id, std::string_view mn_addr, uint16_t port, internal::Segment &amp;seg, std::vector&lt; internal::ibv_mr_ptr &gt; &amp;mrs)</div><div class="ttdef"><b>Definition</b> compute_node.h:84</div></div>
-<div class="ttc" id="anamespaceremus_1_1internal_html_a561ac422c2e4130f250bc4bcbcc955f1"><div class="ttname"><a href="namespaceremus_1_1internal.html#a561ac422c2e4130f250bc4bcbcc955f1">remus::internal::connect_loopback</a></div><div class="ttdeci">Connection * connect_loopback(uint32_t my_id, std::string_view address, uint16_t port)</div><div class="ttdef"><b>Definition</b> compute_node.h:183</div></div>
-<div class="ttc" id="anamespaceremus_1_1internal_html_a73f978a6ab18265049cad0986e32ffb2"><div class="ttname"><a href="namespaceremus_1_1internal.html#a73f978a6ab18265049cad0986e32ffb2">remus::internal::make_nonblocking</a></div><div class="ttdeci">void make_nonblocking(int fd)</div><div class="ttdoc">Set the file descriptor fd as O_NONBLOCK.</div><div class="ttdef"><b>Definition</b> util.h:52</div></div>
-<div class="ttc" id="anamespaceremus_1_1internal_html_aa052afb40659f6c923369dc902db2827"><div class="ttname"><a href="namespaceremus_1_1internal.html#aa052afb40659f6c923369dc902db2827">remus::internal::connect_backoff_min_us</a></div><div class="ttdeci">constexpr uint32_t connect_backoff_min_us</div><div class="ttdoc">Minimum microseconds for exponential backoff.</div><div class="ttdef"><b>Definition</b> compute_node.h:28</div></div>
-<div class="ttc" id="anamespaceremus_1_1internal_html_aa8783740ff64c72d005d2461114eadd8"><div class="ttname"><a href="namespaceremus_1_1internal.html#aa8783740ff64c72d005d2461114eadd8">remus::internal::make_sync</a></div><div class="ttdeci">void make_sync(int fd)</div><div class="ttdoc">Set the file descriptor fd as O_SYNC.</div><div class="ttdef"><b>Definition</b> util.h:59</div></div>
-<div class="ttc" id="anamespaceremus_1_1internal_html_ac888de708a1a3ecd348dc593f8b0ab41"><div class="ttname"><a href="namespaceremus_1_1internal.html#ac888de708a1a3ecd348dc593f8b0ab41">remus::internal::connect_backoff_max_us</a></div><div class="ttdeci">constexpr uint32_t connect_backoff_max_us</div><div class="ttdoc">Maximum microseconds for exponential backoff.</div><div class="ttdef"><b>Definition</b> compute_node.h:31</div></div>
-<div class="ttc" id="anamespaceremus_1_1internal_html_ae05d6e2c012f1986655039ad835750b7"><div class="ttname"><a href="namespaceremus_1_1internal.html#ae05d6e2c012f1986655039ad835750b7">remus::internal::make_default_qp_init_attrs</a></div><div class="ttdeci">ibv_qp_init_attr make_default_qp_init_attrs()</div><div class="ttdef"><b>Definition</b> util.h:104</div></div>
 <div class="ttc" id="anamespaceremus_html"><div class="ttname"><a href="namespaceremus.html">remus</a></div><div class="ttdef"><b>Definition</b> Atomic.h:7</div></div>
 <div class="ttc" id="anamespaceremus_html_a2194cdde31c36ea866ffe00c8793a71d"><div class="ttname"><a href="namespaceremus.html#a2194cdde31c36ea866ffe00c8793a71d">remus::CN_THREAD_BUFSZ</a></div><div class="ttdeci">constexpr const char * CN_THREAD_BUFSZ</div><div class="ttdef"><b>Definition</b> cfg.h:41</div></div>
 <div class="ttc" id="anamespaceremus_html_a48807228cb6b8763101be0f13505d5cb"><div class="ttname"><a href="namespaceremus.html#a48807228cb6b8763101be0f13505d5cb">remus::SEG_SIZE</a></div><div class="ttdeci">constexpr const char * SEG_SIZE</div><div class="ttdef"><b>Definition</b> cfg.h:16</div></div>
@@ -615,16 +575,11 @@ $(document).ready(function(){initNavTree('compute__node_8h_source.html',''); ini
 <div class="ttc" id="astructremus_1_1MachineInfo_html"><div class="ttname"><a href="structremus_1_1MachineInfo.html">remus::MachineInfo</a></div><div class="ttdoc">A simple struct that contains the information needed to identify a machine in the remus system.</div><div class="ttdef"><b>Definition</b> util.h:28</div></div>
 <div class="ttc" id="astructremus_1_1MachineInfo_html_a005e03cfd5f9bebbec0c1c01071f9dec"><div class="ttname"><a href="structremus_1_1MachineInfo.html#a005e03cfd5f9bebbec0c1c01071f9dec">remus::MachineInfo::id</a></div><div class="ttdeci">const uint16_t id</div><div class="ttdef"><b>Definition</b> util.h:29</div></div>
 <div class="ttc" id="astructremus_1_1MachineInfo_html_a91ad5e4dbbb150d34884947dc8a35042"><div class="ttname"><a href="structremus_1_1MachineInfo.html#a91ad5e4dbbb150d34884947dc8a35042">remus::MachineInfo::address</a></div><div class="ttdeci">const std::string address</div><div class="ttdef"><b>Definition</b> util.h:30</div></div>
-<div class="ttc" id="astructremus_1_1internal_1_1ControlBlock_html"><div class="ttname"><a href="structremus_1_1internal_1_1ControlBlock.html">remus::internal::ControlBlock</a></div><div class="ttdoc">A control block for managing segments in the distributed memory system.</div><div class="ttdef"><b>Definition</b> util.h:182</div></div>
 <div class="ttc" id="autil_8h_html"><div class="ttname"><a href="util_8h.html">util.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_6018a8c26b29d29a4775030b4bbe88f7.html">rdma</a></li><li class="navelem"><a class="el" href="dir_13214eeb4531427aa19820af67ea12da.html">include</a></li><li class="navelem"><a class="el" href="dir_7996da782ac42abdde6a605c7784f653.html">remus</a></li><li class="navelem"><a class="el" href="compute__node_8h.html">compute_node.h</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
 </body>
 </html>
