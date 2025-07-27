@@ -2,6 +2,7 @@
 // want to use mermaid, and since mermaid doesn't play nicely with others, we
 // instead use this:
 import { withMermaid } from "vitepress-plugin-mermaid";
+// import { defineConfig } from "vitepress";
 
 // NB:  For more details, see <https://vitepress.dev/reference/site-config>
 export default withMermaid({
@@ -9,8 +10,9 @@ export default withMermaid({
   description: "Making RDMA Programming Easy, Without Sacrificing Performance",
   markdown: { math: true },
   outDir: "./dist",
+  appearance: false,
   themeConfig: {
-    // logo: "logo.png",
+    logo: "public/lulogo.png",
     // Use `nav` if you want navigation along the top.  See
     // <https://vitepress.dev/reference/default-theme-config> for more info
     //
