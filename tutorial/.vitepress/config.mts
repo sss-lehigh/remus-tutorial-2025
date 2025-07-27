@@ -10,6 +10,7 @@ export default withMermaid({
   markdown: { math: true },
   outDir: "./dist",
   themeConfig: {
+    // logo: "logo.png",
     // Use `nav` if you want navigation along the top.  See
     // <https://vitepress.dev/reference/default-theme-config> for more info
     //
