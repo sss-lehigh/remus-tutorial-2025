@@ -45,6 +45,7 @@
     --vp-c-gray-2: #e4e4e9;
     --vp-c-gray-3: #ebebef;
     --vp-c-gray-soft: rgba(142, 150, 170, 0.14);
+    --vp-c-lehigh-soft: rgba(80, 45, 14, 0.94);
 
     --vp-c-indigo-1: #3451b2;
     --vp-c-indigo-2: #3a5ccc;
@@ -174,6 +175,7 @@
     --vp-c-text-1: #3c3c43;
     --vp-c-text-2: #67676c;
     --vp-c-text-3: #929295;
+    --vp-c-text-4: #dfdfd6;
 }
 
 .dark {
@@ -212,14 +214,14 @@
     --vp-c-brand-1: var(--vp-c-lehigh);
     --vp-c-brand-2: var(--vp-c-lehigh);
     --vp-c-brand-3: var(--vp-c-lehigh);
-    --vp-c-brand-soft: var(--vp-c-lehigh);
+    --vp-c-brand-soft: var(--vp-c-lehigh-soft);
 
     /* DEPRECATED: Use `--vp-c-brand-1` instead. */
     --vp-c-brand: var(--vp-c-brand-1);
 
-    --vp-c-tip-1: var(--vp-c-brand-1);
-    --vp-c-tip-2: var(--vp-c-brand-2);
-    --vp-c-tip-3: var(--vp-c-brand-3);
+    --vp-c-tip-1: var(--vp-c-purple-1);
+    --vp-c-tip-2: var(--vp-c-purple-2);
+    --vp-c-tip-3: var(--vp-c-purple-3);
     --vp-c-tip-soft: var(--vp-c-brand-soft);
 
     --vp-c-note-1: var(--vp-c-brand-1);
@@ -442,8 +444,8 @@
     --vp-custom-block-note-code-bg: var(--vp-c-default-soft);
 
     --vp-custom-block-tip-border: transparent;
-    --vp-custom-block-tip-text: var(--vp-c-text-1);
-    --vp-custom-block-tip-bg: var(--vp-c-tip-soft);
+    --vp-custom-block-tip-text: var(--vp-c-text-4);
+    --vp-custom-block-tip-bg: var(--vp-c-indigo-1);
     --vp-custom-block-tip-code-bg: var(--vp-c-tip-soft);
 
     --vp-custom-block-important-border: transparent;

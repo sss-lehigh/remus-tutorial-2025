@@ -13,7 +13,7 @@ export default withMermaid({
   appearance: false,
   base: "/remus-tutorial-2025/",
   themeConfig: {
-    logo: "public/lulogo.png",
+    logo: "lulogo.png",
     // Use `nav` if you want navigation along the top.  See
     // <https://vitepress.dev/reference/default-theme-config> for more info
     //
