@@ -36,7 +36,7 @@ template <typename K> class LazyListSet {
     /// @param ct The calling thread's Remus context
     void acquire(CT &ct) {
       while (true) {
-        if (lock_.compare_exchange_weak(0, 1, ct) == 0) {
+        if (lock_.compare_exchange_weak(0, 1, ct)) {
           break;
         }
         while (lock_.load(ct) == 1) {
